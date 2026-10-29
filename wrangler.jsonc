@@ -9,7 +9,8 @@
     "run_worker_first": ["/api/*"]
   },
   "vars": {
-    // Doplň URL raw API organizátora, až ji dostaneš (prázdné = web jede na ukázkových datech)
-    "SOURCE_URL": ""
+    // Živá data ze Streamers Clash (prázdné = web jede jen na uložených datech z repa)
+    "SOURCE_URL": "https://streamersclash.cz/api/streamers-queue/lobby",
+    "BOARD_URL": "https://streamersclash.cz/api/streamers-queue/board"
   }
 }

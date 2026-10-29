@@ -186,3 +186,15 @@ dialog .row { display: flex; gap: 8px; margin-top: 12px; }
 .rec li > .champ-tag { flex: 1; font-weight: 600; }
 .wl .zero { color: var(--muted); opacity: .6; }
 .rec li { align-items: center; }
+
+/* Streamers Clash data */
+.hero-meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 4px; }
+.tier { font: 700 11px Rajdhani, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 1px 7px; border-radius: 5px; background: var(--panel-2); color: var(--muted); vertical-align: middle; }
+.tier-gold { background: rgba(255, 196, 0, .15); color: #ffc400; }
+.tier-silver { background: rgba(200, 210, 225, .15); color: #c8d2e1; }
+.tier-bronze { background: rgba(205, 127, 50, .18); color: #e0954f; }
+.tier-prized { background: rgba(255, 45, 138, .14); color: var(--accent); }
+.badge-live { background: rgba(255, 77, 94, .16); color: var(--red); }
+.chip { padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-weight: 600; font-size: 13px; }
+.chip.active { border-color: var(--accent); color: var(--text); background: var(--panel-2); }
+.team-opgg { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; padding-left: 8px; }

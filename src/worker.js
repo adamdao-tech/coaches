@@ -2,7 +2,8 @@
 // přeposílá raw JSON z API organizátora (obchází CORS, krátce cachuje).
 //
 // Nastavení:
-//   wrangler.jsonc → vars.SOURCE_URL   (URL raw API organizátora)
+//   wrangler.jsonc → vars.SOURCE_URL   (lobby API organizátora)
+//                    vars.BOARD_URL    (žebříček)
 //   wrangler secret put SOURCE_TOKEN   (volitelně, pokud API chce token)
 
 const CACHE_SECONDS = 30;
@@ -11,27 +12,28 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    if (url.pathname === '/api/data') return proxyData(request, env, ctx);
+    if (url.pathname === '/api/data') return proxy(request, env.SOURCE_URL, env, ctx);
+    if (url.pathname === '/api/board') return proxy(request, env.BOARD_URL, env, ctx);
     if (url.pathname === '/api/health') return json({ ok: true, source: Boolean(env.SOURCE_URL) });
 
     return env.ASSETS.fetch(request);
   },
 };
 
-async function proxyData(request, env, ctx) {
-  if (!env.SOURCE_URL) return json({ error: 'SOURCE_URL není nastavené' }, 404);
+async function proxy(request, target, env, ctx) {
+  if (!target) return json({ error: 'zdroj není nastavený' }, 404);
 
   const cache = caches.default;
-  const cacheKey = new Request(new URL('/api/data', request.url).toString());
+  const cacheKey = new Request(new URL(new URL(request.url).pathname, request.url).toString());
   const cached = await cache.match(cacheKey);
   if (cached) return cached;
 
-  const headers = { accept: 'application/json' };
+  const headers = { accept: 'application/json', 'user-agent': 'coaches-scouting (github.com/adamdao-tech/coaches)' };
   if (env.SOURCE_TOKEN) headers.authorization = `Bearer ${env.SOURCE_TOKEN}`;
 
   let upstream;
   try {
-    upstream = await fetch(env.SOURCE_URL, { headers, cf: { cacheTtl: 0 } });
+    upstream = await fetch(target, { headers, cf: { cacheTtl: 0 } });
   } catch (e) {
     return json({ error: `API organizátora nedostupné: ${e.message}` }, 502);
   }

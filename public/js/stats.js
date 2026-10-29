@@ -2,14 +2,14 @@
 
 const key = (name) => name.toLowerCase();
 
-export function computeStats(lobbies) {
+export function computeStats(lobbies, board = []) {
   const players = new Map();
 
   const get = (p) => {
     const k = key(p.name);
     if (!players.has(k)) {
       players.set(k, {
-        key: k, name: p.name, avatar: p.avatar, opgg: [],
+        key: k, name: p.name, avatar: p.avatar, profile: p.profile || null, opgg: [], board: null,
         games: 0, wins: 0, losses: 0, pending: 0,
         history: [],            // { lobbyId, side, result, time, champion, allies, enemies }
         vs: new Map(),          // soupeř -> { name, wins, losses }
@@ -19,6 +19,7 @@ export function computeStats(lobbies) {
     }
     const s = players.get(k);
     if (!s.avatar && p.avatar) s.avatar = p.avatar;
+    if (!s.profile && p.profile) s.profile = p.profile;
     for (const o of p.opgg || []) if (!s.opgg.some((x) => x.url === o.url)) s.opgg.push(o);
     return s;
   };
@@ -29,6 +30,9 @@ export function computeStats(lobbies) {
     won ? r.wins++ : r.losses++;
     map.set(k, r);
   };
+
+  // žebříček organizátora = oficiální celková bilance všech hráčů
+  for (const e of board) get(e).board = e;
 
   // řazení od nejstaršího, ať forma (posledních 5) dává smysl
   const ordered = [...lobbies].sort(byLobbyOrder);
@@ -57,6 +61,12 @@ export function computeStats(lobbies) {
   }
 
   for (const s of players.values()) {
+    // z uložených zápasů (pro soupeře/spoluhráče)
+    s.tracked = { games: s.games, wins: s.wins, losses: s.losses };
+    // celkem: z žebříčku, pokud je
+    if (s.board) { s.games = s.board.games; s.wins = s.board.wins; s.losses = s.board.losses; }
+    s.rank = s.board?.rank ?? null;
+    s.tier = s.board?.tier ?? null;
     s.wr = s.games ? s.wins / s.games : null;
     const done = s.history.filter((h) => h.result);
     s.form = done.slice(-5).map((h) => h.result);

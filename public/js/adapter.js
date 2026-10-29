@@ -58,14 +58,19 @@ function normOpgg(p) {
   return out;
 }
 
+// relativní cesty ze streamersclash.cz (/api/media/..., /profile/...) → absolutní
+export const SC_ORIGIN = 'https://streamersclash.cz';
+export const absUrl = (u) => (!u ? null : /^https?:/.test(u) ? u : u.startsWith('/') ? SC_ORIGIN + u : u);
+
 function normPlayer(p) {
-  if (typeof p === 'string') return { name: p.trim(), avatar: null, champion: null, opgg: [] };
+  if (typeof p === 'string') return { name: p.trim(), avatar: null, profile: null, champion: null, opgg: [] };
   const name = pick(p, 'name', 'nick', 'nickname', 'username', 'displayName', 'summonerName', 'riotId', 'player');
   if (!name) return null;
   const nameStr = typeof name === 'object' ? pick(name, 'name', 'nick') : name;
   return {
     name: String(nameStr).trim(),
-    avatar: pick(p, 'avatar', 'avatarUrl', 'image', 'img', 'picture', 'icon') || null,
+    avatar: absUrl(pick(p, 'avatar', 'avatarUrl', 'image', 'img', 'picture', 'icon')),
+    profile: absUrl(pick(p, 'href', 'profile', 'profileUrl')),
     champion: pick(p, 'champion', 'championName', 'champ') || null,
     opgg: normOpgg(p),
   };
@@ -118,21 +123,64 @@ function findWinner(l, blueRaw, redRaw) {
   return null;
 }
 
+const STATUS = { live: 'hraje se', waiting: 'čeká na start', ended: 'odehráno' };
+const statusLabel = (s) => (s ? STATUS[String(s).toLowerCase()] || String(s) : '');
+
+// Streamers Clash: day "27. 10." + from "22:00"
+function dayTime(day, from) {
+  const m = String(day || '').match(/(\d{1,2})\.\s*(\d{1,2})\./);
+  if (!m) return null;
+  const now = new Date();
+  let y = now.getFullYear();
+  if (+m[2] > now.getMonth() + 2) y--;
+  const [hh = '00', mm = '00'] = String(from || '').split(':');
+  return `${y}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}T${hh.padStart(2, '0')}:${mm.padStart(2, '0')}:00`;
+}
+
 function normLobby(l, i) {
   if (!l || typeof l !== 'object') return null;
   const { blue, red } = findTeams(l);
   if (!blue && !red) return null;
   return {
-    id: String(pick(l, 'id', 'lobbyId', 'number', 'matchId', 'gameId') ?? i),
-    status: String(pick(l, 'status', 'state') || ''),
-    time: pick(l, 'startedAt', 'createdAt', 'time', 'date', 'since', 'start') || null,
+    id: String(pick(l, 'number', 'lobbyNumber', 'id', 'lobbyId', 'matchId', 'gameId') ?? i),
+    uid: pick(l, 'id', 'uuid') || null,
+    status: statusLabel(pick(l, 'status', 'state')),
+    time: pick(l, 'startedAt', 'createdAt', 'time', 'date', 'since', 'start') || dayTime(l.day, l.from),
+    timeTo: l.to || null,
+    opgg: l.opgg || null,
     winner: findWinner(l, blue, red),
     blue: normTeam(blue || []),
     red: normTeam(red || []),
   };
 }
 
+// Spojí víc zdrojů lobby, duplicitní (stejné číslo/uuid) nahradí novějším stavem
+export function mergeLobbies(...lists) {
+  const m = new Map();
+  for (const list of lists) for (const l of list || []) {
+    const k = l.uid || l.id;
+    const prev = m.get(k);
+    if (!prev || (!prev.winner && l.winner) || !l.winner === !prev.winner) m.set(k, l);
+  }
+  return [...m.values()];
+}
+
+// Streamers Clash board: { entries: [{ rank, nickname, wins, losses, games, avatar, href, tier }] }
+export function normalizeBoard(raw) {
+  const list = asArray(pick(raw, 'entries', 'players', 'board') || raw);
+  return list.map((e) => ({
+    name: String(pick(e, 'nickname', 'name', 'nick') || '').trim(),
+    rank: e.rank ?? null, wins: +e.wins || 0, losses: +e.losses || 0, games: +e.games || 0,
+    tier: e.tier || null, qualified: !!e.qualified,
+    avatar: absUrl(e.avatar), profile: absUrl(e.href),
+  })).filter((e) => e.name);
+}
+
 export function normalize(raw) {
+  // Streamers Clash lobby endpoint: { live: [...], recent: [...] }
+  if (raw && !Array.isArray(raw) && (Array.isArray(raw.live) || Array.isArray(raw.recent))) {
+    return [...(raw.recent || []), ...(raw.live || [])].map(normLobby).filter(Boolean);
+  }
   let lobbies = Array.isArray(raw) ? raw : pick(raw, 'lobbies', 'lobby', 'matches', 'games', 'data', 'items', 'results');
   if (lobbies && !Array.isArray(lobbies) && typeof lobbies === 'object') {
     // { data: { lobbies: [...] } }

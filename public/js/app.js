@@ -1,4 +1,4 @@
-import { normalize } from './adapter.js';
+import { normalize, normalizeBoard, mergeLobbies } from './adapter.js';
 import { computeStats, headToHead, sortedRecords, byLobbyOrder } from './stats.js';
 import { loadChampions, champTag } from './champions.js';
 
@@ -17,7 +17,7 @@ const LS = {
 
 const state = {
   lobbies: [], stats: new Map(), source: '', updated: null,
-  sort: { col: 'wins', dir: -1 }, q: '', minGames: 0,
+  board: [], sort: { col: 'rank', dir: 1 }, q: '', minGames: 0,
 };
 
 /* ---------- načítání dat ---------- */
@@ -32,29 +32,37 @@ async function loadData() {
   await loadChampions();
   const custom = LS.get('coaches.url');
   const pasted = LS.get('coaches.pasted');
-  const attempts = [];
-  if (pasted) attempts.push(['vložený JSON', async () => JSON.parse(pasted)]);
-  if (custom) attempts.push([custom, () => fetchJson(custom)]);
-  attempts.push(['API organizátora', () => fetchJson('/api/data')]);
-  attempts.push(['ukázková data', () => fetchJson('sample-lobbies.json')]);
-
-  for (const [label, fn] of attempts) {
+  const single = [];
+  if (pasted) single.push(['vložený JSON', async () => JSON.parse(pasted)]);
+  if (custom) single.push([custom, () => fetchJson(custom)]);
+  for (const [label, fn] of single) {
     try {
-      const raw = await fn();
-      const lobbies = normalize(raw);
+      const lobbies = normalize(await fn());
       if (!lobbies.length) throw new Error('žádná lobby v datech');
-      setData(lobbies, label);
-      return;
-    } catch (e) {
-      console.warn(`Zdroj „${label}“ selhal:`, e.message);
-    }
+      return setData(lobbies, label);
+    } catch (e) { console.warn(`Zdroj „${label}“ selhal:`, e.message); }
   }
-  setData([], 'žádný zdroj');
+
+  // Výchozí: uložená historie z repa + živá lobby + žebříček (přes Worker, záloha z repa)
+  const [hist, live, board] = await Promise.allSettled([
+    fetchJson('data/matches.json'),
+    fetchJson('/api/data'),
+    fetchJson('/api/board').catch(() => fetchJson('data/board.json')),
+  ]);
+  const ok = (r) => (r.status === 'fulfilled' ? r.value : null);
+  const lobbies = mergeLobbies(ok(hist) ? normalize(ok(hist)) : [], ok(live) ? normalize(ok(live)) : []);
+  const boardList = ok(board) ? normalizeBoard(ok(board)) : [];
+  if (lobbies.length || boardList.length) {
+    return setData(lobbies, ok(live) ? 'živá data · Streamers Clash' : 'Streamers Clash (uložená data)', boardList);
+  }
+  try { setData(normalize(await fetchJson('sample-lobbies.json')), 'ukázková data'); }
+  catch { setData([], 'žádný zdroj'); }
 }
 
-function setData(lobbies, source) {
+function setData(lobbies, source, board = []) {
   state.lobbies = lobbies;
-  state.stats = computeStats(lobbies);
+  state.board = board;
+  state.stats = computeStats(lobbies, board);
   state.source = source;
   state.updated = new Date();
   renderMeta();
@@ -71,7 +79,7 @@ function renderMeta() {
   const demo = state.source === 'ukázková data';
   $('#source').innerHTML = `
     <span class="badge ${demo ? 'badge-warn' : 'badge-ok'}">${esc(state.source)}</span>
-    <span class="muted">${state.lobbies.length} lobby · ${done} odehraných · ${state.stats.size} hráčů · ${state.updated.toLocaleTimeString('cs-CZ')}</span>`;
+    <span class="muted">${state.stats.size} hráčů · ${done} uložených zápasů${state.lobbies.length - done ? ` · ${state.lobbies.length - done} živých/čekajících` : ''} · ${state.updated.toLocaleTimeString('cs-CZ')}</span>`;
   const dl = $('#player-list');
   dl.innerHTML = [...state.stats.values()].map((p) => `<option value="${esc(p.name)}">`).join('');
 }
@@ -83,7 +91,7 @@ function route() {
   const arg = rest.join('/');
   document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.dataset.view === (view === 'hrac' ? 'hraci' : view)));
   const main = $('#main');
-  if (view === 'zapasy') main.innerHTML = renderMatches();
+  if (view === 'zapasy') main.innerHTML = renderMatches(arg || 'vse');
   else if (view === 'h2h') { main.innerHTML = renderH2HShell(arg); runH2H(); }
   else if (view === 'hrac' && arg) main.innerHTML = renderPlayer(arg);
   else { main.innerHTML = renderPlayersShell(); renderPlayersTable(); }
@@ -92,9 +100,24 @@ function route() {
 /* ---------- tabulka hráčů ---------- */
 
 const COLS = [
-  ['name', 'Hráč'], ['games', 'Zápasy'], ['wins', 'W'], ['losses', 'L'], ['wr', 'Winrate'],
-  ['form', 'Forma'], ['streak', 'Série'], ['champs', 'Championi'], ['opgg', 'OP.GG'],
+  ['rank', '#', (p, i) => `<span class="muted">${p.rank ?? i + 1}</span>`],
+  ['name', 'Hráč', (p) => `${playerCell(p)}${p.tier ? ` <span class="tier tier-${esc(p.tier)}">${esc(p.tier)}</span>` : ''}`],
+  ['games', 'Zápasy', (p) => `${p.games}${p.pending ? `<span class="muted small" title="právě hraje / čeká"> +${p.pending}</span>` : ''}`],
+  ['wins', 'W', (p) => `<span class="win">${p.wins}</span>`],
+  ['losses', 'L', (p) => `<span class="loss">${p.losses}</span>`],
+  ['wr', 'Winrate', (p) => wrBar(p.wr)],
+  ['form', 'Forma', (p) => formDots(p.form)],
+  ['streak', 'Série', (p) => `<span class="${p.streak[0] === 'W' ? 'win' : 'loss'}">${esc(p.streak)}</span>`],
+  ['champs', 'Championi', (p) => `<span class="champ-row">${topChamps(p).map((c) => `<span title="${esc(c.name)} ${c.wins}W ${c.losses}L">${champTag(c.name, { label: false })}</span>`).join('') || '<span class="muted">–</span>'}</span>`],
+  ['opgg', 'OP.GG', (p) => opggLinks(p.opgg)],
 ];
+const TEXT_COLS = ['name', 'form', 'opgg', 'champs'];
+
+// sloupce bez dat (championi, OP.GG) skryj
+function visibleCols() {
+  const ps = [...state.stats.values()];
+  return COLS.filter(([c]) => (c === 'champs' ? ps.some((p) => p.champs.size) : c === 'opgg' ? ps.some((p) => p.opgg.length) : true));
+}
 
 function renderPlayersShell() {
   return `
@@ -104,16 +127,16 @@ function renderPlayersShell() {
       <button class="btn ghost" id="csv">Export CSV</button>
     </div>
     <div class="table-wrap"><table class="players">
-      <thead><tr><th>#</th>${COLS.map(([c, l]) => `<th data-col="${c}" class="${['name', 'form', 'opgg', 'champs'].includes(c) ? '' : 'num'}">${l}</th>`).join('')}</tr></thead>
+      <thead><tr>${visibleCols().map(([c, l]) => `<th data-col="${c}" class="${TEXT_COLS.includes(c) ? '' : 'num'}">${l}</th>`).join('')}</tr></thead>
       <tbody></tbody>
     </table></div>
-    <p class="muted small">Klikni na hráče pro detail: proti komu vyhrál/prohrál, s kým hraje, historie.</p>`;
+    <p class="muted small">W/L a pořadí jsou z oficiálního žebříčku. Forma, série a detail (soupeři, spoluhráči) se počítají z uložených zápasů – historie se doplňuje automaticky každých 30 minut.</p>`;
 }
 
 function filteredPlayers() {
   const q = state.q.toLowerCase();
   const { col, dir } = state.sort;
-  const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : col === 'champs' ? p.champs.size : p[col]);
+  const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'rank' ? (p.rank ?? 1e9) : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : col === 'champs' ? p.champs.size : col === 'opgg' ? p.opgg.length : p[col]);
   return [...state.stats.values()]
     .filter((p) => (!q || p.name.toLowerCase().includes(q)) && p.games >= state.minGames)
     .sort((a, b) => {
@@ -126,19 +149,10 @@ const streakVal = (s) => (!s ? 0 : (s[0] === 'W' ? 1 : -1) * parseInt(s.slice(1)
 
 function renderPlayersTable() {
   const rows = filteredPlayers();
+  const cols = visibleCols();
   $('table.players tbody').innerHTML = rows.length ? rows.map((p, i) => `
-    <tr data-name="${esc(p.name)}">
-      <td class="muted">${i + 1}</td>
-      <td>${playerCell(p)}</td>
-      <td class="num">${p.games}${p.pending ? `<span class="muted small"> +${p.pending}</span>` : ''}</td>
-      <td class="num win">${p.wins}</td>
-      <td class="num loss">${p.losses}</td>
-      <td class="num">${wrBar(p.wr)}</td>
-      <td>${formDots(p.form)}</td>
-      <td class="num ${p.streak[0] === 'W' ? 'win' : 'loss'}">${esc(p.streak)}</td>
-      <td><span class="champ-row">${topChamps(p).map((c) => `<span title="${esc(c.name)} ${c.wins}W ${c.losses}L">${champTag(c.name, { label: false })}</span>`).join('') || '<span class="muted">–</span>'}</span></td>
-      <td>${opggLinks(p.opgg)}</td>
-    </tr>`).join('') : `<tr><td colspan="10" class="empty">Nic nenalezeno</td></tr>`;
+    <tr data-name="${esc(p.name)}">${cols.map(([c, , fn]) => `<td class="${TEXT_COLS.includes(c) ? '' : 'num'}">${fn(p, i)}</td>`).join('')}</tr>`).join('')
+    : `<tr><td colspan="${cols.length}" class="empty">Nic nenalezeno</td></tr>`;
   document.querySelectorAll('th[data-col]').forEach((th) => {
     th.classList.toggle('sorted', th.dataset.col === state.sort.col);
     th.dataset.dir = state.sort.dir;
@@ -179,7 +193,13 @@ function renderPlayer(name) {
       ${avatar(p, 64)}
       <div>
         <h2>${esc(p.name)}</h2>
-        <div class="muted">${opggLinks(p.opgg)}</div>
+        <div class="hero-meta">
+          ${p.rank ? `<span class="badge">#${p.rank} v žebříčku</span>` : ''}
+          ${p.tier ? `<span class="tier tier-${esc(p.tier)}">${esc(p.tier)}</span>` : ''}
+          ${p.profile ? `<a class="badge" href="${esc(p.profile)}" target="_blank" rel="noopener">profil na SC ↗</a>` : ''}
+          ${p.opgg.length ? opggLinks(p.opgg) : ''}
+        </div>
+        <div class="muted small">Detail níže je z ${p.tracked.games} uložených zápasů${p.board ? ` (celkem ${p.games})` : ''}.</div>
       </div>
       <div class="kpis">
         <div><b>${p.games}</b><span>zápasů</span></div>
@@ -213,22 +233,33 @@ const nameLink = (n) => `<a href="#hrac/${encodeURIComponent(n)}">${esc(n)}</a>`
 
 /* ---------- zápasy ---------- */
 
-function renderMatches() {
-  const list = [...state.lobbies].sort(byLobbyOrder).reverse();
-  if (!list.length) return '<p class="empty">Žádná data</p>';
+const MATCH_FILTERS = [['vse', 'Vše'], ['zive', 'Živé a čekající'], ['odehrane', 'Odehrané']];
+const MATCH_LIMIT = 60;
+
+function renderMatches(filter = 'vse') {
+  let list = [...state.lobbies].sort(byLobbyOrder).reverse();
+  if (filter === 'zive') list = list.filter((l) => !l.winner);
+  if (filter === 'odehrane') list = list.filter((l) => l.winner);
+  const total = list.length;
+  list = list.slice(0, MATCH_LIMIT);
+  const opgg = (l, side) => (l.opgg?.[side] || []).map((o) => `<a class="opgg" href="${esc(o.url)}" target="_blank" rel="noopener" title="OP.GG multisearch (${o.players} hráčů)">${esc(String(o.server).toUpperCase())} ${o.players}/5</a>`).join(' ');
   const team = (l, side) => `
     <div class="team ${side} ${l.winner === side ? 'won' : l.winner ? 'lost' : ''}">
-      <h4>${side === 'blue' ? 'BLUE' : 'RED'}${l.winner === side ? ' <span class="tag">VÝHRA</span>' : ''}</h4>
+      <h4>${side === 'blue' ? 'BLUE' : 'RED'}${l.winner === side ? ' <span class="tag">W</span>' : ''}</h4>
       ${l[side].map((p) => { const s = state.stats.get(p.name.toLowerCase()); return `
         <a class="pl" href="#hrac/${encodeURIComponent(p.name)}">${p.champion ? champTag(p.champion, { label: false }) : avatar(p, 22)}<span>${esc(p.name)}</span>
         <span class="muted small">${s && s.games ? `${s.wins}W ${s.losses}L` : ''}</span></a>`; }).join('')}
+      ${l.opgg?.[side]?.length ? `<div class="team-opgg">${opgg(l, side)}</div>` : ''}
     </div>`;
-  return `<div class="lobbies">${list.map((l) => `
+  return `
+    <div class="toolbar">${MATCH_FILTERS.map(([k, label]) => `<a class="chip ${k === filter ? 'active' : ''}" href="#zapasy/${k}">${label}</a>`).join('')}
+      <span class="muted small">${total > MATCH_LIMIT ? `zobrazeno ${MATCH_LIMIT} z ${total}` : `${total} lobby`}</span></div>
+    ${list.length ? `<div class="lobbies">${list.map((l) => `
     <article class="lobby">
-      <header><b>#${esc(l.id)}</b><span class="badge">${esc(l.winner ? 'odehráno' : (l.status || 'čeká'))}</span>
-      <span class="muted">${l.time ? esc(fmtTime(l.time)) : ''}</span></header>
+      <header><b>#${esc(l.id)}</b><span class="badge ${l.status === 'hraje se' ? 'badge-live' : ''}">${esc(l.winner ? 'odehráno' : (l.status || 'čeká'))}</span>
+      <span class="muted">${l.time ? esc(fmtTime(l.time)) : ''}${l.timeTo ? `–${esc(l.timeTo)}` : ''}</span></header>
       <div class="teams">${team(l, 'blue')}${team(l, 'red')}</div>
-    </article>`).join('')}</div>`;
+    </article>`).join('')}</div>` : '<p class="empty">Žádná lobby</p>'}`;
 }
 function fmtTime(t) {
   const d = new Date(t);
@@ -323,7 +354,7 @@ document.addEventListener('click', (e) => {
   const th = e.target.closest('th[data-col]');
   if (th) {
     const c = th.dataset.col;
-    state.sort = { col: c, dir: state.sort.col === c ? -state.sort.dir : (c === 'name' ? 1 : -1) };
+    state.sort = { col: c, dir: state.sort.col === c ? -state.sort.dir : (['name', 'rank'].includes(c) ? 1 : -1) };
     renderPlayersTable();
     return;
   }
