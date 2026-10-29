@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coaches Scouting</title>
+  <meta name="description" content="Scouting hráčů Streamers Clash – výhry, prohry, soupeři a spoluhráči z dat organizátora.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1><span class="bar"></span>COACHES <small>scouting</small></h1>
+    <nav>
+      <a class="tab" data-view="hraci" href="#hraci">Hráči</a>
+      <a class="tab" data-view="zapasy" href="#zapasy">Zápasy</a>
+      <a class="tab" data-view="h2h" href="#h2h">Head-to-head</a>
+    </nav>
+    <div class="actions">
+      <button class="btn ghost" id="reload" title="Znovu načíst data">↻</button>
+      <button class="btn" id="src-btn">Zdroj dat</button>
+    </div>
+  </header>
+  <div id="source" class="source"></div>
+  <main id="main"><p class="muted">Načítám…</p></main>
+  <datalist id="player-list"></datalist>
+
+  <dialog id="src-dialog">
+    <form id="src-form">
+      <h3>Zdroj dat</h3>
+      <p class="muted small">Bez nastavení se bere API organizátora (přes <code>/api/data</code>), a když není, ukázková data.</p>
+      <label>URL na raw JSON API
+        <input id="src-url" type="url" placeholder="https://…/api/lobbies">
+      </label>
+      <label>…nebo vlož / nahraj JSON
+        <textarea id="src-json" rows="7" placeholder='{"lobbies":[...]}'></textarea>
+      </label>
+      <input id="src-file" type="file" accept=".json,application/json">
+      <p id="src-err" class="loss small"></p>
+      <div class="row">
+        <button type="button" class="btn ghost" id="src-reset">Výchozí zdroj</button>
+        <span class="grow"></span>
+        <button type="button" class="btn ghost" id="src-cancel">Zrušit</button>
+        <button class="btn" type="submit">Načíst</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

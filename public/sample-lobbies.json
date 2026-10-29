@@ -1,0 +1,2265 @@
+{
+ "_note": "UKÁZKOVÁ DATA – výsledky jsou vymyšlené",
+ "lobbies": [
+  {
+   "id": 812,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Pedronix",
+      "opgg": {
+       "eune": "Pedronix#EUNE"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "176lvx",
+      "opgg": {
+       "euw": "176lvx#EUW"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Metys",
+      "opgg": {},
+      "champion": "Lux"
+     },
+     {
+      "name": "lethalented",
+      "opgg": {},
+      "champion": "Syndra"
+     },
+     {
+      "name": "The_Goksi",
+      "opgg": {
+       "eune": "The_Goksi#EUNE"
+      },
+      "champion": "Nautilus"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "sw3ry",
+      "opgg": {},
+      "champion": "Thresh"
+     },
+     {
+      "name": "rakos420",
+      "opgg": {},
+      "champion": "Kaisa"
+     },
+     {
+      "name": "w8maxcs",
+      "opgg": {},
+      "champion": "Syndra"
+     },
+     {
+      "name": "Pengu",
+      "opgg": {
+       "eune": "Pengu#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "Munet",
+      "opgg": {
+       "eune": "Munet#EUNE"
+      },
+      "champion": "Lux"
+     }
+    ]
+   }
+  },
+  {
+   "id": 813,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Chmelda",
+      "opgg": {},
+      "champion": "Jinx"
+     },
+     {
+      "name": "Undead",
+      "opgg": {},
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Michaloo832",
+      "opgg": {},
+      "champion": "Viego"
+     },
+     {
+      "name": "KoreanPizzaBoy",
+      "opgg": {
+       "euw": "KoreanPizzaBoy#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "robin",
+      "opgg": {},
+      "champion": "Syndra"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "SebaHolub",
+      "opgg": {
+       "euw": "SebaHolub#EUW"
+      },
+      "champion": "Yasuo"
+     },
+     {
+      "name": "Samco0015",
+      "opgg": {
+       "euw": "Samco0015#EUW"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "Sambee",
+      "opgg": {
+       "euw": "Sambee#EUW"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "Rguardian",
+      "opgg": {},
+      "champion": "Ahri"
+     },
+     {
+      "name": "Wride",
+      "opgg": {
+       "eune": "Wride#EUNE"
+      },
+      "champion": "Ezreal"
+     }
+    ]
+   }
+  },
+  {
+   "id": 814,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:00:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "Necromartin",
+      "opgg": {
+       "euw": "Necromartin#EUW"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "sugiiss",
+      "opgg": {
+       "eune": "sugiiss#EUNE"
+      },
+      "champion": "Thresh"
+     },
+     {
+      "name": "Dadu",
+      "opgg": {},
+      "champion": "Garen"
+     },
+     {
+      "name": "dvlk696",
+      "opgg": {},
+      "champion": "Sett"
+     },
+     {
+      "name": "SKREAM",
+      "opgg": {
+       "euw": "SKREAM#EUW"
+      },
+      "champion": "Darius"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "ItzConki",
+      "opgg": {},
+      "champion": "Garen"
+     },
+     {
+      "name": "Ereniko",
+      "opgg": {
+       "eune": "Ereniko#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "matej2532",
+      "opgg": {
+       "euw": "matej2532#EUW"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "Kebixik",
+      "opgg": {},
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Anton",
+      "opgg": {},
+      "champion": "Leona"
+     }
+    ]
+   }
+  },
+  {
+   "id": 815,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:00:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "bandygod",
+      "opgg": {
+       "eune": "bandygod#EUNE"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "KloMrk",
+      "opgg": {},
+      "champion": "Garen"
+     },
+     {
+      "name": "sovaz1",
+      "opgg": {
+       "euw": "sovaz1#EUW"
+      },
+      "champion": "Sett"
+     },
+     {
+      "name": "Ejdyxdd",
+      "opgg": {
+       "eune": "Ejdyxdd#EUNE"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "SGoob",
+      "opgg": {
+       "euw": "SGoob#EUW"
+      },
+      "champion": "Thresh"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Turyx",
+      "opgg": {
+       "euw": "Turyx#EUW"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "ockoLOL",
+      "opgg": {
+       "eune": "ockoLOL#EUNE"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "fityr",
+      "opgg": {
+       "eune": "fityr#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "pukkmenstar",
+      "opgg": {
+       "eune": "pukkmenstar#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "SherifGooffy",
+      "opgg": {
+       "eune": "SherifGooffy#EUNE"
+      },
+      "champion": "Lee Sin"
+     }
+    ]
+   }
+  },
+  {
+   "id": 816,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "BreyK",
+      "opgg": {
+       "eune": "BreyK#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "koubee",
+      "opgg": {
+       "euw": "koubee#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "eSGi",
+      "opgg": {
+       "eune": "eSGi#EUNE"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Skodix",
+      "opgg": {},
+      "champion": "Thresh"
+     },
+     {
+      "name": "FonkoCZ",
+      "opgg": {
+       "euw": "FonkoCZ#EUW"
+      },
+      "champion": "Yasuo"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Thomass616",
+      "opgg": {
+       "eune": "Thomass616#EUNE"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "Only",
+      "opgg": {},
+      "champion": "Syndra"
+     },
+     {
+      "name": "Stryg",
+      "opgg": {
+       "eune": "Stryg#EUNE"
+      },
+      "champion": "Sett"
+     },
+     {
+      "name": "Twight",
+      "opgg": {
+       "eune": "Twight#EUNE"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "Honzikk",
+      "opgg": {
+       "eune": "Honzikk#EUNE"
+      },
+      "champion": "Nautilus"
+     }
+    ]
+   }
+  },
+  {
+   "id": 817,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:00:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "tomomaso",
+      "opgg": {
+       "euw": "tomomaso#EUW"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "VekTTor",
+      "opgg": {},
+      "champion": "Lux"
+     },
+     {
+      "name": "mouzwyr",
+      "opgg": {
+       "euw": "mouzwyr#EUW"
+      },
+      "champion": "Sett"
+     },
+     {
+      "name": "bruska132",
+      "opgg": {
+       "euw": "bruska132#EUW"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "Mittcho",
+      "opgg": {
+       "euw": "Mittcho#EUW"
+      },
+      "champion": "Thresh"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Enrik",
+      "opgg": {
+       "euw": "Enrik#EUW"
+      },
+      "champion": "Yasuo"
+     },
+     {
+      "name": "Gile",
+      "opgg": {
+       "eune": "Gile#EUNE"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "billyboner",
+      "opgg": {
+       "euw": "billyboner#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "Dawe146",
+      "opgg": {
+       "euw": "Dawe146#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Proky",
+      "opgg": {},
+      "champion": "Lux"
+     }
+    ]
+   }
+  },
+  {
+   "id": 818,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:40:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "mouzwyr",
+      "opgg": {
+       "euw": "mouzwyr#EUW"
+      },
+      "champion": "Sett"
+     },
+     {
+      "name": "w8maxcs",
+      "opgg": {},
+      "champion": "Yasuo"
+     },
+     {
+      "name": "lethalented",
+      "opgg": {},
+      "champion": "Ahri"
+     },
+     {
+      "name": "Gile",
+      "opgg": {
+       "eune": "Gile#EUNE"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "Chmelda",
+      "opgg": {},
+      "champion": "Garen"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "matej2532",
+      "opgg": {
+       "euw": "matej2532#EUW"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "pukkmenstar",
+      "opgg": {
+       "eune": "pukkmenstar#EUNE"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "VekTTor",
+      "opgg": {},
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Stryg",
+      "opgg": {
+       "eune": "Stryg#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "SherifGooffy",
+      "opgg": {
+       "eune": "SherifGooffy#EUNE"
+      },
+      "champion": "Jinx"
+     }
+    ]
+   }
+  },
+  {
+   "id": 819,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:40:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "fityr",
+      "opgg": {
+       "eune": "fityr#EUNE"
+      },
+      "champion": "Ahri"
+     },
+     {
+      "name": "Enrik",
+      "opgg": {
+       "euw": "Enrik#EUW"
+      },
+      "champion": "Syndra"
+     },
+     {
+      "name": "rakos420",
+      "opgg": {},
+      "champion": "Sett"
+     },
+     {
+      "name": "SKREAM",
+      "opgg": {
+       "euw": "SKREAM#EUW"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Munet",
+      "opgg": {
+       "eune": "Munet#EUNE"
+      },
+      "champion": "Thresh"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Samco0015",
+      "opgg": {
+       "euw": "Samco0015#EUW"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "bruska132",
+      "opgg": {
+       "euw": "bruska132#EUW"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "Pengu",
+      "opgg": {
+       "eune": "Pengu#EUNE"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "Dadu",
+      "opgg": {},
+      "champion": "Leona"
+     },
+     {
+      "name": "Mittcho",
+      "opgg": {
+       "euw": "Mittcho#EUW"
+      },
+      "champion": "Ahri"
+     }
+    ]
+   }
+  },
+  {
+   "id": 820,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:40:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "Undead",
+      "opgg": {},
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Twight",
+      "opgg": {
+       "eune": "Twight#EUNE"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "tomomaso",
+      "opgg": {
+       "euw": "tomomaso#EUW"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Pedronix",
+      "opgg": {
+       "eune": "Pedronix#EUNE"
+      },
+      "champion": "Thresh"
+     },
+     {
+      "name": "Kebixik",
+      "opgg": {},
+      "champion": "Ezreal"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Skodix",
+      "opgg": {},
+      "champion": "Viego"
+     },
+     {
+      "name": "eSGi",
+      "opgg": {
+       "eune": "eSGi#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "Wride",
+      "opgg": {
+       "eune": "Wride#EUNE"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "ItzConki",
+      "opgg": {},
+      "champion": "Viego"
+     },
+     {
+      "name": "bandygod",
+      "opgg": {
+       "eune": "bandygod#EUNE"
+      },
+      "champion": "Leona"
+     }
+    ]
+   }
+  },
+  {
+   "id": 821,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:40:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Necromartin",
+      "opgg": {
+       "euw": "Necromartin#EUW"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "Ereniko",
+      "opgg": {
+       "eune": "Ereniko#EUNE"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "Thomass616",
+      "opgg": {
+       "eune": "Thomass616#EUNE"
+      },
+      "champion": "Yasuo"
+     },
+     {
+      "name": "Metys",
+      "opgg": {},
+      "champion": "Sett"
+     },
+     {
+      "name": "KloMrk",
+      "opgg": {},
+      "champion": "Darius"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "dvlk696",
+      "opgg": {},
+      "champion": "Lux"
+     },
+     {
+      "name": "Turyx",
+      "opgg": {
+       "euw": "Turyx#EUW"
+      },
+      "champion": "Syndra"
+     },
+     {
+      "name": "Anton",
+      "opgg": {},
+      "champion": "Syndra"
+     },
+     {
+      "name": "Proky",
+      "opgg": {},
+      "champion": "Darius"
+     },
+     {
+      "name": "ockoLOL",
+      "opgg": {
+       "eune": "ockoLOL#EUNE"
+      },
+      "champion": "Ezreal"
+     }
+    ]
+   }
+  },
+  {
+   "id": 822,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:40:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Rguardian",
+      "opgg": {},
+      "champion": "Kaisa"
+     },
+     {
+      "name": "176lvx",
+      "opgg": {
+       "euw": "176lvx#EUW"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "robin",
+      "opgg": {},
+      "champion": "Yasuo"
+     },
+     {
+      "name": "SGoob",
+      "opgg": {
+       "euw": "SGoob#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Michaloo832",
+      "opgg": {},
+      "champion": "Viego"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "sovaz1",
+      "opgg": {
+       "euw": "sovaz1#EUW"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "FonkoCZ",
+      "opgg": {
+       "euw": "FonkoCZ#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "SebaHolub",
+      "opgg": {
+       "euw": "SebaHolub#EUW"
+      },
+      "champion": "Syndra"
+     },
+     {
+      "name": "Honzikk",
+      "opgg": {
+       "eune": "Honzikk#EUNE"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "The_Goksi",
+      "opgg": {
+       "eune": "The_Goksi#EUNE"
+      },
+      "champion": "Thresh"
+     }
+    ]
+   }
+  },
+  {
+   "id": 823,
+   "status": "finished",
+   "startedAt": "2026-10-29T16:40:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Only",
+      "opgg": {},
+      "champion": "Yasuo"
+     },
+     {
+      "name": "sw3ry",
+      "opgg": {},
+      "champion": "Garen"
+     },
+     {
+      "name": "billyboner",
+      "opgg": {
+       "euw": "billyboner#EUW"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "Ejdyxdd",
+      "opgg": {
+       "eune": "Ejdyxdd#EUNE"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "BreyK",
+      "opgg": {
+       "eune": "BreyK#EUNE"
+      },
+      "champion": "Ahri"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "koubee",
+      "opgg": {
+       "euw": "koubee#EUW"
+      },
+      "champion": "Ahri"
+     },
+     {
+      "name": "KoreanPizzaBoy",
+      "opgg": {
+       "euw": "KoreanPizzaBoy#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "Dawe146",
+      "opgg": {
+       "euw": "Dawe146#EUW"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "sugiiss",
+      "opgg": {
+       "eune": "sugiiss#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Sambee",
+      "opgg": {
+       "euw": "Sambee#EUW"
+      },
+      "champion": "Syndra"
+     }
+    ]
+   }
+  },
+  {
+   "id": 824,
+   "status": "finished",
+   "startedAt": "2026-10-29T17:20:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "Wride",
+      "opgg": {
+       "eune": "Wride#EUNE"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "Honzikk",
+      "opgg": {
+       "eune": "Honzikk#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "VekTTor",
+      "opgg": {},
+      "champion": "Thresh"
+     },
+     {
+      "name": "Enrik",
+      "opgg": {
+       "euw": "Enrik#EUW"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "Mittcho",
+      "opgg": {
+       "euw": "Mittcho#EUW"
+      },
+      "champion": "Garen"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "fityr",
+      "opgg": {
+       "eune": "fityr#EUNE"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "sugiiss",
+      "opgg": {
+       "eune": "sugiiss#EUNE"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "Turyx",
+      "opgg": {
+       "euw": "Turyx#EUW"
+      },
+      "champion": "Thresh"
+     },
+     {
+      "name": "ockoLOL",
+      "opgg": {
+       "eune": "ockoLOL#EUNE"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "ItzConki",
+      "opgg": {},
+      "champion": "Yasuo"
+     }
+    ]
+   }
+  },
+  {
+   "id": 825,
+   "status": "finished",
+   "startedAt": "2026-10-29T17:20:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "Kebixik",
+      "opgg": {},
+      "champion": "Ahri"
+     },
+     {
+      "name": "eSGi",
+      "opgg": {
+       "eune": "eSGi#EUNE"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "tomomaso",
+      "opgg": {
+       "euw": "tomomaso#EUW"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "rakos420",
+      "opgg": {},
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Michaloo832",
+      "opgg": {},
+      "champion": "Jinx"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "SKREAM",
+      "opgg": {
+       "euw": "SKREAM#EUW"
+      },
+      "champion": "Syndra"
+     },
+     {
+      "name": "Proky",
+      "opgg": {},
+      "champion": "Kaisa"
+     },
+     {
+      "name": "bruska132",
+      "opgg": {
+       "euw": "bruska132#EUW"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "Twight",
+      "opgg": {
+       "eune": "Twight#EUNE"
+      },
+      "champion": "Ahri"
+     },
+     {
+      "name": "w8maxcs",
+      "opgg": {},
+      "champion": "Ezreal"
+     }
+    ]
+   }
+  },
+  {
+   "id": 826,
+   "status": "finished",
+   "startedAt": "2026-10-29T17:20:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Necromartin",
+      "opgg": {
+       "euw": "Necromartin#EUW"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "pukkmenstar",
+      "opgg": {
+       "eune": "pukkmenstar#EUNE"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "Thomass616",
+      "opgg": {
+       "eune": "Thomass616#EUNE"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "Pedronix",
+      "opgg": {
+       "eune": "Pedronix#EUNE"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "BreyK",
+      "opgg": {
+       "eune": "BreyK#EUNE"
+      },
+      "champion": "Yasuo"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Only",
+      "opgg": {},
+      "champion": "Lux"
+     },
+     {
+      "name": "robin",
+      "opgg": {},
+      "champion": "Ezreal"
+     },
+     {
+      "name": "dvlk696",
+      "opgg": {},
+      "champion": "Darius"
+     },
+     {
+      "name": "lethalented",
+      "opgg": {},
+      "champion": "Jinx"
+     },
+     {
+      "name": "Rguardian",
+      "opgg": {},
+      "champion": "Lee Sin"
+     }
+    ]
+   }
+  },
+  {
+   "id": 827,
+   "status": "finished",
+   "startedAt": "2026-10-29T17:20:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "sovaz1",
+      "opgg": {
+       "euw": "sovaz1#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Dawe146",
+      "opgg": {
+       "euw": "Dawe146#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "Pengu",
+      "opgg": {
+       "eune": "Pengu#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "SGoob",
+      "opgg": {
+       "euw": "SGoob#EUW"
+      },
+      "champion": "Syndra"
+     },
+     {
+      "name": "sw3ry",
+      "opgg": {},
+      "champion": "Yasuo"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "SebaHolub",
+      "opgg": {
+       "euw": "SebaHolub#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Anton",
+      "opgg": {},
+      "champion": "Ezreal"
+     },
+     {
+      "name": "KoreanPizzaBoy",
+      "opgg": {
+       "euw": "KoreanPizzaBoy#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "176lvx",
+      "opgg": {
+       "euw": "176lvx#EUW"
+      },
+      "champion": "Ahri"
+     },
+     {
+      "name": "Sambee",
+      "opgg": {
+       "euw": "Sambee#EUW"
+      },
+      "champion": "Nautilus"
+     }
+    ]
+   }
+  },
+  {
+   "id": 828,
+   "status": "finished",
+   "startedAt": "2026-10-29T17:20:00.000Z",
+   "winner": "blue",
+   "blue": {
+    "players": [
+     {
+      "name": "Ejdyxdd",
+      "opgg": {
+       "eune": "Ejdyxdd#EUNE"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Metys",
+      "opgg": {},
+      "champion": "Darius"
+     },
+     {
+      "name": "billyboner",
+      "opgg": {
+       "euw": "billyboner#EUW"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "KloMrk",
+      "opgg": {},
+      "champion": "Lux"
+     },
+     {
+      "name": "Ereniko",
+      "opgg": {
+       "eune": "Ereniko#EUNE"
+      },
+      "champion": "Lee Sin"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "FonkoCZ",
+      "opgg": {
+       "euw": "FonkoCZ#EUW"
+      },
+      "champion": "Thresh"
+     },
+     {
+      "name": "koubee",
+      "opgg": {
+       "euw": "koubee#EUW"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "bandygod",
+      "opgg": {
+       "eune": "bandygod#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "Munet",
+      "opgg": {
+       "eune": "Munet#EUNE"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "Dadu",
+      "opgg": {},
+      "champion": "Lux"
+     }
+    ]
+   }
+  },
+  {
+   "id": 829,
+   "status": "finished",
+   "startedAt": "2026-10-29T17:20:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "The_Goksi",
+      "opgg": {
+       "eune": "The_Goksi#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Undead",
+      "opgg": {},
+      "champion": "Leona"
+     },
+     {
+      "name": "mouzwyr",
+      "opgg": {
+       "euw": "mouzwyr#EUW"
+      },
+      "champion": "Thresh"
+     },
+     {
+      "name": "matej2532",
+      "opgg": {
+       "euw": "matej2532#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Gile",
+      "opgg": {
+       "eune": "Gile#EUNE"
+      },
+      "champion": "Ezreal"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "SherifGooffy",
+      "opgg": {
+       "eune": "SherifGooffy#EUNE"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "Skodix",
+      "opgg": {},
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Samco0015",
+      "opgg": {
+       "euw": "Samco0015#EUW"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "Chmelda",
+      "opgg": {},
+      "champion": "Jinx"
+     },
+     {
+      "name": "Stryg",
+      "opgg": {
+       "eune": "Stryg#EUNE"
+      },
+      "champion": "Darius"
+     }
+    ]
+   }
+  },
+  {
+   "id": 830,
+   "status": "finished",
+   "startedAt": "2026-10-29T18:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "matej2532",
+      "opgg": {
+       "euw": "matej2532#EUW"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "Dadu",
+      "opgg": {},
+      "champion": "Leona"
+     },
+     {
+      "name": "Michaloo832",
+      "opgg": {},
+      "champion": "Darius"
+     },
+     {
+      "name": "FonkoCZ",
+      "opgg": {
+       "euw": "FonkoCZ#EUW"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "Only",
+      "opgg": {},
+      "champion": "Sett"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "rakos420",
+      "opgg": {},
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "sugiiss",
+      "opgg": {
+       "eune": "sugiiss#EUNE"
+      },
+      "champion": "Ahri"
+     },
+     {
+      "name": "Necromartin",
+      "opgg": {
+       "euw": "Necromartin#EUW"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "Thomass616",
+      "opgg": {
+       "eune": "Thomass616#EUNE"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "eSGi",
+      "opgg": {
+       "eune": "eSGi#EUNE"
+      },
+      "champion": "Syndra"
+     }
+    ]
+   }
+  },
+  {
+   "id": 831,
+   "status": "finished",
+   "startedAt": "2026-10-29T18:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Wride",
+      "opgg": {
+       "eune": "Wride#EUNE"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "Gile",
+      "opgg": {
+       "eune": "Gile#EUNE"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "Ejdyxdd",
+      "opgg": {
+       "eune": "Ejdyxdd#EUNE"
+      },
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Kebixik",
+      "opgg": {},
+      "champion": "Yasuo"
+     },
+     {
+      "name": "Twight",
+      "opgg": {
+       "eune": "Twight#EUNE"
+      },
+      "champion": "Nautilus"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "w8maxcs",
+      "opgg": {},
+      "champion": "Sett"
+     },
+     {
+      "name": "Rguardian",
+      "opgg": {},
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "VekTTor",
+      "opgg": {},
+      "champion": "Darius"
+     },
+     {
+      "name": "pukkmenstar",
+      "opgg": {
+       "eune": "pukkmenstar#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "ockoLOL",
+      "opgg": {
+       "eune": "ockoLOL#EUNE"
+      },
+      "champion": "Lux"
+     }
+    ]
+   }
+  },
+  {
+   "id": 832,
+   "status": "finished",
+   "startedAt": "2026-10-29T18:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Undead",
+      "opgg": {},
+      "champion": "Leona"
+     },
+     {
+      "name": "Dawe146",
+      "opgg": {
+       "euw": "Dawe146#EUW"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "The_Goksi",
+      "opgg": {
+       "eune": "The_Goksi#EUNE"
+      },
+      "champion": "Sett"
+     },
+     {
+      "name": "Skodix",
+      "opgg": {},
+      "champion": "Syndra"
+     },
+     {
+      "name": "Enrik",
+      "opgg": {
+       "euw": "Enrik#EUW"
+      },
+      "champion": "Syndra"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "bruska132",
+      "opgg": {
+       "euw": "bruska132#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "Stryg",
+      "opgg": {
+       "eune": "Stryg#EUNE"
+      },
+      "champion": "Yasuo"
+     },
+     {
+      "name": "Mittcho",
+      "opgg": {
+       "euw": "Mittcho#EUW"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "tomomaso",
+      "opgg": {
+       "euw": "tomomaso#EUW"
+      },
+      "champion": "Sett"
+     },
+     {
+      "name": "koubee",
+      "opgg": {
+       "euw": "koubee#EUW"
+      },
+      "champion": "Jinx"
+     }
+    ]
+   }
+  },
+  {
+   "id": 833,
+   "status": "finished",
+   "startedAt": "2026-10-29T18:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "Anton",
+      "opgg": {},
+      "champion": "Thresh"
+     },
+     {
+      "name": "Metys",
+      "opgg": {},
+      "champion": "Thresh"
+     },
+     {
+      "name": "SKREAM",
+      "opgg": {
+       "euw": "SKREAM#EUW"
+      },
+      "champion": "Yasuo"
+     },
+     {
+      "name": "Pedronix",
+      "opgg": {
+       "eune": "Pedronix#EUNE"
+      },
+      "champion": "Jinx"
+     },
+     {
+      "name": "ItzConki",
+      "opgg": {},
+      "champion": "Jinx"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Chmelda",
+      "opgg": {},
+      "champion": "Jinx"
+     },
+     {
+      "name": "Proky",
+      "opgg": {},
+      "champion": "Yasuo"
+     },
+     {
+      "name": "SebaHolub",
+      "opgg": {
+       "euw": "SebaHolub#EUW"
+      },
+      "champion": "Kaisa"
+     },
+     {
+      "name": "lethalented",
+      "opgg": {},
+      "champion": "Nautilus"
+     },
+     {
+      "name": "KoreanPizzaBoy",
+      "opgg": {
+       "euw": "KoreanPizzaBoy#EUW"
+      },
+      "champion": "Darius"
+     }
+    ]
+   }
+  },
+  {
+   "id": 834,
+   "status": "finished",
+   "startedAt": "2026-10-29T18:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "mouzwyr",
+      "opgg": {
+       "euw": "mouzwyr#EUW"
+      },
+      "champion": "Nautilus"
+     },
+     {
+      "name": "bandygod",
+      "opgg": {
+       "eune": "bandygod#EUNE"
+      },
+      "champion": "Syndra"
+     },
+     {
+      "name": "dvlk696",
+      "opgg": {},
+      "champion": "Kaisa"
+     },
+     {
+      "name": "Honzikk",
+      "opgg": {
+       "eune": "Honzikk#EUNE"
+      },
+      "champion": "Lee Sin"
+     },
+     {
+      "name": "SGoob",
+      "opgg": {
+       "euw": "SGoob#EUW"
+      },
+      "champion": "Jinx"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "BreyK",
+      "opgg": {
+       "eune": "BreyK#EUNE"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "Pengu",
+      "opgg": {
+       "eune": "Pengu#EUNE"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "sovaz1",
+      "opgg": {
+       "euw": "sovaz1#EUW"
+      },
+      "champion": "Leona"
+     },
+     {
+      "name": "sw3ry",
+      "opgg": {},
+      "champion": "Thresh"
+     },
+     {
+      "name": "Munet",
+      "opgg": {
+       "eune": "Munet#EUNE"
+      },
+      "champion": "Lee Sin"
+     }
+    ]
+   }
+  },
+  {
+   "id": 835,
+   "status": "finished",
+   "startedAt": "2026-10-29T18:00:00.000Z",
+   "winner": "red",
+   "blue": {
+    "players": [
+     {
+      "name": "fityr",
+      "opgg": {
+       "eune": "fityr#EUNE"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "Ereniko",
+      "opgg": {
+       "eune": "Ereniko#EUNE"
+      },
+      "champion": "Ahri"
+     },
+     {
+      "name": "billyboner",
+      "opgg": {
+       "euw": "billyboner#EUW"
+      },
+      "champion": "Lux"
+     },
+     {
+      "name": "176lvx",
+      "opgg": {
+       "euw": "176lvx#EUW"
+      },
+      "champion": "Garen"
+     },
+     {
+      "name": "SherifGooffy",
+      "opgg": {
+       "eune": "SherifGooffy#EUNE"
+      },
+      "champion": "Viego"
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "KloMrk",
+      "opgg": {},
+      "champion": "Nautilus"
+     },
+     {
+      "name": "robin",
+      "opgg": {},
+      "champion": "Ezreal"
+     },
+     {
+      "name": "Samco0015",
+      "opgg": {
+       "euw": "Samco0015#EUW"
+      },
+      "champion": "Darius"
+     },
+     {
+      "name": "Turyx",
+      "opgg": {
+       "euw": "Turyx#EUW"
+      },
+      "champion": "Viego"
+     },
+     {
+      "name": "Sambee",
+      "opgg": {
+       "euw": "Sambee#EUW"
+      },
+      "champion": "Lux"
+     }
+    ]
+   }
+  },
+  {
+   "id": 836,
+   "status": "čeká na start",
+   "startedAt": "2026-10-29T19:32:00+01:00",
+   "winner": null,
+   "blue": {
+    "players": [
+     {
+      "name": "176lvx",
+      "opgg": {
+       "euw": "176lvx#EUW"
+      }
+     },
+     {
+      "name": "bandygod",
+      "opgg": {
+       "eune": "bandygod#EUNE"
+      }
+     },
+     {
+      "name": "Metys",
+      "opgg": {}
+     },
+     {
+      "name": "sovaz1",
+      "opgg": {
+       "euw": "sovaz1#EUW"
+      }
+     },
+     {
+      "name": "The_Goksi",
+      "opgg": {
+       "eune": "The_Goksi#EUNE"
+      }
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "dvlk696",
+      "opgg": {}
+     },
+     {
+      "name": "Enrik",
+      "opgg": {
+       "euw": "Enrik#EUW"
+      }
+     },
+     {
+      "name": "Stryg",
+      "opgg": {
+       "eune": "Stryg#EUNE"
+      }
+     },
+     {
+      "name": "sw3ry",
+      "opgg": {}
+     },
+     {
+      "name": "tomomaso",
+      "opgg": {
+       "euw": "tomomaso#EUW"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": 837,
+   "status": "čeká na start",
+   "startedAt": "2026-10-29T19:32:00+01:00",
+   "winner": null,
+   "blue": {
+    "players": [
+     {
+      "name": "Gile",
+      "opgg": {
+       "eune": "Gile#EUNE"
+      }
+     },
+     {
+      "name": "Only",
+      "opgg": {}
+     },
+     {
+      "name": "Sambee",
+      "opgg": {
+       "euw": "Sambee#EUW"
+      }
+     },
+     {
+      "name": "sugiiss",
+      "opgg": {
+       "eune": "sugiiss#EUNE"
+      }
+     },
+     {
+      "name": "VekTTor",
+      "opgg": {}
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "billyboner",
+      "opgg": {
+       "euw": "billyboner#EUW"
+      }
+     },
+     {
+      "name": "BreyK",
+      "opgg": {
+       "eune": "BreyK#EUNE"
+      }
+     },
+     {
+      "name": "ItzConki",
+      "opgg": {}
+     },
+     {
+      "name": "SGoob",
+      "opgg": {
+       "euw": "SGoob#EUW"
+      }
+     },
+     {
+      "name": "Twight",
+      "opgg": {
+       "eune": "Twight#EUNE"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": 838,
+   "status": "čeká na start",
+   "startedAt": "2026-10-29T19:32:00+01:00",
+   "winner": null,
+   "blue": {
+    "players": [
+     {
+      "name": "lethalented",
+      "opgg": {}
+     },
+     {
+      "name": "mouzwyr",
+      "opgg": {
+       "euw": "mouzwyr#EUW"
+      }
+     },
+     {
+      "name": "Pedronix",
+      "opgg": {
+       "eune": "Pedronix#EUNE"
+      }
+     },
+     {
+      "name": "Skodix",
+      "opgg": {}
+     },
+     {
+      "name": "Turyx",
+      "opgg": {
+       "euw": "Turyx#EUW"
+      }
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "ockoLOL",
+      "opgg": {
+       "eune": "ockoLOL#EUNE"
+      }
+     },
+     {
+      "name": "robin",
+      "opgg": {}
+     },
+     {
+      "name": "SKREAM",
+      "opgg": {
+       "euw": "SKREAM#EUW"
+      }
+     },
+     {
+      "name": "Thomass616",
+      "opgg": {
+       "eune": "Thomass616#EUNE"
+      }
+     },
+     {
+      "name": "w8maxcs",
+      "opgg": {}
+     }
+    ]
+   }
+  },
+  {
+   "id": 839,
+   "status": "čeká na start",
+   "startedAt": "2026-10-29T19:32:00+01:00",
+   "winner": null,
+   "blue": {
+    "players": [
+     {
+      "name": "bruska132",
+      "opgg": {
+       "euw": "bruska132#EUW"
+      }
+     },
+     {
+      "name": "Ejdyxdd",
+      "opgg": {
+       "eune": "Ejdyxdd#EUNE"
+      }
+     },
+     {
+      "name": "Kebixik",
+      "opgg": {}
+     },
+     {
+      "name": "Necromartin",
+      "opgg": {
+       "euw": "Necromartin#EUW"
+      }
+     },
+     {
+      "name": "SherifGooffy",
+      "opgg": {
+       "eune": "SherifGooffy#EUNE"
+      }
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Dadu",
+      "opgg": {}
+     },
+     {
+      "name": "FonkoCZ",
+      "opgg": {
+       "euw": "FonkoCZ#EUW"
+      }
+     },
+     {
+      "name": "Honzikk",
+      "opgg": {
+       "eune": "Honzikk#EUNE"
+      }
+     },
+     {
+      "name": "Rguardian",
+      "opgg": {}
+     },
+     {
+      "name": "SebaHolub",
+      "opgg": {
+       "euw": "SebaHolub#EUW"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": 840,
+   "status": "čeká na start",
+   "startedAt": "2026-10-29T19:32:00+01:00",
+   "winner": null,
+   "blue": {
+    "players": [
+     {
+      "name": "eSGi",
+      "opgg": {
+       "eune": "eSGi#EUNE"
+      }
+     },
+     {
+      "name": "Chmelda",
+      "opgg": {}
+     },
+     {
+      "name": "koubee",
+      "opgg": {
+       "euw": "koubee#EUW"
+      }
+     },
+     {
+      "name": "Pengu",
+      "opgg": {
+       "eune": "Pengu#EUNE"
+      }
+     },
+     {
+      "name": "Undead",
+      "opgg": {}
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Dawe146",
+      "opgg": {
+       "euw": "Dawe146#EUW"
+      }
+     },
+     {
+      "name": "fityr",
+      "opgg": {
+       "eune": "fityr#EUNE"
+      }
+     },
+     {
+      "name": "Michaloo832",
+      "opgg": {}
+     },
+     {
+      "name": "Mittcho",
+      "opgg": {
+       "euw": "Mittcho#EUW"
+      }
+     },
+     {
+      "name": "Wride",
+      "opgg": {
+       "eune": "Wride#EUNE"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": 841,
+   "status": "čeká na start",
+   "startedAt": "2026-10-29T19:32:00+01:00",
+   "winner": null,
+   "blue": {
+    "players": [
+     {
+      "name": "Anton",
+      "opgg": {}
+     },
+     {
+      "name": "matej2532",
+      "opgg": {
+       "euw": "matej2532#EUW"
+      }
+     },
+     {
+      "name": "pukkmenstar",
+      "opgg": {
+       "eune": "pukkmenstar#EUNE"
+      }
+     },
+     {
+      "name": "rakos420",
+      "opgg": {}
+     },
+     {
+      "name": "Samco0015",
+      "opgg": {
+       "euw": "Samco0015#EUW"
+      }
+     }
+    ]
+   },
+   "red": {
+    "players": [
+     {
+      "name": "Ereniko",
+      "opgg": {
+       "eune": "Ereniko#EUNE"
+      }
+     },
+     {
+      "name": "KloMrk",
+      "opgg": {}
+     },
+     {
+      "name": "KoreanPizzaBoy",
+      "opgg": {
+       "euw": "KoreanPizzaBoy#EUW"
+      }
+     },
+     {
+      "name": "Munet",
+      "opgg": {
+       "eune": "Munet#EUNE"
+      }
+     },
+     {
+      "name": "Proky",
+      "opgg": {}
+     }
+    ]
+   }
+  }
+ ]
+}
