@@ -1,0 +1,2311 @@
+{
+ "source": "https://streamersclash.cz/api/streamers-queue/lobby",
+ "updatedAt": "2026-10-29T21:59:43.735Z",
+ "count": 36,
+ "matches": [
+  {
+   "id": "a7fc878d-f0b4-48ce-989b-3834d241aa6a",
+   "number": 1257,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "22:00",
+   "to": "22:37",
+   "startedAt": "2026-10-29T22:00:00+01:00",
+   "blue": [
+    {
+     "nickname": "Esko",
+     "avatar": "https://cdn.discordapp.com/avatars/348826557357490176/07b16aee7910c53fe928ca3bb0ce22de.webp?size=256",
+     "href": "/profile/Esko"
+    },
+    {
+     "nickname": "netoush",
+     "avatar": "/api/media/file/avatar-1269-1790627584179.webp?v=mulpfiqj",
+     "href": "/profile/netoush"
+    },
+    {
+     "nickname": "PNC WidowMaker",
+     "avatar": "https://cdn.discordapp.com/avatars/378116183184113664/bc978dfd3b4a6413962a78bebb9987d4.webp?size=256",
+     "href": "/profile/PNC%20WidowMaker"
+    },
+    {
+     "nickname": "ShiroNeko",
+     "avatar": "/api/media/file/avatar-1662-1791665458577.webp?v=mv2vcrrn",
+     "href": "/profile/ShiroNeko"
+    },
+    {
+     "nickname": "toplanerlarry",
+     "avatar": "https://cdn.discordapp.com/avatars/210480964265181185/e07d18ceda0311477b4e803e93136bfc.webp?size=256",
+     "href": "/profile/toplanerlarry"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "annniecz",
+     "avatar": "https://cdn.discordapp.com/avatars/740553204642611291/b5f8369dc63f256f370c031eceb113e9.webp?size=256",
+     "href": "/profile/annniecz"
+    },
+    {
+     "nickname": "Dzus",
+     "avatar": "/api/media/file/avatar-1331-1791045935942.webp?v=musmi94e",
+     "href": "/profile/Dzus"
+    },
+    {
+     "nickname": "eSGi",
+     "avatar": "https://cdn.discordapp.com/avatars/315807604893024266/71489f7e1ba8e4d3e04d99a532fee219.webp?size=256",
+     "href": "/profile/eSGi"
+    },
+    {
+     "nickname": "MathReif",
+     "avatar": "https://cdn.discordapp.com/avatars/389030362912784388/c6a6087c159cc12ea154e2164517f04d.webp?size=256",
+     "href": "/profile/MathReif"
+    },
+    {
+     "nickname": "Motýlek Milík",
+     "avatar": "https://cdn.discordapp.com/avatars/577496396782108682/dc8daadd4a2b9f8c0e3bc31b4119af0b.webp?size=256",
+     "href": "/profile/Mot%C3%BDlek%20Mil%C3%ADk"
+    }
+   ]
+  },
+  {
+   "id": "f23593a6-df7b-4a85-914e-fb8ccd12f2e9",
+   "number": 1256,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "22:00",
+   "to": "22:42",
+   "startedAt": "2026-10-29T22:00:00+01:00",
+   "blue": [
+    {
+     "nickname": "feeddachicken",
+     "avatar": "/api/media/file/avatar-2039-1792537995725.webp?v=mvhau9rl",
+     "href": "/profile/feeddachicken"
+    },
+    {
+     "nickname": "PaulieAngelo",
+     "avatar": "/api/media/file/avatar-1820-1791654620243.webp?v=mv2owgte",
+     "href": "/profile/PaulieAngelo"
+    },
+    {
+     "nickname": "razwenxd",
+     "avatar": "/api/media/file/avatar-1667-1791496233421.webp?v=mv02losz",
+     "href": "/profile/razwenxd"
+    },
+    {
+     "nickname": "SGoob",
+     "avatar": "https://cdn.discordapp.com/avatars/476742198939877390/4cb3900e807989cc1e21d86231ce3347.webp?size=256",
+     "href": "/profile/SGoob"
+    },
+    {
+     "nickname": "Shadow",
+     "avatar": "/api/media/file/avatar-1748-1791529714208.webp?v=mv0mjaqt",
+     "href": "/profile/Shadow"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "brigos",
+     "avatar": "https://cdn.discordapp.com/avatars/937966312691466281/d09e25c743b1212983546a696041f00c.webp?size=256",
+     "href": null
+    },
+    {
+     "nickname": "Coach Robko",
+     "avatar": "/api/media/file/avatar-1074-1790350719956.webp?v=muh4lcxt",
+     "href": "/profile/Coach%20Robko"
+    },
+    {
+     "nickname": "Dejvidson",
+     "avatar": "https://cdn.discordapp.com/avatars/1090986306286403644/7722b8f74b43882223912719c13be925.webp?size=256",
+     "href": "/profile/Dejvidson"
+    },
+    {
+     "nickname": "Marrted",
+     "avatar": "/api/media/file/avatar-1287-1791559359697.webp?v=mv146pcb",
+     "href": "/profile/Marrted"
+    },
+    {
+     "nickname": "TANO",
+     "avatar": "/api/media/file/avatar-1661-1791487014391.webp?v=muzx43bx",
+     "href": "/profile/TANO"
+    }
+   ]
+  },
+  {
+   "id": "488e1a1e-3a29-42ab-865c-4a14e9765019",
+   "number": 1255,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "22:00",
+   "to": "22:48",
+   "startedAt": "2026-10-29T22:00:00+01:00",
+   "blue": [
+    {
+     "nickname": "filceklol",
+     "avatar": "https://cdn.discordapp.com/avatars/1012208285178413056/e3f9e98d41c95c16836e14b5fc2b165e.webp?size=256",
+     "href": "/profile/filceklol"
+    },
+    {
+     "nickname": "Reekular",
+     "avatar": "/api/media/file/avatar-1148-1791308702220.webp?v=muwyy8u3",
+     "href": "/profile/Reekular"
+    },
+    {
+     "nickname": "RTMR",
+     "avatar": "https://cdn.discordapp.com/avatars/234709875937116162/0f7e32e6af1e3022eb351fd112c0629f.webp?size=256",
+     "href": "/profile/RTMR"
+    },
+    {
+     "nickname": "Sins of Mine",
+     "avatar": "/api/media/file/avatar-1373-1790844305322.webp?v=mupagluq",
+     "href": "/profile/Sins%20of%20Mine"
+    },
+    {
+     "nickname": "sugiiss",
+     "avatar": "/api/media/file/avatar-1054-1790720591577.webp?v=mun8szzd",
+     "href": "/profile/sugiiss"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "bandygod",
+     "avatar": "https://cdn.discordapp.com/avatars/336146147561439232/fb4b1526de0cefc5cc7ece6fa1353617.webp?size=256",
+     "href": "/profile/bandygod"
+    },
+    {
+     "nickname": "CHROBY",
+     "avatar": "https://cdn.discordapp.com/avatars/320290666389176334/a21862671313c6d4503a3f1b15bc97ad.webp?size=256",
+     "href": "/profile/CHROBY"
+    },
+    {
+     "nickname": "Only",
+     "avatar": "https://cdn.discordapp.com/avatars/284080240026976258/830b624f41e7c7d5d7b1744b7cf7805d.webp?size=256",
+     "href": "/profile/Only"
+    },
+    {
+     "nickname": "Svoby",
+     "avatar": "/api/media/file/avatar-1326-1790788178051.webp?v=muod1lrz",
+     "href": "/profile/Svoby"
+    },
+    {
+     "nickname": "WoodyJackcz",
+     "avatar": "/api/media/file/avatar-1232-1791387611151.webp?v=muy9xjb4",
+     "href": "/profile/WoodyJackcz"
+    }
+   ]
+  },
+  {
+   "id": "2bcb5100-eda9-441e-9cac-f2d20b2cbd31",
+   "number": 1254,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "22:00",
+   "to": "22:37",
+   "startedAt": "2026-10-29T22:00:00+01:00",
+   "blue": [
+    {
+     "nickname": "Darkeszy",
+     "avatar": "https://cdn.discordapp.com/avatars/575299601268211712/6e5400e092524f239d78d7ef39653123.webp?size=256",
+     "href": "/profile/Darkeszy"
+    },
+    {
+     "nickname": "Dragos",
+     "avatar": "/api/media/file/avatar-1868-1791816934836.webp?v=mv5djfm4",
+     "href": "/profile/Dragos"
+    },
+    {
+     "nickname": "dvlk696",
+     "avatar": "/api/media/file/avatar-1586-1791676860007.webp?v=mv32556d",
+     "href": "/profile/dvlk696"
+    },
+    {
+     "nickname": "Stembi09",
+     "avatar": "https://cdn.discordapp.com/avatars/890670539050471524/58e150337f4598408e3c1411dd9448d7.webp?size=256",
+     "href": "/profile/Stembi09"
+    },
+    {
+     "nickname": "Trolonom",
+     "avatar": "/api/media/file/avatar-1491-1791125534435.webp?v=mutxwbmy",
+     "href": "/profile/Trolonom"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Allty_Ironside",
+     "avatar": "/api/media/file/avatar-1316-1790786604248.webp?v=muoc3vhh",
+     "href": "/profile/Allty_Ironside"
+    },
+    {
+     "nickname": "fityr",
+     "avatar": "/api/media/file/avatar-1523-1793203582547.webp?v=mvsb444m",
+     "href": "/profile/fityr"
+    },
+    {
+     "nickname": "lukyyn1337",
+     "avatar": "/api/media/file/avatar-1675-1791400789493.webp?v=muyhrzsb",
+     "href": "/profile/lukyyn1337"
+    },
+    {
+     "nickname": "nyyxxen",
+     "avatar": "/api/media/file/avatar-1437-1790960138601.webp?v=mur7fbhs",
+     "href": "/profile/nyyxxen"
+    },
+    {
+     "nickname": "Skodix",
+     "avatar": "/api/media/file/avatar-1214-1790454590271.webp?v=muiufns4",
+     "href": "/profile/Skodix"
+    }
+   ]
+  },
+  {
+   "id": "c028016f-7416-49b9-a27a-a3b43a61004f",
+   "number": 1253,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "21:37",
+   "to": "22:15",
+   "startedAt": "2026-10-29T21:37:00+01:00",
+   "blue": [
+    {
+     "nickname": "GeNi",
+     "avatar": "https://cdn.discordapp.com/avatars/545997654719594506/184e493112d432df585a96198efc71c0.webp?size=256",
+     "href": "/profile/GeNi"
+    },
+    {
+     "nickname": "gentlemandemonic",
+     "avatar": "/api/media/file/avatar-1179-1790412330599.webp?v=mui59w13",
+     "href": "/profile/gentlemandemonic"
+    },
+    {
+     "nickname": "Hajnlik",
+     "avatar": "https://cdn.discordapp.com/avatars/339706354069667841/547d1ba4e2f2f5ad48493ffd8aec00bf.webp?size=256",
+     "href": "/profile/Hajnlik"
+    },
+    {
+     "nickname": "KoreanPizzaBoy",
+     "avatar": "/api/media/file/avatar-1234-1790539950695.webp?v=muk998c1",
+     "href": "/profile/KoreanPizzaBoy"
+    },
+    {
+     "nickname": "Necromartin",
+     "avatar": "https://cdn.discordapp.com/avatars/344628852796162048/f46bbc91360718352175b3c361568d92.webp?size=256",
+     "href": "/profile/Necromartin"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "bruska132",
+     "avatar": "/api/media/file/avatar-1215-1790466952430.webp?v=muj1smjs",
+     "href": "/profile/bruska132"
+    },
+    {
+     "nickname": "FonkoCZ",
+     "avatar": "/api/media/file/avatar-1087-1791410137066.webp?v=muynccfv",
+     "href": "/profile/FonkoCZ"
+    },
+    {
+     "nickname": "opat04",
+     "avatar": "https://cdn.discordapp.com/avatars/570381968701653005/1b45b23b261094e43fd64b49f91606ca.webp?size=256",
+     "href": "/profile/opat04"
+    },
+    {
+     "nickname": "willyshhh",
+     "avatar": "/api/media/file/avatar-1061-1791364456640.webp?v=muxw596w",
+     "href": "/profile/willyshhh"
+    },
+    {
+     "nickname": "Zewy",
+     "avatar": "/api/media/file/avatar-2007-1792694399176.webp?v=mvjvyjfa",
+     "href": "/profile/Zewy"
+    }
+   ]
+  },
+  {
+   "id": "94f2dd5b-acc9-4f54-99f0-e9d03dfd3762",
+   "number": 1252,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:37",
+   "to": "22:26",
+   "startedAt": "2026-10-29T21:37:00+01:00",
+   "blue": [
+    {
+     "nickname": "Featherr",
+     "avatar": "/api/media/file/avatar-1689-1791455231197.webp?v=muze6vac",
+     "href": "/profile/Featherr"
+    },
+    {
+     "nickname": "Hollyprdusa",
+     "avatar": "https://cdn.discordapp.com/avatars/476163926313271297/78b07ffc5b17ac345d7aa3a2fb3152e1.webp?size=256",
+     "href": "/profile/Hollyprdusa"
+    },
+    {
+     "nickname": "Janggro",
+     "avatar": "https://cdn.discordapp.com/avatars/350740807910817793/0b1a1ac92f1267557297d9e0e58375d7.webp?size=256",
+     "href": "/profile/Janggro"
+    },
+    {
+     "nickname": "L9FRAGGER",
+     "avatar": "https://cdn.discordapp.com/avatars/688889661086760981/bdf71812d76d3de3838a3fe920f58baf.webp?size=256",
+     "href": "/profile/L9FRAGGER"
+    },
+    {
+     "nickname": "SakulOG",
+     "avatar": "/api/media/file/avatar-1204-1791560094329.webp?v=mv14mg76",
+     "href": "/profile/SakulOG"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Fuse",
+     "avatar": "/api/media/file/avatar-1330-1790876009106.webp?v=muptc4o7",
+     "href": "/profile/Fuse"
+    },
+    {
+     "nickname": "lazmenko",
+     "avatar": "/api/media/file/avatar-1256-1791505210692.webp?v=mv07y3rd",
+     "href": "/profile/lazmenko"
+    },
+    {
+     "nickname": "MafysGOAT",
+     "avatar": "/api/media/file/avatar-2083-1793106688490.webp?v=mvqpfbvw",
+     "href": "/profile/MafysGOAT"
+    },
+    {
+     "nickname": "MrKrabs",
+     "avatar": "/api/media/file/avatar-1328-1790805621505.webp?v=muonfh96",
+     "href": "/profile/MrKrabs"
+    },
+    {
+     "nickname": "Pislouu",
+     "avatar": "/api/media/file/avatar-1565-1792276558735.webp?v=mvcz6rpn",
+     "href": "/profile/Pislouu"
+    }
+   ]
+  },
+  {
+   "id": "cb525b1c-066c-425f-b3e7-b1370a49b6f8",
+   "number": 1251,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "21:37",
+   "to": "22:15",
+   "startedAt": "2026-10-29T21:37:00+01:00",
+   "blue": [
+    {
+     "nickname": "BeastMartinn",
+     "avatar": "/api/media/file/avatar-1151-1791716835512.webp?v=mv3pxyhn",
+     "href": "/profile/BeastMartinn"
+    },
+    {
+     "nickname": "danden",
+     "avatar": "https://cdn.discordapp.com/avatars/370599291783479297/0bcb8faccb3b357650de8086398ddf58.webp?size=256",
+     "href": "/profile/danden"
+    },
+    {
+     "nickname": "Jendys",
+     "avatar": "/api/media/file/avatar-1461-1791734162688.webp?v=mv409c93",
+     "href": "/profile/Jendys"
+    },
+    {
+     "nickname": "Narama",
+     "avatar": "https://cdn.discordapp.com/avatars/150246432497074176/3e2ca0c588c6b79412b02d0bb63a19f4.webp?size=256",
+     "href": "/profile/Narama"
+    },
+    {
+     "nickname": "poutnik__",
+     "avatar": "/api/media/file/avatar-1261-1791492734674.webp?v=mv00ip6s",
+     "href": "/profile/poutnik__"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "femomadnessss",
+     "avatar": "https://cdn.discordapp.com/avatars/255771559464140802/f0009f405a8fee117122e7e0fe800d2f.webp?size=256",
+     "href": "/profile/femomadnessss"
+    },
+    {
+     "nickname": "koubee",
+     "avatar": "/api/media/file/avatar-1445-1791409724597.webp?v=muyn3i6w",
+     "href": "/profile/koubee"
+    },
+    {
+     "nickname": "matej2532",
+     "avatar": "https://cdn.discordapp.com/avatars/217974062620737536/364cb9c1ea41676bb532f5a74959e809.webp?size=256",
+     "href": "/profile/matej2532"
+    },
+    {
+     "nickname": "rakos420",
+     "avatar": "https://cdn.discordapp.com/avatars/331405763576594443/7df70ffaf28a5af34672d2af7c5326d7.webp?size=256",
+     "href": "/profile/rakos420"
+    },
+    {
+     "nickname": "Springy",
+     "avatar": "/api/media/file/avatar-1456-1791389699626.webp?v=muyb6atp",
+     "href": "/profile/Springy"
+    }
+   ]
+  },
+  {
+   "id": "f7d5fe4e-009a-446c-a535-429c36f84ba6",
+   "number": 1250,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:37",
+   "to": "22:32",
+   "startedAt": "2026-10-29T21:37:00+01:00",
+   "blue": [
+    {
+     "nickname": "Cringo",
+     "avatar": "/api/media/file/avatar-1286-1791989677983.webp?v=mv88dx5u",
+     "href": "/profile/Cringo"
+    },
+    {
+     "nickname": "Honzikk",
+     "avatar": "https://cdn.discordapp.com/avatars/395485488456138752/f6b56cd552ac7fd516fb9285875b30f4.webp?size=256",
+     "href": "/profile/Honzikk"
+    },
+    {
+     "nickname": "Josifek04",
+     "avatar": "https://cdn.discordapp.com/avatars/278555964729196544/b8122b02a5b064067639c95c46590f32.webp?size=256",
+     "href": "/profile/Josifek04"
+    },
+    {
+     "nickname": "Pluto",
+     "avatar": "/api/media/file/avatar-1533-1791264702466.webp?v=muw8r6f3",
+     "href": "/profile/Pluto"
+    },
+    {
+     "nickname": "SKREAM",
+     "avatar": "/api/media/file/avatar-1699-1791457671513.webp?v=muzfn69c",
+     "href": "/profile/SKREAM"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "akaro911",
+     "avatar": "https://cdn.discordapp.com/avatars/329892903847591936/4f1a655dfcb32ede0f5080a852cc810d.webp?size=256",
+     "href": "/profile/akaro911"
+    },
+    {
+     "nickname": "DobroCZ",
+     "avatar": "https://cdn.discordapp.com/avatars/1098720361455030313/b9d06fe678a20706522d1e8456024c56.webp?size=256",
+     "href": "/profile/DobroCZ"
+    },
+    {
+     "nickname": "Flickoara",
+     "avatar": "https://cdn.discordapp.com/avatars/1225875218162126981/75c996e0bc6be9b7f01db7515a56552e.webp?size=256",
+     "href": "/profile/Flickoara"
+    },
+    {
+     "nickname": "halkum_",
+     "avatar": "/api/media/file/avatar-1913-1792228827836.webp?v=mvc6rqat",
+     "href": "/profile/halkum_"
+    },
+    {
+     "nickname": "Kotvyc74",
+     "avatar": "/api/media/file/avatar-1140-1790364322930.webp?v=muhcox47",
+     "href": "/profile/Kotvyc74"
+    }
+   ]
+  },
+  {
+   "id": "949ecbcd-15cc-48cd-b274-dcf9cc66353b",
+   "number": 1249,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:20",
+   "to": "22:10",
+   "startedAt": "2026-10-29T21:20:00+01:00",
+   "blue": [
+    {
+     "nickname": "Falazury",
+     "avatar": "/api/media/file/avatar-1093-1790368747080.webp?v=muhfbqt2",
+     "href": "/profile/Falazury"
+    },
+    {
+     "nickname": "Munet",
+     "avatar": "https://cdn.discordapp.com/avatars/146705068354174976/99fea1fe74aab975b87803103ad9c5a7.webp?size=256",
+     "href": null
+    },
+    {
+     "nickname": "sw3ry",
+     "avatar": "https://cdn.discordapp.com/avatars/758346241612185612/f5a31b00140e7d3897a07b2f7b58dca1.webp?size=256",
+     "href": "/profile/sw3ry"
+    },
+    {
+     "nickname": "tomomaso",
+     "avatar": "https://cdn.discordapp.com/avatars/320493616189538314/3acc023227b27ae7c2c292d812dd9dc4.webp?size=256",
+     "href": "/profile/tomomaso"
+    },
+    {
+     "nickname": "zdedenda",
+     "avatar": "https://cdn.discordapp.com/avatars/594608843372101644/7dce93882bdad65eddc1a47632a80ada.webp?size=256",
+     "href": "/profile/zdedenda"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Chmelda",
+     "avatar": "/api/media/file/avatar-1195-1790670316162.webp?v=mumevez4",
+     "href": "/profile/Chmelda"
+    },
+    {
+     "nickname": "Koule",
+     "avatar": "/api/media/file/avatar-1629-1791627889362.webp?v=mv28zj6g",
+     "href": "/profile/Koule"
+    },
+    {
+     "nickname": "paooo6",
+     "avatar": "/api/media/file/avatar-1030-1790348680556.webp?v=muh3dncj",
+     "href": "/profile/paooo6"
+    },
+    {
+     "nickname": "Rabb1tChamp",
+     "avatar": "https://cdn.discordapp.com/avatars/176377284666589184/20248c3e96ce21476b5ac7e3c79ef189.webp?size=256",
+     "href": "/profile/Rabb1tChamp"
+    },
+    {
+     "nickname": "Twight",
+     "avatar": "https://cdn.discordapp.com/avatars/760201464277893130/229a2230f0b609b418c61c0128c15ee6.webp?size=256",
+     "href": "/profile/Twight"
+    }
+   ]
+  },
+  {
+   "id": "b3530fae-be34-4284-8cb7-bcade78a49d3",
+   "number": 1248,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:20",
+   "to": "22:00",
+   "startedAt": "2026-10-29T21:20:00+01:00",
+   "blue": [
+    {
+     "nickname": "AAdaMM",
+     "avatar": "https://cdn.discordapp.com/avatars/776896816377626705/a110798f38b3d1c0f4413975a3e957c5.webp?size=256",
+     "href": "/profile/AAdaMM"
+    },
+    {
+     "nickname": "Allty_Ironside",
+     "avatar": "/api/media/file/avatar-1316-1790786604248.webp?v=muoc3vhh",
+     "href": "/profile/Allty_Ironside"
+    },
+    {
+     "nickname": "eSGi",
+     "avatar": "https://cdn.discordapp.com/avatars/315807604893024266/71489f7e1ba8e4d3e04d99a532fee219.webp?size=256",
+     "href": "/profile/eSGi"
+    },
+    {
+     "nickname": "netoush",
+     "avatar": "/api/media/file/avatar-1269-1790627584179.webp?v=mulpfiqj",
+     "href": "/profile/netoush"
+    },
+    {
+     "nickname": "PNC WidowMaker",
+     "avatar": "https://cdn.discordapp.com/avatars/378116183184113664/bc978dfd3b4a6413962a78bebb9987d4.webp?size=256",
+     "href": "/profile/PNC%20WidowMaker"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "bandygod",
+     "avatar": "https://cdn.discordapp.com/avatars/336146147561439232/fb4b1526de0cefc5cc7ece6fa1353617.webp?size=256",
+     "href": "/profile/bandygod"
+    },
+    {
+     "nickname": "Dejvidson",
+     "avatar": "https://cdn.discordapp.com/avatars/1090986306286403644/7722b8f74b43882223912719c13be925.webp?size=256",
+     "href": "/profile/Dejvidson"
+    },
+    {
+     "nickname": "Kaffeine",
+     "avatar": "/api/media/file/avatar-1875-1791990392955.webp?v=mv88t8rj",
+     "href": "/profile/Kaffeine"
+    },
+    {
+     "nickname": "Skodix",
+     "avatar": "/api/media/file/avatar-1214-1790454590271.webp?v=muiufns4",
+     "href": "/profile/Skodix"
+    },
+    {
+     "nickname": "Stembi09",
+     "avatar": "https://cdn.discordapp.com/avatars/890670539050471524/58e150337f4598408e3c1411dd9448d7.webp?size=256",
+     "href": "/profile/Stembi09"
+    }
+   ]
+  },
+  {
+   "id": "977c470d-0be4-404e-928d-f56f9c13e6dd",
+   "number": 1247,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "21:20",
+   "to": "22:06",
+   "startedAt": "2026-10-29T21:20:00+01:00",
+   "blue": [
+    {
+     "nickname": "0ri",
+     "avatar": "/api/media/file/avatar-1082-1792756874144.webp?v=mvkx5lda",
+     "href": "/profile/0ri"
+    },
+    {
+     "nickname": "Danos",
+     "avatar": "https://cdn.discordapp.com/embed/avatars/3.png",
+     "href": "/profile/Danos"
+    },
+    {
+     "nickname": "Kousamek",
+     "avatar": "/api/media/file/avatar-1400-1790877549922.webp?v=mupu95kt",
+     "href": "/profile/Kousamek"
+    },
+    {
+     "nickname": "Machy_",
+     "avatar": "https://cdn.discordapp.com/avatars/220156384707215362/675bc1468376d888f212f37369ea77db.webp?size=256",
+     "href": "/profile/Machy_"
+    },
+    {
+     "nickname": "wonderthreshmichael",
+     "avatar": "https://cdn.discordapp.com/avatars/351351690672209920/54168124cdca7d71a94185da256ca290.webp?size=256",
+     "href": "/profile/wonderthreshmichael"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "BunnyV",
+     "avatar": "/api/media/file/avatar-1044-1792856487172.webp?v=mvmkgnbu",
+     "href": "/profile/BunnyV"
+    },
+    {
+     "nickname": "Dumpster",
+     "avatar": "/api/media/file/avatar-1080-1791882499253.webp?v=mv6gkpfd",
+     "href": "/profile/Dumpster"
+    },
+    {
+     "nickname": "Kryštof",
+     "avatar": "https://cdn.discordapp.com/avatars/590952696585125888/ede50a95ade7cf0ef0ab98026f64dcbe.webp?size=256",
+     "href": "/profile/Kry%C5%A1tof"
+    },
+    {
+     "nickname": "nvn",
+     "avatar": "https://cdn.discordapp.com/avatars/235411154275401739/768a9999635c04cd492cdb7190ce4c22.webp?size=256",
+     "href": "/profile/nvn"
+    },
+    {
+     "nickname": "Samyaza",
+     "avatar": "https://cdn.discordapp.com/avatars/219921550592180224/5b4633aa9efc1aae14c8682cbcc939d4.webp?size=256",
+     "href": "/profile/Samyaza"
+    }
+   ]
+  },
+  {
+   "id": "040f99f2-0708-46c3-8f16-6052a6f311b3",
+   "number": 1246,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:20",
+   "to": "22:13",
+   "startedAt": "2026-10-29T21:20:00+01:00",
+   "blue": [
+    {
+     "nickname": "Alikra",
+     "avatar": "https://cdn.discordapp.com/avatars/681202953528410201/a75b6bd690f383afe18e3ce4f5d40c12.webp?size=256",
+     "href": "/profile/Alikra"
+    },
+    {
+     "nickname": "Dallas",
+     "avatar": "/api/media/file/avatar-1045-1791125809519.webp?v=muty27wa",
+     "href": "/profile/Dallas"
+    },
+    {
+     "nickname": "jirkakalab",
+     "avatar": "https://cdn.discordapp.com/avatars/285724479722749953/c7eb338696591dd4f2f99464a3f1ea9d.webp?size=256",
+     "href": "/profile/jirkakalab"
+    },
+    {
+     "nickname": "LandziGarden",
+     "avatar": "/api/media/file/avatar-1199-1793243890991.webp?v=mvsz41zw",
+     "href": "/profile/LandziGarden"
+    },
+    {
+     "nickname": "Wride",
+     "avatar": "/api/media/file/avatar-1173-1790407448122.webp?v=mui2d8pe",
+     "href": "/profile/Wride"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "bigbid",
+     "avatar": "/api/media/file/avatar-1656-1791410167272.webp?v=muynczq8",
+     "href": "/profile/bigbid"
+    },
+    {
+     "nickname": "DONUD",
+     "avatar": "/api/media/file/avatar-1866-1791752436105.webp?v=mv4b500y",
+     "href": "/profile/DONUD"
+    },
+    {
+     "nickname": "narryana",
+     "avatar": "/api/media/file/avatar-1624-1791383203618.webp?v=muy7b2hh",
+     "href": "/profile/narryana"
+    },
+    {
+     "nickname": "Samco0015",
+     "avatar": "/api/media/file/avatar-1479-1791748106287.webp?v=mv48k76y",
+     "href": "/profile/Samco0015"
+    },
+    {
+     "nickname": "Sovereign",
+     "avatar": "https://cdn.discordapp.com/embed/avatars/1.png",
+     "href": "/profile/Sovereign"
+    }
+   ]
+  },
+  {
+   "id": "d21540d2-3976-49fb-af6e-137f2e2c177b",
+   "number": 1245,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "21:02",
+   "to": "21:40",
+   "startedAt": "2026-10-29T21:02:00+01:00",
+   "blue": [
+    {
+     "nickname": "Ejdyxdd",
+     "avatar": "https://cdn.discordapp.com/avatars/475304001928167455/c90245e59945dd9c049ae4799e8d8890.webp?size=256",
+     "href": "/profile/Ejdyxdd"
+    },
+    {
+     "nickname": "Enymol",
+     "avatar": "https://cdn.discordapp.com/avatars/670960877410713600/9b5a5ef61fff8b5ec22052690270c996.webp?size=256",
+     "href": "/profile/Enymol"
+    },
+    {
+     "nickname": "mouzwyr",
+     "avatar": "https://cdn.discordapp.com/avatars/227762487037132800/5ef27e3dce8276cca5220eca28504812.webp?size=256",
+     "href": "/profile/mouzwyr"
+    },
+    {
+     "nickname": "Reekular",
+     "avatar": "/api/media/file/avatar-1148-1791308702220.webp?v=muwyy8u3",
+     "href": "/profile/Reekular"
+    },
+    {
+     "nickname": "Turyx",
+     "avatar": "https://cdn.discordapp.com/avatars/517444510695948288/954090e5b2e1961fca6c86f639956bb1.webp?size=256",
+     "href": "/profile/Turyx"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Marrted",
+     "avatar": "/api/media/file/avatar-1287-1791559359697.webp?v=mv146pcb",
+     "href": "/profile/Marrted"
+    },
+    {
+     "nickname": "Only",
+     "avatar": "https://cdn.discordapp.com/avatars/284080240026976258/830b624f41e7c7d5d7b1744b7cf7805d.webp?size=256",
+     "href": "/profile/Only"
+    },
+    {
+     "nickname": "Pedronix",
+     "avatar": "/api/media/file/avatar-1547-1791498207833.webp?v=mv03s09u",
+     "href": "/profile/Pedronix"
+    },
+    {
+     "nickname": "SGoob",
+     "avatar": "https://cdn.discordapp.com/avatars/476742198939877390/4cb3900e807989cc1e21d86231ce3347.webp?size=256",
+     "href": "/profile/SGoob"
+    },
+    {
+     "nickname": "ShiroNeko",
+     "avatar": "/api/media/file/avatar-1662-1791665458577.webp?v=mv2vcrrn",
+     "href": "/profile/ShiroNeko"
+    }
+   ]
+  },
+  {
+   "id": "3eb4b2bf-c33d-4e80-b14a-104e7e3afe09",
+   "number": 1244,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:02",
+   "to": "21:44",
+   "startedAt": "2026-10-29T21:02:00+01:00",
+   "blue": [
+    {
+     "nickname": "dvlk696",
+     "avatar": "/api/media/file/avatar-1586-1791676860007.webp?v=mv32556d",
+     "href": "/profile/dvlk696"
+    },
+    {
+     "nickname": "Dzus",
+     "avatar": "/api/media/file/avatar-1331-1791045935942.webp?v=musmi94e",
+     "href": "/profile/Dzus"
+    },
+    {
+     "nickname": "feeddachicken",
+     "avatar": "/api/media/file/avatar-2039-1792537995725.webp?v=mvhau9rl",
+     "href": "/profile/feeddachicken"
+    },
+    {
+     "nickname": "kohut9",
+     "avatar": "/api/media/file/avatar-1344-1792961032413.webp?v=mvoapf21",
+     "href": "/profile/kohut9"
+    },
+    {
+     "nickname": "lukyyn1337",
+     "avatar": "/api/media/file/avatar-1675-1791400789493.webp?v=muyhrzsb",
+     "href": "/profile/lukyyn1337"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Dawe146",
+     "avatar": "https://cdn.discordapp.com/avatars/716006548727660616/a383351e217730dd1b2464df23bc4135.webp?size=256",
+     "href": "/profile/Dawe146"
+    },
+    {
+     "nickname": "filceklol",
+     "avatar": "https://cdn.discordapp.com/avatars/1012208285178413056/e3f9e98d41c95c16836e14b5fc2b165e.webp?size=256",
+     "href": "/profile/filceklol"
+    },
+    {
+     "nickname": "KYA",
+     "avatar": "/api/media/file/avatar-1442-1792526620362.webp?v=mvh42gh4",
+     "href": "/profile/KYA"
+    },
+    {
+     "nickname": "lennyy___",
+     "avatar": "https://cdn.discordapp.com/avatars/438319602880086016/a90fa1ad16c2e1c341345727f0afeeec.webp?size=256",
+     "href": "/profile/lennyy___"
+    },
+    {
+     "nickname": "Pata1G",
+     "avatar": "/api/media/file/avatar-1084-1792098042385.webp?v=mva0wjk9",
+     "href": "/profile/Pata1G"
+    }
+   ]
+  },
+  {
+   "id": "18dd625d-cece-4f17-9d0a-b90fb37832b4",
+   "number": 1243,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:02",
+   "to": "21:40",
+   "startedAt": "2026-10-29T21:02:00+01:00",
+   "blue": [
+    {
+     "nickname": "AdameXs",
+     "avatar": "https://cdn.discordapp.com/avatars/569555499742396447/31d7f18e5a43d504984dd00c4c40b451.webp?size=256",
+     "href": "/profile/AdameXs"
+    },
+    {
+     "nickname": "Bombakk",
+     "avatar": "/api/media/file/avatar-1171-1791923623164.webp?v=mv7524tn",
+     "href": "/profile/Bombakk"
+    },
+    {
+     "nickname": "Flickoara",
+     "avatar": "https://cdn.discordapp.com/avatars/1225875218162126981/75c996e0bc6be9b7f01db7515a56552e.webp?size=256",
+     "href": "/profile/Flickoara"
+    },
+    {
+     "nickname": "Narama",
+     "avatar": "https://cdn.discordapp.com/avatars/150246432497074176/3e2ca0c588c6b79412b02d0bb63a19f4.webp?size=256",
+     "href": "/profile/Narama"
+    },
+    {
+     "nickname": "opat04",
+     "avatar": "https://cdn.discordapp.com/avatars/570381968701653005/1b45b23b261094e43fd64b49f91606ca.webp?size=256",
+     "href": "/profile/opat04"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "512kozel",
+     "avatar": "/api/media/file/avatar-1721-1791752300359.webp?v=mv4b23bl",
+     "href": "/profile/512kozel"
+    },
+    {
+     "nickname": "femomadnessss",
+     "avatar": "https://cdn.discordapp.com/avatars/255771559464140802/f0009f405a8fee117122e7e0fe800d2f.webp?size=256",
+     "href": "/profile/femomadnessss"
+    },
+    {
+     "nickname": "Fuse",
+     "avatar": "/api/media/file/avatar-1330-1790876009106.webp?v=muptc4o7",
+     "href": "/profile/Fuse"
+    },
+    {
+     "nickname": "Janggro",
+     "avatar": "https://cdn.discordapp.com/avatars/350740807910817793/0b1a1ac92f1267557297d9e0e58375d7.webp?size=256",
+     "href": "/profile/Janggro"
+    },
+    {
+     "nickname": "noname447",
+     "avatar": "https://cdn.discordapp.com/embed/avatars/5.png",
+     "href": "/profile/noname447"
+    }
+   ]
+  },
+  {
+   "id": "5ab035d6-2d49-4f11-b844-2bd35cb6957b",
+   "number": 1242,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "21:02",
+   "to": "21:52",
+   "startedAt": "2026-10-29T21:02:00+01:00",
+   "blue": [
+    {
+     "nickname": "Coach Robko",
+     "avatar": "/api/media/file/avatar-1074-1790350719956.webp?v=muh4lcxt",
+     "href": "/profile/Coach%20Robko"
+    },
+    {
+     "nickname": "RTMR",
+     "avatar": "https://cdn.discordapp.com/avatars/234709875937116162/0f7e32e6af1e3022eb351fd112c0629f.webp?size=256",
+     "href": "/profile/RTMR"
+    },
+    {
+     "nickname": "Stryg",
+     "avatar": "https://cdn.discordapp.com/avatars/226766564777656320/6cad80a2504bf0d9bbfdd9b1683f2a65.webp?size=256",
+     "href": "/profile/Stryg"
+    },
+    {
+     "nickname": "Svoby",
+     "avatar": "/api/media/file/avatar-1326-1790788178051.webp?v=muod1lrz",
+     "href": "/profile/Svoby"
+    },
+    {
+     "nickname": "Thomass616",
+     "avatar": "/api/media/file/avatar-1325-1790790151075.webp?v=muoe7w72",
+     "href": "/profile/Thomass616"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "annniecz",
+     "avatar": "https://cdn.discordapp.com/avatars/740553204642611291/b5f8369dc63f256f370c031eceb113e9.webp?size=256",
+     "href": "/profile/annniecz"
+    },
+    {
+     "nickname": "brigos",
+     "avatar": "https://cdn.discordapp.com/avatars/937966312691466281/d09e25c743b1212983546a696041f00c.webp?size=256",
+     "href": null
+    },
+    {
+     "nickname": "Esko",
+     "avatar": "https://cdn.discordapp.com/avatars/348826557357490176/07b16aee7910c53fe928ca3bb0ce22de.webp?size=256",
+     "href": "/profile/Esko"
+    },
+    {
+     "nickname": "Fatushcz",
+     "avatar": "/api/media/file/avatar-1581-1791306521563.webp?v=muwxni6e",
+     "href": "/profile/Fatushcz"
+    },
+    {
+     "nickname": "PaulieAngelo",
+     "avatar": "/api/media/file/avatar-1820-1791654620243.webp?v=mv2owgte",
+     "href": "/profile/PaulieAngelo"
+    }
+   ]
+  },
+  {
+   "id": "d5a3a282-9b4f-4ab3-91af-52b64819822e",
+   "number": 1241,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "21:02",
+   "to": "21:51",
+   "startedAt": "2026-10-29T21:02:00+01:00",
+   "blue": [
+    {
+     "nickname": "Metys",
+     "avatar": "/api/media/file/avatar-1335-1791408832593.webp?v=muymkdwc",
+     "href": "/profile/Metys"
+    },
+    {
+     "nickname": "sugiiss",
+     "avatar": "/api/media/file/avatar-1054-1790720591577.webp?v=mun8szzd",
+     "href": "/profile/sugiiss"
+    },
+    {
+     "nickname": "toplanerlarry",
+     "avatar": "https://cdn.discordapp.com/avatars/210480964265181185/e07d18ceda0311477b4e803e93136bfc.webp?size=256",
+     "href": "/profile/toplanerlarry"
+    },
+    {
+     "nickname": "Trolonom",
+     "avatar": "/api/media/file/avatar-1491-1791125534435.webp?v=mutxwbmy",
+     "href": "/profile/Trolonom"
+    },
+    {
+     "nickname": "welcomlol",
+     "avatar": "https://cdn.discordapp.com/avatars/573062200391106560/dc6d38c6b24795f0e70de2c7673a4d52.webp?size=256",
+     "href": "/profile/welcomlol"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "adm2stoned",
+     "avatar": "/api/media/file/avatar-1428-1791806030414.webp?v=mv571pp0",
+     "href": "/profile/adm2stoned"
+    },
+    {
+     "nickname": "Dragos",
+     "avatar": "/api/media/file/avatar-1868-1791816934836.webp?v=mv5djfm4",
+     "href": "/profile/Dragos"
+    },
+    {
+     "nickname": "nyyxxen",
+     "avatar": "/api/media/file/avatar-1437-1790960138601.webp?v=mur7fbhs",
+     "href": "/profile/nyyxxen"
+    },
+    {
+     "nickname": "TANO",
+     "avatar": "/api/media/file/avatar-1661-1791487014391.webp?v=muzx43bx",
+     "href": "/profile/TANO"
+    },
+    {
+     "nickname": "WoodyJackcz",
+     "avatar": "/api/media/file/avatar-1232-1791387611151.webp?v=muy9xjb4",
+     "href": "/profile/WoodyJackcz"
+    }
+   ]
+  },
+  {
+   "id": "059c1dad-d17b-44ad-9f17-8e3ef11bb676",
+   "number": 1240,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:57",
+   "to": "21:48",
+   "startedAt": "2026-10-29T20:57:00+01:00",
+   "blue": [
+    {
+     "nickname": "akaro911",
+     "avatar": "https://cdn.discordapp.com/avatars/329892903847591936/4f1a655dfcb32ede0f5080a852cc810d.webp?size=256",
+     "href": "/profile/akaro911"
+    },
+    {
+     "nickname": "DobroCZ",
+     "avatar": "https://cdn.discordapp.com/avatars/1098720361455030313/b9d06fe678a20706522d1e8456024c56.webp?size=256",
+     "href": "/profile/DobroCZ"
+    },
+    {
+     "nickname": "koubee",
+     "avatar": "/api/media/file/avatar-1445-1791409724597.webp?v=muyn3i6w",
+     "href": "/profile/koubee"
+    },
+    {
+     "nickname": "LightJohn",
+     "avatar": "/api/media/file/avatar-1135-1791113772858.webp?v=mutqw8by",
+     "href": "/profile/LightJohn"
+    },
+    {
+     "nickname": "Mejris_8297",
+     "avatar": "https://cdn.discordapp.com/avatars/759484031074041856/be9e54be14fa7e4deceb23e926d008c9.webp?size=256",
+     "href": "/profile/Mejris_8297"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "L9FRAGGER",
+     "avatar": "https://cdn.discordapp.com/avatars/688889661086760981/bdf71812d76d3de3838a3fe920f58baf.webp?size=256",
+     "href": "/profile/L9FRAGGER"
+    },
+    {
+     "nickname": "lazmenko",
+     "avatar": "/api/media/file/avatar-1256-1791505210692.webp?v=mv07y3rd",
+     "href": "/profile/lazmenko"
+    },
+    {
+     "nickname": "MafysGOAT",
+     "avatar": "/api/media/file/avatar-2083-1793106688490.webp?v=mvqpfbvw",
+     "href": "/profile/MafysGOAT"
+    },
+    {
+     "nickname": "poutnik__",
+     "avatar": "/api/media/file/avatar-1261-1791492734674.webp?v=mv00ip6s",
+     "href": "/profile/poutnik__"
+    },
+    {
+     "nickname": "toxar",
+     "avatar": "/api/media/file/avatar-1109-1792682177319.webp?v=mvjooky3",
+     "href": "/profile/toxar"
+    }
+   ]
+  },
+  {
+   "id": "11edb424-7e34-4e5b-a2d7-ec8dc4b62362",
+   "number": 1239,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:57",
+   "to": "21:36",
+   "startedAt": "2026-10-29T20:57:00+01:00",
+   "blue": [
+    {
+     "nickname": "Enrik",
+     "avatar": "/api/media/file/avatar-1276-1790688326274.webp?v=mumplgp9",
+     "href": "/profile/Enrik"
+    },
+    {
+     "nickname": "Josifek04",
+     "avatar": "https://cdn.discordapp.com/avatars/278555964729196544/b8122b02a5b064067639c95c46590f32.webp?size=256",
+     "href": "/profile/Josifek04"
+    },
+    {
+     "nickname": "MissHell",
+     "avatar": "https://cdn.discordapp.com/avatars/552539817536126998/7c8ef5cab4a48407b90f18b39b489c09.webp?size=256",
+     "href": "/profile/MissHell"
+    },
+    {
+     "nickname": "Necromartin",
+     "avatar": "https://cdn.discordapp.com/avatars/344628852796162048/f46bbc91360718352175b3c361568d92.webp?size=256",
+     "href": "/profile/Necromartin"
+    },
+    {
+     "nickname": "Zewy",
+     "avatar": "/api/media/file/avatar-2007-1792694399176.webp?v=mvjvyjfa",
+     "href": "/profile/Zewy"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "BeastMartinn",
+     "avatar": "/api/media/file/avatar-1151-1791716835512.webp?v=mv3pxyhn",
+     "href": "/profile/BeastMartinn"
+    },
+    {
+     "nickname": "Featherr",
+     "avatar": "/api/media/file/avatar-1689-1791455231197.webp?v=muze6vac",
+     "href": "/profile/Featherr"
+    },
+    {
+     "nickname": "Honzikk",
+     "avatar": "https://cdn.discordapp.com/avatars/395485488456138752/f6b56cd552ac7fd516fb9285875b30f4.webp?size=256",
+     "href": "/profile/Honzikk"
+    },
+    {
+     "nickname": "Pislouu",
+     "avatar": "/api/media/file/avatar-1565-1792276558735.webp?v=mvcz6rpn",
+     "href": "/profile/Pislouu"
+    },
+    {
+     "nickname": "razwenxd",
+     "avatar": "/api/media/file/avatar-1667-1791496233421.webp?v=mv02losz",
+     "href": "/profile/razwenxd"
+    }
+   ]
+  },
+  {
+   "id": "4ac9c899-3f1b-4735-868e-4265038c2485",
+   "number": 1238,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:57",
+   "to": "21:30",
+   "startedAt": "2026-10-29T20:57:00+01:00",
+   "blue": [
+    {
+     "nickname": "GeNi",
+     "avatar": "https://cdn.discordapp.com/avatars/545997654719594506/184e493112d432df585a96198efc71c0.webp?size=256",
+     "href": "/profile/GeNi"
+    },
+    {
+     "nickname": "Hajnlik",
+     "avatar": "https://cdn.discordapp.com/avatars/339706354069667841/547d1ba4e2f2f5ad48493ffd8aec00bf.webp?size=256",
+     "href": "/profile/Hajnlik"
+    },
+    {
+     "nickname": "MrKrabs",
+     "avatar": "/api/media/file/avatar-1328-1790805621505.webp?v=muonfh96",
+     "href": "/profile/MrKrabs"
+    },
+    {
+     "nickname": "SKREAM",
+     "avatar": "/api/media/file/avatar-1699-1791457671513.webp?v=muzfn69c",
+     "href": "/profile/SKREAM"
+    },
+    {
+     "nickname": "willyshhh",
+     "avatar": "/api/media/file/avatar-1061-1791364456640.webp?v=muxw596w",
+     "href": "/profile/willyshhh"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Cringo",
+     "avatar": "/api/media/file/avatar-1286-1791989677983.webp?v=mv88dx5u",
+     "href": "/profile/Cringo"
+    },
+    {
+     "nickname": "danden",
+     "avatar": "https://cdn.discordapp.com/avatars/370599291783479297/0bcb8faccb3b357650de8086398ddf58.webp?size=256",
+     "href": "/profile/danden"
+    },
+    {
+     "nickname": "halkum_",
+     "avatar": "/api/media/file/avatar-1913-1792228827836.webp?v=mvc6rqat",
+     "href": "/profile/halkum_"
+    },
+    {
+     "nickname": "matej2532",
+     "avatar": "https://cdn.discordapp.com/avatars/217974062620737536/364cb9c1ea41676bb532f5a74959e809.webp?size=256",
+     "href": "/profile/matej2532"
+    },
+    {
+     "nickname": "SakulOG",
+     "avatar": "/api/media/file/avatar-1204-1791560094329.webp?v=mv14mg76",
+     "href": "/profile/SakulOG"
+    }
+   ]
+  },
+  {
+   "id": "f89acb53-0019-4d96-bea2-1c260d4f34e1",
+   "number": 1237,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:57",
+   "to": "21:48",
+   "startedAt": "2026-10-29T20:57:00+01:00",
+   "blue": [
+    {
+     "nickname": "FeywinQ",
+     "avatar": "/api/media/file/avatar-2095-1793144082542.webp?v=mvrbotcq",
+     "href": "/profile/FeywinQ"
+    },
+    {
+     "nickname": "fityr",
+     "avatar": "/api/media/file/avatar-1523-1793203582547.webp?v=mvsb444m",
+     "href": "/profile/fityr"
+    },
+    {
+     "nickname": "MathReif",
+     "avatar": "https://cdn.discordapp.com/avatars/389030362912784388/c6a6087c159cc12ea154e2164517f04d.webp?size=256",
+     "href": "/profile/MathReif"
+    },
+    {
+     "nickname": "Shadow",
+     "avatar": "/api/media/file/avatar-1748-1791529714208.webp?v=mv0mjaqt",
+     "href": "/profile/Shadow"
+    },
+    {
+     "nickname": "Sins of Mine",
+     "avatar": "/api/media/file/avatar-1373-1790844305322.webp?v=mupagluq",
+     "href": "/profile/Sins%20of%20Mine"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "crazypeanuttt",
+     "avatar": "https://cdn.discordapp.com/avatars/1541977732076933151/4814cf6eddbdff4237654ee1aab22427.webp?size=256",
+     "href": "/profile/crazypeanuttt"
+    },
+    {
+     "nickname": "enjinka_",
+     "avatar": "https://cdn.discordapp.com/avatars/825035311398518814/c688dea956c8aa4b50a4e8560c1aae30.webp?size=256",
+     "href": "/profile/enjinka_"
+    },
+    {
+     "nickname": "CHROBY",
+     "avatar": "https://cdn.discordapp.com/avatars/320290666389176334/a21862671313c6d4503a3f1b15bc97ad.webp?size=256",
+     "href": "/profile/CHROBY"
+    },
+    {
+     "nickname": "JustAlex",
+     "avatar": "/api/media/file/avatar-2042-1792680742242.webp?v=mvjnttom",
+     "href": "/profile/JustAlex"
+    },
+    {
+     "nickname": "Motýlek Milík",
+     "avatar": "https://cdn.discordapp.com/avatars/577496396782108682/dc8daadd4a2b9f8c0e3bc31b4119af0b.webp?size=256",
+     "href": "/profile/Mot%C3%BDlek%20Mil%C3%ADk"
+    }
+   ]
+  },
+  {
+   "id": "f3fa10aa-ab3a-4251-b345-6e9aa44ac6ae",
+   "number": 1236,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:24",
+   "to": "20:58",
+   "startedAt": "2026-10-29T20:24:00+01:00",
+   "blue": [
+    {
+     "nickname": "Janggro",
+     "avatar": "https://cdn.discordapp.com/avatars/350740807910817793/0b1a1ac92f1267557297d9e0e58375d7.webp?size=256",
+     "href": "/profile/Janggro"
+    },
+    {
+     "nickname": "KYA",
+     "avatar": "/api/media/file/avatar-1442-1792526620362.webp?v=mvh42gh4",
+     "href": "/profile/KYA"
+    },
+    {
+     "nickname": "Only",
+     "avatar": "https://cdn.discordapp.com/avatars/284080240026976258/830b624f41e7c7d5d7b1744b7cf7805d.webp?size=256",
+     "href": "/profile/Only"
+    },
+    {
+     "nickname": "opat04",
+     "avatar": "https://cdn.discordapp.com/avatars/570381968701653005/1b45b23b261094e43fd64b49f91606ca.webp?size=256",
+     "href": "/profile/opat04"
+    },
+    {
+     "nickname": "Turyx",
+     "avatar": "https://cdn.discordapp.com/avatars/517444510695948288/954090e5b2e1961fca6c86f639956bb1.webp?size=256",
+     "href": "/profile/Turyx"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "filceklol",
+     "avatar": "https://cdn.discordapp.com/avatars/1012208285178413056/e3f9e98d41c95c16836e14b5fc2b165e.webp?size=256",
+     "href": "/profile/filceklol"
+    },
+    {
+     "nickname": "Fuse",
+     "avatar": "/api/media/file/avatar-1330-1790876009106.webp?v=muptc4o7",
+     "href": "/profile/Fuse"
+    },
+    {
+     "nickname": "PaulieAngelo",
+     "avatar": "/api/media/file/avatar-1820-1791654620243.webp?v=mv2owgte",
+     "href": "/profile/PaulieAngelo"
+    },
+    {
+     "nickname": "RTMR",
+     "avatar": "https://cdn.discordapp.com/avatars/234709875937116162/0f7e32e6af1e3022eb351fd112c0629f.webp?size=256",
+     "href": "/profile/RTMR"
+    },
+    {
+     "nickname": "sugiiss",
+     "avatar": "/api/media/file/avatar-1054-1790720591577.webp?v=mun8szzd",
+     "href": "/profile/sugiiss"
+    }
+   ]
+  },
+  {
+   "id": "99c6b868-5591-4fb5-b594-c0df3bf21da8",
+   "number": 1235,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:24",
+   "to": "21:15",
+   "startedAt": "2026-10-29T20:24:00+01:00",
+   "blue": [
+    {
+     "nickname": "bandygod",
+     "avatar": "https://cdn.discordapp.com/avatars/336146147561439232/fb4b1526de0cefc5cc7ece6fa1353617.webp?size=256",
+     "href": "/profile/bandygod"
+    },
+    {
+     "nickname": "Danos",
+     "avatar": "https://cdn.discordapp.com/embed/avatars/3.png",
+     "href": "/profile/Danos"
+    },
+    {
+     "nickname": "Dumpster",
+     "avatar": "/api/media/file/avatar-1080-1791882499253.webp?v=mv6gkpfd",
+     "href": "/profile/Dumpster"
+    },
+    {
+     "nickname": "mlemi",
+     "avatar": "/api/media/file/avatar-1033-1790346454753.webp?v=muh21y52",
+     "href": "/profile/mlemi"
+    },
+    {
+     "nickname": "tomomaso",
+     "avatar": "https://cdn.discordapp.com/avatars/320493616189538314/3acc023227b27ae7c2c292d812dd9dc4.webp?size=256",
+     "href": "/profile/tomomaso"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "0ri",
+     "avatar": "/api/media/file/avatar-1082-1792756874144.webp?v=mvkx5lda",
+     "href": "/profile/0ri"
+    },
+    {
+     "nickname": "DONUD",
+     "avatar": "/api/media/file/avatar-1866-1791752436105.webp?v=mv4b500y",
+     "href": "/profile/DONUD"
+    },
+    {
+     "nickname": "Kaffeine",
+     "avatar": "/api/media/file/avatar-1875-1791990392955.webp?v=mv88t8rj",
+     "href": "/profile/Kaffeine"
+    },
+    {
+     "nickname": "m1shak",
+     "avatar": "/api/media/file/avatar-1216-1790467728750.webp?v=muj299h8",
+     "href": "/profile/m1shak"
+    },
+    {
+     "nickname": "paooo6",
+     "avatar": "/api/media/file/avatar-1030-1790348680556.webp?v=muh3dncj",
+     "href": "/profile/paooo6"
+    }
+   ]
+  },
+  {
+   "id": "2230a455-6d1e-4511-bc42-a1036000503c",
+   "number": 1234,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:24",
+   "to": "21:15",
+   "startedAt": "2026-10-29T20:24:00+01:00",
+   "blue": [
+    {
+     "nickname": "Kryštof",
+     "avatar": "https://cdn.discordapp.com/avatars/590952696585125888/ede50a95ade7cf0ef0ab98026f64dcbe.webp?size=256",
+     "href": "/profile/Kry%C5%A1tof"
+    },
+    {
+     "nickname": "narryana",
+     "avatar": "/api/media/file/avatar-1624-1791383203618.webp?v=muy7b2hh",
+     "href": "/profile/narryana"
+    },
+    {
+     "nickname": "Norty1441",
+     "avatar": "/api/media/file/avatar-1320-1791494100471.webp?v=mv01byzm",
+     "href": "/profile/Norty1441"
+    },
+    {
+     "nickname": "rakos420",
+     "avatar": "https://cdn.discordapp.com/avatars/331405763576594443/7df70ffaf28a5af34672d2af7c5326d7.webp?size=256",
+     "href": "/profile/rakos420"
+    },
+    {
+     "nickname": "Skodix",
+     "avatar": "/api/media/file/avatar-1214-1790454590271.webp?v=muiufns4",
+     "href": "/profile/Skodix"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Jenikk",
+     "avatar": "/api/media/file/avatar-1383-1790852302474.webp?v=mupf80h4",
+     "href": "/profile/Jenikk"
+    },
+    {
+     "nickname": "Kebixik",
+     "avatar": "/api/media/file/avatar-1775-1791722934066.webp?v=mv3tko4x",
+     "href": "/profile/Kebixik"
+    },
+    {
+     "nickname": "Samyaza",
+     "avatar": "https://cdn.discordapp.com/avatars/219921550592180224/5b4633aa9efc1aae14c8682cbcc939d4.webp?size=256",
+     "href": "/profile/Samyaza"
+    },
+    {
+     "nickname": "sw3ry",
+     "avatar": "https://cdn.discordapp.com/avatars/758346241612185612/f5a31b00140e7d3897a07b2f7b58dca1.webp?size=256",
+     "href": "/profile/sw3ry"
+    },
+    {
+     "nickname": "Wride",
+     "avatar": "/api/media/file/avatar-1173-1790407448122.webp?v=mui2d8pe",
+     "href": "/profile/Wride"
+    }
+   ]
+  },
+  {
+   "id": "eeee3bca-e616-4d08-a163-f17d29f837d8",
+   "number": 1233,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:24",
+   "to": "21:02",
+   "startedAt": "2026-10-29T20:24:00+01:00",
+   "blue": [
+    {
+     "nickname": "512kozel",
+     "avatar": "/api/media/file/avatar-1721-1791752300359.webp?v=mv4b23bl",
+     "href": "/profile/512kozel"
+    },
+    {
+     "nickname": "brigos",
+     "avatar": "https://cdn.discordapp.com/avatars/937966312691466281/d09e25c743b1212983546a696041f00c.webp?size=256",
+     "href": null
+    },
+    {
+     "nickname": "Dallas",
+     "avatar": "/api/media/file/avatar-1045-1791125809519.webp?v=muty27wa",
+     "href": "/profile/Dallas"
+    },
+    {
+     "nickname": "Dragos",
+     "avatar": "/api/media/file/avatar-1868-1791816934836.webp?v=mv5djfm4",
+     "href": "/profile/Dragos"
+    },
+    {
+     "nickname": "Narama",
+     "avatar": "https://cdn.discordapp.com/avatars/150246432497074176/3e2ca0c588c6b79412b02d0bb63a19f4.webp?size=256",
+     "href": "/profile/Narama"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "annniecz",
+     "avatar": "https://cdn.discordapp.com/avatars/740553204642611291/b5f8369dc63f256f370c031eceb113e9.webp?size=256",
+     "href": "/profile/annniecz"
+    },
+    {
+     "nickname": "Bombakk",
+     "avatar": "/api/media/file/avatar-1171-1791923623164.webp?v=mv7524tn",
+     "href": "/profile/Bombakk"
+    },
+    {
+     "nickname": "Ejdyxdd",
+     "avatar": "https://cdn.discordapp.com/avatars/475304001928167455/c90245e59945dd9c049ae4799e8d8890.webp?size=256",
+     "href": "/profile/Ejdyxdd"
+    },
+    {
+     "nickname": "femomadnessss",
+     "avatar": "https://cdn.discordapp.com/avatars/255771559464140802/f0009f405a8fee117122e7e0fe800d2f.webp?size=256",
+     "href": "/profile/femomadnessss"
+    },
+    {
+     "nickname": "WoodyJackcz",
+     "avatar": "/api/media/file/avatar-1232-1791387611151.webp?v=muy9xjb4",
+     "href": "/profile/WoodyJackcz"
+    }
+   ]
+  },
+  {
+   "id": "32d65141-c40f-479a-957d-2708938a0d9f",
+   "number": 1232,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "20:54",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "GeNi",
+     "avatar": "https://cdn.discordapp.com/avatars/545997654719594506/184e493112d432df585a96198efc71c0.webp?size=256",
+     "href": "/profile/GeNi"
+    },
+    {
+     "nickname": "Hajnlik",
+     "avatar": "https://cdn.discordapp.com/avatars/339706354069667841/547d1ba4e2f2f5ad48493ffd8aec00bf.webp?size=256",
+     "href": "/profile/Hajnlik"
+    },
+    {
+     "nickname": "Josifek04",
+     "avatar": "https://cdn.discordapp.com/avatars/278555964729196544/b8122b02a5b064067639c95c46590f32.webp?size=256",
+     "href": "/profile/Josifek04"
+    },
+    {
+     "nickname": "SakulOG",
+     "avatar": "/api/media/file/avatar-1204-1791560094329.webp?v=mv14mg76",
+     "href": "/profile/SakulOG"
+    },
+    {
+     "nickname": "TANO",
+     "avatar": "/api/media/file/avatar-1661-1791487014391.webp?v=muzx43bx",
+     "href": "/profile/TANO"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "DobroCZ",
+     "avatar": "https://cdn.discordapp.com/avatars/1098720361455030313/b9d06fe678a20706522d1e8456024c56.webp?size=256",
+     "href": "/profile/DobroCZ"
+    },
+    {
+     "nickname": "CHROBY",
+     "avatar": "https://cdn.discordapp.com/avatars/320290666389176334/a21862671313c6d4503a3f1b15bc97ad.webp?size=256",
+     "href": "/profile/CHROBY"
+    },
+    {
+     "nickname": "MissHell",
+     "avatar": "https://cdn.discordapp.com/avatars/552539817536126998/7c8ef5cab4a48407b90f18b39b489c09.webp?size=256",
+     "href": "/profile/MissHell"
+    },
+    {
+     "nickname": "razwenxd",
+     "avatar": "/api/media/file/avatar-1667-1791496233421.webp?v=mv02losz",
+     "href": "/profile/razwenxd"
+    },
+    {
+     "nickname": "sovaz1",
+     "avatar": "/api/media/file/avatar-1132-1790377600158.webp?v=muhklhvw",
+     "href": "/profile/sovaz1"
+    }
+   ]
+  },
+  {
+   "id": "7d35b624-6c0a-4a00-915b-4fac8180697e",
+   "number": 1231,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "21:21",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "bruska132",
+     "avatar": "/api/media/file/avatar-1215-1790466952430.webp?v=muj1smjs",
+     "href": "/profile/bruska132"
+    },
+    {
+     "nickname": "BunnyV",
+     "avatar": "/api/media/file/avatar-1044-1792856487172.webp?v=mvmkgnbu",
+     "href": "/profile/BunnyV"
+    },
+    {
+     "nickname": "Darkeszy",
+     "avatar": "https://cdn.discordapp.com/avatars/575299601268211712/6e5400e092524f239d78d7ef39653123.webp?size=256",
+     "href": "/profile/Darkeszy"
+    },
+    {
+     "nickname": "The_Goksi",
+     "avatar": "https://cdn.discordapp.com/avatars/284061575483228160/ef60452071a9596efd7e3fb587a74e7a.webp?size=256",
+     "href": "/profile/The_Goksi"
+    },
+    {
+     "nickname": "zdedenda",
+     "avatar": "https://cdn.discordapp.com/avatars/594608843372101644/7dce93882bdad65eddc1a47632a80ada.webp?size=256",
+     "href": "/profile/zdedenda"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "FonkoCZ",
+     "avatar": "/api/media/file/avatar-1087-1791410137066.webp?v=muynccfv",
+     "href": "/profile/FonkoCZ"
+    },
+    {
+     "nickname": "gentlemandemonic",
+     "avatar": "/api/media/file/avatar-1179-1790412330599.webp?v=mui59w13",
+     "href": "/profile/gentlemandemonic"
+    },
+    {
+     "nickname": "Kotvyc74",
+     "avatar": "/api/media/file/avatar-1140-1790364322930.webp?v=muhcox47",
+     "href": "/profile/Kotvyc74"
+    },
+    {
+     "nickname": "Pluto",
+     "avatar": "/api/media/file/avatar-1533-1791264702466.webp?v=muw8r6f3",
+     "href": "/profile/Pluto"
+    },
+    {
+     "nickname": "Springy",
+     "avatar": "/api/media/file/avatar-1456-1791389699626.webp?v=muyb6atp",
+     "href": "/profile/Springy"
+    }
+   ]
+  },
+  {
+   "id": "1a739751-2a85-4111-969b-7521147a4183",
+   "number": 1230,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "21:05",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "bigbid",
+     "avatar": "/api/media/file/avatar-1656-1791410167272.webp?v=muynczq8",
+     "href": "/profile/bigbid"
+    },
+    {
+     "nickname": "Dejvidson",
+     "avatar": "https://cdn.discordapp.com/avatars/1090986306286403644/7722b8f74b43882223912719c13be925.webp?size=256",
+     "href": "/profile/Dejvidson"
+    },
+    {
+     "nickname": "jirkakalab",
+     "avatar": "https://cdn.discordapp.com/avatars/285724479722749953/c7eb338696591dd4f2f99464a3f1ea9d.webp?size=256",
+     "href": "/profile/jirkakalab"
+    },
+    {
+     "nickname": "Machy_",
+     "avatar": "https://cdn.discordapp.com/avatars/220156384707215362/675bc1468376d888f212f37369ea77db.webp?size=256",
+     "href": "/profile/Machy_"
+    },
+    {
+     "nickname": "PNC WidowMaker",
+     "avatar": "https://cdn.discordapp.com/avatars/378116183184113664/bc978dfd3b4a6413962a78bebb9987d4.webp?size=256",
+     "href": "/profile/PNC%20WidowMaker"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "AAdaMM",
+     "avatar": "https://cdn.discordapp.com/avatars/776896816377626705/a110798f38b3d1c0f4413975a3e957c5.webp?size=256",
+     "href": "/profile/AAdaMM"
+    },
+    {
+     "nickname": "Chmelda",
+     "avatar": "/api/media/file/avatar-1195-1790670316162.webp?v=mumevez4",
+     "href": "/profile/Chmelda"
+    },
+    {
+     "nickname": "LandziGarden",
+     "avatar": "/api/media/file/avatar-1199-1793243890991.webp?v=mvsz41zw",
+     "href": "/profile/LandziGarden"
+    },
+    {
+     "nickname": "netoush",
+     "avatar": "/api/media/file/avatar-1269-1790627584179.webp?v=mulpfiqj",
+     "href": "/profile/netoush"
+    },
+    {
+     "nickname": "Sovereign",
+     "avatar": "https://cdn.discordapp.com/embed/avatars/1.png",
+     "href": "/profile/Sovereign"
+    }
+   ]
+  },
+  {
+   "id": "fb76b9ac-1b8e-4daa-b9dd-cb1e52df1b80",
+   "number": 1229,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "21:02",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "adm2stoned",
+     "avatar": "/api/media/file/avatar-1428-1791806030414.webp?v=mv571pp0",
+     "href": "/profile/adm2stoned"
+    },
+    {
+     "nickname": "Allty_Ironside",
+     "avatar": "/api/media/file/avatar-1316-1790786604248.webp?v=muoc3vhh",
+     "href": "/profile/Allty_Ironside"
+    },
+    {
+     "nickname": "Marrted",
+     "avatar": "/api/media/file/avatar-1287-1791559359697.webp?v=mv146pcb",
+     "href": "/profile/Marrted"
+    },
+    {
+     "nickname": "Reekular",
+     "avatar": "/api/media/file/avatar-1148-1791308702220.webp?v=muwyy8u3",
+     "href": "/profile/Reekular"
+    },
+    {
+     "nickname": "Stembi09",
+     "avatar": "https://cdn.discordapp.com/avatars/890670539050471524/58e150337f4598408e3c1411dd9448d7.webp?size=256",
+     "href": "/profile/Stembi09"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "dahodak",
+     "avatar": "https://cdn.discordapp.com/avatars/311189962639015936/36ef1b9474d31f68c9068e5b3d532d60.webp?size=256",
+     "href": "/profile/dahodak"
+    },
+    {
+     "nickname": "Enymol",
+     "avatar": "https://cdn.discordapp.com/avatars/670960877410713600/9b5a5ef61fff8b5ec22052690270c996.webp?size=256",
+     "href": "/profile/Enymol"
+    },
+    {
+     "nickname": "lennyy___",
+     "avatar": "https://cdn.discordapp.com/avatars/438319602880086016/a90fa1ad16c2e1c341345727f0afeeec.webp?size=256",
+     "href": "/profile/lennyy___"
+    },
+    {
+     "nickname": "nyyxxen",
+     "avatar": "/api/media/file/avatar-1437-1790960138601.webp?v=mur7fbhs",
+     "href": "/profile/nyyxxen"
+    },
+    {
+     "nickname": "Stryg",
+     "avatar": "https://cdn.discordapp.com/avatars/226766564777656320/6cad80a2504bf0d9bbfdd9b1683f2a65.webp?size=256",
+     "href": "/profile/Stryg"
+    }
+   ]
+  },
+  {
+   "id": "453869e7-6a05-46ed-9c03-0a76530941cf",
+   "number": 1228,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "20:55",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "crazypeanuttt",
+     "avatar": "https://cdn.discordapp.com/avatars/1541977732076933151/4814cf6eddbdff4237654ee1aab22427.webp?size=256",
+     "href": "/profile/crazypeanuttt"
+    },
+    {
+     "nickname": "feeddachicken",
+     "avatar": "/api/media/file/avatar-2039-1792537995725.webp?v=mvhau9rl",
+     "href": "/profile/feeddachicken"
+    },
+    {
+     "nickname": "Pislouu",
+     "avatar": "/api/media/file/avatar-1565-1792276558735.webp?v=mvcz6rpn",
+     "href": "/profile/Pislouu"
+    },
+    {
+     "nickname": "w1nryxxd",
+     "avatar": "https://cdn.discordapp.com/avatars/930245241867489291/4e84914728c3ff5257e9565fd7ef6ae4.webp?size=256",
+     "href": "/profile/w1nryxxd"
+    },
+    {
+     "nickname": "willyshhh",
+     "avatar": "/api/media/file/avatar-1061-1791364456640.webp?v=muxw596w",
+     "href": "/profile/willyshhh"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "keba_p_",
+     "avatar": "/api/media/file/avatar-1164-1791542685227.webp?v=mv0u9b8v",
+     "href": "/profile/keba_p_"
+    },
+    {
+     "nickname": "koubee",
+     "avatar": "/api/media/file/avatar-1445-1791409724597.webp?v=muyn3i6w",
+     "href": "/profile/koubee"
+    },
+    {
+     "nickname": "MafysGOAT",
+     "avatar": "/api/media/file/avatar-2083-1793106688490.webp?v=mvqpfbvw",
+     "href": "/profile/MafysGOAT"
+    },
+    {
+     "nickname": "MathReif",
+     "avatar": "https://cdn.discordapp.com/avatars/389030362912784388/c6a6087c159cc12ea154e2164517f04d.webp?size=256",
+     "href": "/profile/MathReif"
+    },
+    {
+     "nickname": "Motýlek Milík",
+     "avatar": "https://cdn.discordapp.com/avatars/577496396782108682/dc8daadd4a2b9f8c0e3bc31b4119af0b.webp?size=256",
+     "href": "/profile/Mot%C3%BDlek%20Mil%C3%ADk"
+    }
+   ]
+  },
+  {
+   "id": "6c22050c-b89f-4ab7-9fdb-cb0c5f15b5b9",
+   "number": 1227,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "21:06",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "Alikra",
+     "avatar": "https://cdn.discordapp.com/avatars/681202953528410201/a75b6bd690f383afe18e3ce4f5d40c12.webp?size=256",
+     "href": "/profile/Alikra"
+    },
+    {
+     "nickname": "eSGi",
+     "avatar": "https://cdn.discordapp.com/avatars/315807604893024266/71489f7e1ba8e4d3e04d99a532fee219.webp?size=256",
+     "href": "/profile/eSGi"
+    },
+    {
+     "nickname": "Koule",
+     "avatar": "/api/media/file/avatar-1629-1791627889362.webp?v=mv28zj6g",
+     "href": "/profile/Koule"
+    },
+    {
+     "nickname": "Munet",
+     "avatar": "https://cdn.discordapp.com/avatars/146705068354174976/99fea1fe74aab975b87803103ad9c5a7.webp?size=256",
+     "href": null
+    },
+    {
+     "nickname": "Twight",
+     "avatar": "https://cdn.discordapp.com/avatars/760201464277893130/229a2230f0b609b418c61c0128c15ee6.webp?size=256",
+     "href": "/profile/Twight"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Kousamek",
+     "avatar": "/api/media/file/avatar-1400-1790877549922.webp?v=mupu95kt",
+     "href": "/profile/Kousamek"
+    },
+    {
+     "nickname": "nvn",
+     "avatar": "https://cdn.discordapp.com/avatars/235411154275401739/768a9999635c04cd492cdb7190ce4c22.webp?size=256",
+     "href": "/profile/nvn"
+    },
+    {
+     "nickname": "Samco0015",
+     "avatar": "/api/media/file/avatar-1479-1791748106287.webp?v=mv48k76y",
+     "href": "/profile/Samco0015"
+    },
+    {
+     "nickname": "StyvyX",
+     "avatar": "/api/media/file/avatar-1226-1790551735225.webp?v=mukg9tcg",
+     "href": "/profile/StyvyX"
+    },
+    {
+     "nickname": "wonderthreshmichael",
+     "avatar": "https://cdn.discordapp.com/avatars/351351690672209920/54168124cdca7d71a94185da256ca290.webp?size=256",
+     "href": "/profile/wonderthreshmichael"
+    }
+   ]
+  },
+  {
+   "id": "c5d5740a-4485-4fb0-811e-f208120385c3",
+   "number": 1226,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:16",
+   "to": "20:59",
+   "startedAt": "2026-10-29T20:16:00+01:00",
+   "blue": [
+    {
+     "nickname": "AdameXs",
+     "avatar": "https://cdn.discordapp.com/avatars/569555499742396447/31d7f18e5a43d504984dd00c4c40b451.webp?size=256",
+     "href": "/profile/AdameXs"
+    },
+    {
+     "nickname": "Dzus",
+     "avatar": "/api/media/file/avatar-1331-1791045935942.webp?v=musmi94e",
+     "href": "/profile/Dzus"
+    },
+    {
+     "nickname": "Esko",
+     "avatar": "https://cdn.discordapp.com/avatars/348826557357490176/07b16aee7910c53fe928ca3bb0ce22de.webp?size=256",
+     "href": "/profile/Esko"
+    },
+    {
+     "nickname": "Trolonom",
+     "avatar": "/api/media/file/avatar-1491-1791125534435.webp?v=mutxwbmy",
+     "href": "/profile/Trolonom"
+    },
+    {
+     "nickname": "VekTTor",
+     "avatar": "https://cdn.discordapp.com/avatars/649672320591462420/d3888b58609a7b93949bcd34c7026f51.webp?size=256",
+     "href": "/profile/VekTTor"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Dawe146",
+     "avatar": "https://cdn.discordapp.com/avatars/716006548727660616/a383351e217730dd1b2464df23bc4135.webp?size=256",
+     "href": "/profile/Dawe146"
+    },
+    {
+     "nickname": "dvlk696",
+     "avatar": "/api/media/file/avatar-1586-1791676860007.webp?v=mv32556d",
+     "href": "/profile/dvlk696"
+    },
+    {
+     "nickname": "lukyyn1337",
+     "avatar": "/api/media/file/avatar-1675-1791400789493.webp?v=muyhrzsb",
+     "href": "/profile/lukyyn1337"
+    },
+    {
+     "nickname": "noname447",
+     "avatar": "https://cdn.discordapp.com/embed/avatars/5.png",
+     "href": "/profile/noname447"
+    },
+    {
+     "nickname": "ShiroNeko",
+     "avatar": "/api/media/file/avatar-1662-1791665458577.webp?v=mv2vcrrn",
+     "href": "/profile/ShiroNeko"
+    }
+   ]
+  },
+  {
+   "id": "55727db2-b6ac-4785-9009-d450af241cb6",
+   "number": 1225,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:08",
+   "to": "21:01",
+   "startedAt": "2026-10-29T20:08:00+01:00",
+   "blue": [
+    {
+     "nickname": "kwombo_",
+     "avatar": "/api/media/file/avatar-1203-1790803626489.webp?v=muom8pvc",
+     "href": "/profile/kwombo_"
+    },
+    {
+     "nickname": "LesbaZyra",
+     "avatar": "/api/media/file/avatar-1021-1793177611212.webp?v=mvrvng8l",
+     "href": "/profile/LesbaZyra"
+    },
+    {
+     "nickname": "SGoob",
+     "avatar": "https://cdn.discordapp.com/avatars/476742198939877390/4cb3900e807989cc1e21d86231ce3347.webp?size=256",
+     "href": "/profile/SGoob"
+    },
+    {
+     "nickname": "Shifter",
+     "avatar": "https://cdn.discordapp.com/avatars/392708097262616578/afa05f1713590d591e360823bd49408a.webp?size=256",
+     "href": "/profile/Shifter"
+    },
+    {
+     "nickname": "Svoby",
+     "avatar": "/api/media/file/avatar-1326-1790788178051.webp?v=muod1lrz",
+     "href": "/profile/Svoby"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "gentleman kolofou",
+     "avatar": "https://cdn.discordapp.com/avatars/951965783666352158/abea2046e0f00cca84a941c744bd6a68.webp?size=256",
+     "href": null
+    },
+    {
+     "nickname": "Metys",
+     "avatar": "/api/media/file/avatar-1335-1791408832593.webp?v=muymkdwc",
+     "href": "/profile/Metys"
+    },
+    {
+     "nickname": "mouzwyr",
+     "avatar": "https://cdn.discordapp.com/avatars/227762487037132800/5ef27e3dce8276cca5220eca28504812.webp?size=256",
+     "href": "/profile/mouzwyr"
+    },
+    {
+     "nickname": "Pata1G",
+     "avatar": "/api/media/file/avatar-1084-1792098042385.webp?v=mva0wjk9",
+     "href": "/profile/Pata1G"
+    },
+    {
+     "nickname": "Thomass616",
+     "avatar": "/api/media/file/avatar-1325-1790790151075.webp?v=muoe7w72",
+     "href": "/profile/Thomass616"
+    }
+   ]
+  },
+  {
+   "id": "b000c6f4-6cb4-4495-a7ff-858aa65e5564",
+   "number": 1224,
+   "state": "ended",
+   "winner": "red",
+   "day": "29. 10.",
+   "from": "20:08",
+   "to": "20:50",
+   "startedAt": "2026-10-29T20:08:00+01:00",
+   "blue": [
+    {
+     "nickname": "BeastMartinn",
+     "avatar": "/api/media/file/avatar-1151-1791716835512.webp?v=mv3pxyhn",
+     "href": "/profile/BeastMartinn"
+    },
+    {
+     "nickname": "halkum_",
+     "avatar": "/api/media/file/avatar-1913-1792228827836.webp?v=mvc6rqat",
+     "href": "/profile/halkum_"
+    },
+    {
+     "nickname": "Knoflajz",
+     "avatar": "https://cdn.discordapp.com/avatars/497463148895404033/027d520603e4b2135f6505d06d8c8eaf.webp?size=256",
+     "href": "/profile/Knoflajz"
+    },
+    {
+     "nickname": "lazmenko",
+     "avatar": "/api/media/file/avatar-1256-1791505210692.webp?v=mv07y3rd",
+     "href": "/profile/lazmenko"
+    },
+    {
+     "nickname": "Shadow",
+     "avatar": "/api/media/file/avatar-1748-1791529714208.webp?v=mv0mjaqt",
+     "href": "/profile/Shadow"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "Enrik",
+     "avatar": "/api/media/file/avatar-1276-1790688326274.webp?v=mumplgp9",
+     "href": "/profile/Enrik"
+    },
+    {
+     "nickname": "kohut9",
+     "avatar": "/api/media/file/avatar-1344-1792961032413.webp?v=mvoapf21",
+     "href": "/profile/kohut9"
+    },
+    {
+     "nickname": "Sins of Mine",
+     "avatar": "/api/media/file/avatar-1373-1790844305322.webp?v=mupagluq",
+     "href": "/profile/Sins%20of%20Mine"
+    },
+    {
+     "nickname": "toplanerlarry",
+     "avatar": "https://cdn.discordapp.com/avatars/210480964265181185/e07d18ceda0311477b4e803e93136bfc.webp?size=256",
+     "href": "/profile/toplanerlarry"
+    },
+    {
+     "nickname": "toxar",
+     "avatar": "/api/media/file/avatar-1109-1792682177319.webp?v=mvjooky3",
+     "href": "/profile/toxar"
+    }
+   ]
+  },
+  {
+   "id": "de29564f-0e0b-4e3e-a4a3-f3e58651c834",
+   "number": 1223,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:08",
+   "to": "20:58",
+   "startedAt": "2026-10-29T20:08:00+01:00",
+   "blue": [
+    {
+     "nickname": "Coach Robko",
+     "avatar": "/api/media/file/avatar-1074-1790350719956.webp?v=muh4lcxt",
+     "href": "/profile/Coach%20Robko"
+    },
+    {
+     "nickname": "Fatushcz",
+     "avatar": "/api/media/file/avatar-1581-1791306521563.webp?v=muwxni6e",
+     "href": "/profile/Fatushcz"
+    },
+    {
+     "nickname": "Flickoara",
+     "avatar": "https://cdn.discordapp.com/avatars/1225875218162126981/75c996e0bc6be9b7f01db7515a56552e.webp?size=256",
+     "href": "/profile/Flickoara"
+    },
+    {
+     "nickname": "Pedronix",
+     "avatar": "/api/media/file/avatar-1547-1791498207833.webp?v=mv03s09u",
+     "href": "/profile/Pedronix"
+    },
+    {
+     "nickname": "welcomlol",
+     "avatar": "https://cdn.discordapp.com/avatars/573062200391106560/dc6d38c6b24795f0e70de2c7673a4d52.webp?size=256",
+     "href": "/profile/welcomlol"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "billyboner",
+     "avatar": "/api/media/file/avatar-1923-1792066485007.webp?v=mv9i45r1",
+     "href": "/profile/billyboner"
+    },
+    {
+     "nickname": "JustAlex",
+     "avatar": "/api/media/file/avatar-2042-1792680742242.webp?v=mvjnttom",
+     "href": "/profile/JustAlex"
+    },
+    {
+     "nickname": "matej2532",
+     "avatar": "https://cdn.discordapp.com/avatars/217974062620737536/364cb9c1ea41676bb532f5a74959e809.webp?size=256",
+     "href": "/profile/matej2532"
+    },
+    {
+     "nickname": "Necromartin",
+     "avatar": "https://cdn.discordapp.com/avatars/344628852796162048/f46bbc91360718352175b3c361568d92.webp?size=256",
+     "href": "/profile/Necromartin"
+    },
+    {
+     "nickname": "Zewy",
+     "avatar": "/api/media/file/avatar-2007-1792694399176.webp?v=mvjvyjfa",
+     "href": "/profile/Zewy"
+    }
+   ]
+  },
+  {
+   "id": "891e5bd0-7c7b-4bf3-9880-23b7757c0544",
+   "number": 1222,
+   "state": "ended",
+   "winner": "blue",
+   "day": "29. 10.",
+   "from": "20:08",
+   "to": "20:44",
+   "startedAt": "2026-10-29T20:08:00+01:00",
+   "blue": [
+    {
+     "nickname": "FeywinQ",
+     "avatar": "/api/media/file/avatar-2095-1793144082542.webp?v=mvrbotcq",
+     "href": "/profile/FeywinQ"
+    },
+    {
+     "nickname": "letadlokuba",
+     "avatar": "https://cdn.discordapp.com/avatars/413352045672661002/ad673aad5ace557243ccf2f996e2442f.webp?size=256",
+     "href": "/profile/letadlokuba"
+    },
+    {
+     "nickname": "Mejris_8297",
+     "avatar": "https://cdn.discordapp.com/avatars/759484031074041856/be9e54be14fa7e4deceb23e926d008c9.webp?size=256",
+     "href": "/profile/Mejris_8297"
+    },
+    {
+     "nickname": "poutnik__",
+     "avatar": "/api/media/file/avatar-1261-1791492734674.webp?v=mv00ip6s",
+     "href": "/profile/poutnik__"
+    },
+    {
+     "nickname": "SKREAM",
+     "avatar": "/api/media/file/avatar-1699-1791457671513.webp?v=muzfn69c",
+     "href": "/profile/SKREAM"
+    }
+   ],
+   "red": [
+    {
+     "nickname": "danden",
+     "avatar": "https://cdn.discordapp.com/avatars/370599291783479297/0bcb8faccb3b357650de8086398ddf58.webp?size=256",
+     "href": "/profile/danden"
+    },
+    {
+     "nickname": "fityr",
+     "avatar": "/api/media/file/avatar-1523-1793203582547.webp?v=mvsb444m",
+     "href": "/profile/fityr"
+    },
+    {
+     "nickname": "L9FRAGGER",
+     "avatar": "https://cdn.discordapp.com/avatars/688889661086760981/bdf71812d76d3de3838a3fe920f58baf.webp?size=256",
+     "href": "/profile/L9FRAGGER"
+    },
+    {
+     "nickname": "LightJohn",
+     "avatar": "/api/media/file/avatar-1135-1791113772858.webp?v=mutqw8by",
+     "href": "/profile/LightJohn"
+    },
+    {
+     "nickname": "MrKrabs",
+     "avatar": "/api/media/file/avatar-1328-1790805621505.webp?v=muonfh96",
+     "href": "/profile/MrKrabs"
+    }
+   ]
+  }
+ ]
+}
