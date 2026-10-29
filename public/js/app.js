@@ -1,5 +1,10 @@
 import { normalize } from './adapter.js';
 import { computeStats, headToHead, sortedRecords, byLobbyOrder } from './stats.js';
+import { loadChampions, champTag } from './champions.js';
+
+const wl = (r) => `<span class="wl"><b class="${r.wins ? 'win' : 'zero'}">${r.wins}W</b> <b class="${r.losses ? 'loss' : 'zero'}">${r.losses}L</b></span>`;
+const wrOf = (r) => pct(r.wins / ((r.wins + r.losses) || 1));
+const topChamps = (p, n = 3) => sortedRecords(p.champs).slice(0, n);
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -24,6 +29,7 @@ async function fetchJson(url) {
 }
 
 async function loadData() {
+  await loadChampions();
   const custom = LS.get('coaches.url');
   const pasted = LS.get('coaches.pasted');
   const attempts = [];
@@ -86,8 +92,8 @@ function route() {
 /* ---------- tabulka hráčů ---------- */
 
 const COLS = [
-  ['name', 'Hráč'], ['games', 'Zápasy'], ['wins', 'V'], ['losses', 'P'], ['wr', 'Winrate'],
-  ['form', 'Forma'], ['streak', 'Série'], ['opgg', 'OP.GG'],
+  ['name', 'Hráč'], ['games', 'Zápasy'], ['wins', 'W'], ['losses', 'L'], ['wr', 'Winrate'],
+  ['form', 'Forma'], ['streak', 'Série'], ['champs', 'Championi'], ['opgg', 'OP.GG'],
 ];
 
 function renderPlayersShell() {
@@ -98,7 +104,7 @@ function renderPlayersShell() {
       <button class="btn ghost" id="csv">Export CSV</button>
     </div>
     <div class="table-wrap"><table class="players">
-      <thead><tr><th>#</th>${COLS.map(([c, l]) => `<th data-col="${c}" class="${['name', 'form', 'opgg'].includes(c) ? '' : 'num'}">${l}</th>`).join('')}</tr></thead>
+      <thead><tr><th>#</th>${COLS.map(([c, l]) => `<th data-col="${c}" class="${['name', 'form', 'opgg', 'champs'].includes(c) ? '' : 'num'}">${l}</th>`).join('')}</tr></thead>
       <tbody></tbody>
     </table></div>
     <p class="muted small">Klikni na hráče pro detail: proti komu vyhrál/prohrál, s kým hraje, historie.</p>`;
@@ -107,7 +113,7 @@ function renderPlayersShell() {
 function filteredPlayers() {
   const q = state.q.toLowerCase();
   const { col, dir } = state.sort;
-  const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : p[col]);
+  const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : col === 'champs' ? p.champs.size : p[col]);
   return [...state.stats.values()]
     .filter((p) => (!q || p.name.toLowerCase().includes(q)) && p.games >= state.minGames)
     .sort((a, b) => {
@@ -130,8 +136,9 @@ function renderPlayersTable() {
       <td class="num">${wrBar(p.wr)}</td>
       <td>${formDots(p.form)}</td>
       <td class="num ${p.streak[0] === 'W' ? 'win' : 'loss'}">${esc(p.streak)}</td>
+      <td><span class="champ-row">${topChamps(p).map((c) => `<span title="${esc(c.name)} ${c.wins}W ${c.losses}L">${champTag(c.name, { label: false })}</span>`).join('') || '<span class="muted">–</span>'}</span></td>
       <td>${opggLinks(p.opgg)}</td>
-    </tr>`).join('') : `<tr><td colspan="9" class="empty">Nic nenalezeno</td></tr>`;
+    </tr>`).join('') : `<tr><td colspan="10" class="empty">Nic nenalezeno</td></tr>`;
   document.querySelectorAll('th[data-col]').forEach((th) => {
     th.classList.toggle('sorted', th.dataset.col === state.sort.col);
     th.dataset.dir = state.sort.dir;
@@ -145,7 +152,7 @@ const avatar = (p, size = 26) => p.avatar
 const playerCell = (p) => `<a class="pl" href="#hrac/${encodeURIComponent(p.name)}">${avatar(p)}<span>${esc(p.name)}</span></a>`;
 const wrBar = (wr) => wr == null ? '<span class="muted">–</span>' :
   `<span class="wr"><span class="wr-bar"><i style="width:${Math.round(wr * 100)}%" class="${wr >= 0.5 ? 'hi' : 'lo'}"></i></span>${pct(wr)}</span>`;
-const formDots = (f) => f.length ? `<span class="form">${f.map((r) => `<i class="${r === 'W' ? 'w' : 'l'}" title="${r === 'W' ? 'výhra' : 'prohra'}"></i>`).join('')}</span>` : '<span class="muted">–</span>';
+const formDots = (f) => f.length ? `<span class="form">${f.map((r) => `<i class="${r === 'W' ? 'w' : 'l'}" title="${r}"></i>`).join('')}</span>` : '<span class="muted">–</span>';
 const opggLinks = (list) => list.length
   ? list.map((o) => `<a class="opgg" href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.region.toUpperCase())}</a>`).join(' ')
   : '<span class="muted">–</span>';
@@ -164,8 +171,7 @@ function renderPlayer(name) {
 
   const recList = (list, mode) => list.length ? `<ul class="rec">${list.map((r) => `
     <li><a href="#h2h/${encodeURIComponent(p.name)}/${encodeURIComponent(r.name)}">${esc(r.name)}</a>
-      <span class="${mode === 'beat' ? 'win' : mode === 'lost' ? 'loss' : ''}">${mode === 'beat' ? `${r.wins}× výhra` : mode === 'lost' ? `${r.losses}× prohra` : ''}</span>
-      <span class="muted small">${r.wins}-${r.losses}</span></li>`).join('')}</ul>` : '<p class="muted">Zatím nic</p>';
+      ${wl(r)}</li>`).join('')}</ul>` : '<p class="muted">Zatím nic</p>';
 
   return `
     <a href="#hraci" class="back">← Všichni hráči</a>
@@ -177,8 +183,8 @@ function renderPlayer(name) {
       </div>
       <div class="kpis">
         <div><b>${p.games}</b><span>zápasů</span></div>
-        <div><b class="win">${p.wins}</b><span>výher</span></div>
-        <div><b class="loss">${p.losses}</b><span>proher</span></div>
+        <div><b class="win">${p.wins}</b><span>W</span></div>
+        <div><b class="loss">${p.losses}</b><span>L</span></div>
         <div><b>${pct(p.wr)}</b><span>winrate</span></div>
         <div><b>${formDots(p.form)}</b><span>forma</span></div>
       </div>
@@ -188,17 +194,17 @@ function renderPlayer(name) {
       <section class="card"><h3>Prohrál proti</h3>${recList(lost, 'lost')}</section>
       <section class="card"><h3>Spoluhráči</h3>${mates.length ? `<ul class="rec">${mates.map((r) => `
         <li><a href="#hrac/${encodeURIComponent(r.name)}">${esc(r.name)}</a>
-        <span>${r.wins}-${r.losses}</span><span class="muted small">${pct(r.wins / (r.wins + r.losses))}</span></li>`).join('')}</ul>` : '<p class="muted">Zatím nic</p>'}</section>
+        ${wl(r)}<span class="muted small pc">${wrOf(r)}</span></li>`).join('')}</ul>` : '<p class="muted">Zatím nic</p>'}</section>
     </div>
-    ${champs.length ? `<section class="card"><h3>Championi</h3><ul class="rec">${champs.map((r) => `<li><span>${esc(r.name)}</span><span>${r.wins}-${r.losses}</span><span class="muted small">${pct(r.wins / (r.wins + r.losses))}</span></li>`).join('')}</ul></section>` : ''}
+    ${champs.length ? `<section class="card"><h3>Championi</h3><ul class="rec">${champs.map((r) => `<li>${champTag(r.name, { size: 28 })}${wl(r)}<span class="muted small pc">${wrOf(r)}</span></li>`).join('')}</ul></section>` : ''}
     <section class="card">
       <h3>Historie zápasů</h3>
       <table class="hist"><thead><tr><th>Lobby</th><th>Strana</th><th>Výsledek</th>${p.history.some((h) => h.champion) ? '<th>Champion</th>' : ''}<th>Spoluhráči</th><th>Soupeři</th></tr></thead>
       <tbody>${[...p.history].reverse().map((h) => `
         <tr><td>#${esc(h.lobbyId)}</td>
           <td><span class="side ${h.side}">${h.side === 'blue' ? 'BLUE' : 'RED'}</span></td>
-          <td>${h.result ? `<b class="${h.result === 'W' ? 'win' : 'loss'}">${h.result === 'W' ? 'Výhra' : 'Prohra'}</b>` : '<span class="muted">čeká</span>'}</td>
-          ${p.history.some((x) => x.champion) ? `<td>${esc(h.champion || '–')}</td>` : ''}
+          <td>${h.result ? `<b class="${h.result === 'W' ? 'win' : 'loss'}">${h.result}</b>` : '<span class="muted">čeká</span>'}</td>
+          ${p.history.some((x) => x.champion) ? `<td>${champTag(h.champion)}</td>` : ''}
           <td class="names">${h.allies.map(nameLink).join(', ')}</td>
           <td class="names">${h.enemies.map(nameLink).join(', ')}</td></tr>`).join('')}</tbody></table>
     </section>`;
@@ -214,8 +220,8 @@ function renderMatches() {
     <div class="team ${side} ${l.winner === side ? 'won' : l.winner ? 'lost' : ''}">
       <h4>${side === 'blue' ? 'BLUE' : 'RED'}${l.winner === side ? ' <span class="tag">VÝHRA</span>' : ''}</h4>
       ${l[side].map((p) => { const s = state.stats.get(p.name.toLowerCase()); return `
-        <a class="pl" href="#hrac/${encodeURIComponent(p.name)}">${avatar(p, 22)}<span>${esc(p.name)}</span>
-        <span class="muted small">${s && s.games ? `${s.wins}-${s.losses}` : ''}</span></a>`; }).join('')}
+        <a class="pl" href="#hrac/${encodeURIComponent(p.name)}">${p.champion ? champTag(p.champion, { label: false }) : avatar(p, 22)}<span>${esc(p.name)}</span>
+        <span class="muted small">${s && s.games ? `${s.wins}W ${s.losses}L` : ''}</span></a>`; }).join('')}
     </div>`;
   return `<div class="lobbies">${list.map((l) => `
     <article class="lobby">
@@ -256,7 +262,7 @@ function runH2H() {
       </section>
       <section class="card"><h3>Spolu v týmu</h3>
         <div class="score"><b class="win">${r.together.wins}</b>:<b class="loss">${r.together.losses}</b></div>
-        <ul class="rec">${r.together.games.map((g) => gameRow(g.lobby, g.lobby.winner ? (g.lobby.winner === g.side ? '<b class="win">výhra</b>' : '<b class="loss">prohra</b>') : '<span class="muted">čeká</span>')).join('') || '<li class="muted">Ještě spolu nehráli</li>'}</ul>
+        <ul class="rec">${r.together.games.map((g) => gameRow(g.lobby, g.lobby.winner ? (g.lobby.winner === g.side ? '<b class="win">W</b>' : '<b class="loss">L</b>') : '<span class="muted">čeká</span>')).join('') || '<li class="muted">Ještě spolu nehráli</li>'}</ul>
       </section>
     </div>`;
 }
@@ -264,13 +270,14 @@ function runH2H() {
 /* ---------- export ---------- */
 
 function exportCsv() {
-  const rows = [['hrac', 'zapasy', 'vyhry', 'prohry', 'winrate', 'forma', 'serie', 'porazil', 'prohral_proti', 'opgg']];
+  const rows = [['hrac', 'zapasy', 'vyhry', 'prohry', 'winrate', 'forma', 'serie', 'porazil', 'prohral_proti', 'championi', 'opgg']];
   for (const p of filteredPlayers()) {
     const vs = sortedRecords(p.vs);
     rows.push([
       p.name, p.games, p.wins, p.losses, p.wr == null ? '' : (p.wr * 100).toFixed(1), p.form.join(''), p.streak,
-      vs.filter((r) => r.wins).map((r) => `${r.name} ${r.wins}x`).join('; '),
-      vs.filter((r) => r.losses).map((r) => `${r.name} ${r.losses}x`).join('; '),
+      vs.filter((r) => r.wins).map((r) => `${r.name} ${r.wins}W`).join('; '),
+      vs.filter((r) => r.losses).map((r) => `${r.name} ${r.losses}L`).join('; '),
+      sortedRecords(p.champs).map((c) => `${c.name} ${c.wins}W ${c.losses}L`).join('; '),
       p.opgg.map((o) => o.url).join(' '),
     ]);
   }

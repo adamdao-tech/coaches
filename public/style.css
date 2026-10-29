@@ -175,3 +175,14 @@ dialog .row { display: flex; gap: 8px; margin-top: 12px; }
   .kpis { margin-left: 0; gap: 16px; }
   #q { min-width: 0; flex: 1; }
 }
+
+/* championi + W/L */
+.wl { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.wl b { font-weight: 600; }
+.pc { min-width: 42px; text-align: right; }
+.champ-tag { display: inline-flex; align-items: center; gap: 8px; }
+.champ { border-radius: 6px; border: 1px solid var(--line); background: var(--panel-2); flex: none; }
+.champ-row { display: inline-flex; gap: 4px; vertical-align: middle; }
+.rec li > .champ-tag { flex: 1; font-weight: 600; }
+.wl .zero { color: var(--muted); opacity: .6; }
+.rec li { align-items: center; }
