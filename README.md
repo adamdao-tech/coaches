@@ -11,14 +11,20 @@ Odkazy jdou sdílet (`#hrac/SGoob`, `#h2h/SGoob/Twight`).
 
 ## Zdroj dat
 
-Pořadí, ve kterém web data hledá:
+Hlavní zdroj je **Streamers Queue API** (Candi, `https://sq.candycz01.xyz`) přes Worker:
 
-1. JSON vložený/nahraný přes tlačítko **Zdroj dat** (uloží se jen v prohlížeči),
-2. vlastní URL zadaná tamtéž,
-3. `/api/data` – Worker přeposílá API organizátora (`SOURCE_URL`), cache 30 s, obchází CORS,
-4. `sample-lobbies.json` – **ukázková data** (výsledky vymyšlené), dokud API není.
+| Endpoint webu | API | Cache |
+|---|---|---|
+| `/api/sq/players` | `/api/players` – hráči, ELO, W/L | 60 s |
+| `/api/sq/games` | `/api/games?state=ENDED,IN_PROGRESS,WAITING` – celá historie | 120 s |
+| `/api/sq/live` | `/api/games?state=ACTIVE` – živé zápasy, web je obnovuje každou minutu | 15 s |
 
-Živá data se obnovují každou minutu.
+API klíč je **secret** `SQ_API_KEY` ve Workeru – nikdy ho nedávej do kódu ani do `wrangler.jsonc`.
+Nastavení: Cloudflare → Workers → coaches → Settings → Variables and Secrets → Add → Secret `SQ_API_KEY`,
+nebo `npx wrangler secret put SQ_API_KEY`. Kontrola: `/api/health` vrátí `"sq": true`.
+
+Když API neodpovídá, web spadne na zálohu: veřejné endpointy streamersclash.cz (`/api/data`, `/api/board`)
+a uložená data v `public/data/`. Další možnosti v tlačítku **Zdroj dat** (vložený JSON, vlastní URL).
 
 ## Až přijde formát API
 

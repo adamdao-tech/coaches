@@ -64,11 +64,14 @@ export const absUrl = (u) => (!u ? null : /^https?:/.test(u) ? u : u.startsWith(
 
 function normPlayer(p) {
   if (typeof p === 'string') return { name: p.trim(), avatar: null, profile: null, champion: null, opgg: [] };
-  const name = pick(p, 'name', 'nick', 'nickname', 'username', 'displayName', 'summonerName', 'riotId', 'player');
+  const name = pick(p, 'name', 'nick', 'nickname', 'displayName', 'username', 'summonerName', 'riotId', 'player');
   if (!name) return null;
   const nameStr = typeof name === 'object' ? pick(name, 'name', 'nick') : name;
+  const elo = Number(pick(p, 'elo', 'rating', 'mmr'));
   return {
+    id: pick(p, 'id', 'discordId', 'userId') != null ? String(pick(p, 'id', 'discordId', 'userId')) : null,
     name: String(nameStr).trim(),
+    elo: Number.isFinite(elo) ? elo : null,
     avatar: absUrl(pick(p, 'avatar', 'avatarUrl', 'image', 'img', 'picture', 'icon')),
     profile: absUrl(pick(p, 'href', 'profile', 'profileUrl')),
     champion: pick(p, 'champion', 'championName', 'champ') || null,
@@ -102,9 +105,10 @@ function findTeams(l) {
       red = red || pick(teams, 'red', 'RED');
     }
   }
-  // Varianta: ploché pole hráčů s polem side/team
+  // Varianta: ploché pole hráčů s polem side/team (i když týmy existují, ale jsou prázdné)
   const players = pick(l, 'players', 'participants');
-  if ((!blue || !red) && Array.isArray(players)) {
+  const emptyTeam = (t) => !t || normTeam(t).length === 0;
+  if ((emptyTeam(blue) || emptyTeam(red)) && Array.isArray(players) && players.length) {
     blue = players.filter((p) => sideOf(pick(p, 'side', 'team', 'color')) === 'blue');
     red = players.filter((p) => sideOf(pick(p, 'side', 'team', 'color')) === 'red');
   }
@@ -116,6 +120,11 @@ function findWinner(l, blueRaw, redRaw) {
   if (w !== undefined) {
     const s = sideOf(typeof w === 'object' ? pick(w, 'side', 'color', 'name') : w);
     if (s) return s;
+    // vítěz jako id/název týmu (Streamers Queue: teams.blue.id)
+    const wid = String(typeof w === 'object' ? pick(w, 'id', 'teamId', 'name') : w).toLowerCase();
+    const tid = (t) => (t && !Array.isArray(t) ? [pick(t, 'id', 'teamId'), pick(t, 'name')].filter(Boolean).map((x) => String(x).toLowerCase()) : []);
+    if (tid(blueRaw).includes(wid)) return 'blue';
+    if (tid(redRaw).includes(wid)) return 'red';
   }
   const won = (t) => t && !Array.isArray(t) && (pick(t, 'win', 'won', 'winner', 'isWinner') === true || String(pick(t, 'result') || '').toLowerCase() === 'win');
   if (won(blueRaw)) return 'blue';
@@ -123,7 +132,7 @@ function findWinner(l, blueRaw, redRaw) {
   return null;
 }
 
-const STATUS = { live: 'hraje se', waiting: 'čeká na start', ended: 'odehráno' };
+const STATUS = { live: 'hraje se', in_progress: 'hraje se', waiting: 'čeká na start', ended: 'odehráno', cancelled: 'zrušeno' };
 const statusLabel = (s) => (s ? STATUS[String(s).toLowerCase()] || String(s) : '');
 
 // Streamers Clash: day "27. 10." + from "22:00"
@@ -137,21 +146,51 @@ function dayTime(day, from) {
   return `${y}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}T${hh.padStart(2, '0')}:${mm.padStart(2, '0')}:00`;
 }
 
+// "2026-10-28T20:55:00.000Z" → "21:55" (místní čas); "22:39" nechá být
+function clock(t) {
+  if (!t) return null;
+  if (/^\d{1,2}:\d{2}$/.test(String(t))) return String(t);
+  const d = new Date(t);
+  return isNaN(d) ? String(t) : d.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
+}
+
+function teamInfo(t) {
+  if (!t || Array.isArray(t)) return null;
+  const avg = Number(pick(t, 'averageElo', 'avgElo'));
+  return Number.isFinite(avg) ? { avgElo: Math.round(avg) } : null;
+}
+
 function normLobby(l, i) {
   if (!l || typeof l !== 'object') return null;
+  if (String(pick(l, 'status', 'state') || '').toLowerCase() === 'cancelled') return null;
   const { blue, red } = findTeams(l);
   if (!blue && !red) return null;
+  const pred = pick(l, 'predictions', 'prediction');
+  const bp = Number(pick(pred, 'blueWinProbability', 'blue')), rp = Number(pick(pred, 'redWinProbability', 'red'));
   return {
-    id: String(pick(l, 'number', 'lobbyNumber', 'id', 'lobbyId', 'matchId', 'gameId') ?? i),
+    id: String(pick(l, 'gameNumber', 'number', 'lobbyNumber', 'id', 'lobbyId', 'matchId', 'gameId') ?? i),
     uid: pick(l, 'id', 'uuid') || null,
     status: statusLabel(pick(l, 'status', 'state')),
     time: pick(l, 'startedAt', 'createdAt', 'time', 'date', 'since', 'start') || dayTime(l.day, l.from),
-    timeTo: l.to || null,
+    timeTo: clock(pick(l, 'endedAt', 'to')),
     opgg: l.opgg || null,
     winner: findWinner(l, blue, red),
     blue: normTeam(blue || []),
     red: normTeam(red || []),
+    // Streamers Queue: předpověď výhry a průměrné ELO týmů
+    odds: Number.isFinite(bp) && Number.isFinite(rp) ? { blue: bp, red: rp } : null,
+    teamInfo: { blue: teamInfo(blue), red: teamInfo(red) },
   };
+}
+
+// Hráči v zápasech mají jméno z doby zápasu; podle Discord ID je sjednotí na aktuální jméno ze žebříčku
+export function canonicalize(lobbies, board) {
+  const names = new Map(board.filter((b) => b.id).map((b) => [b.id, b.name]));
+  if (!names.size) return lobbies;
+  for (const l of lobbies) for (const side of ['blue', 'red']) for (const p of l[side]) {
+    if (p.id && names.has(p.id)) p.name = names.get(p.id);
+  }
+  return lobbies;
 }
 
 // Spojí víc zdrojů lobby, duplicitní (stejné číslo/uuid) nahradí novějším stavem
@@ -165,15 +204,30 @@ export function mergeLobbies(...lists) {
   return [...m.values()];
 }
 
-// Streamers Clash board: { entries: [{ rank, nickname, wins, losses, games, avatar, href, tier }] }
+// Žebříček: Streamers Clash board { entries: [{ rank, nickname, wins, losses, games, … }] }
+// nebo Streamers Queue API /api/players [{ id, displayName, username, elo, wins, losses, totalGames, winrate, … }]
 export function normalizeBoard(raw) {
-  const list = asArray(pick(raw, 'entries', 'players', 'board') || raw);
-  return list.map((e) => ({
-    name: String(pick(e, 'nickname', 'name', 'nick') || '').trim(),
-    rank: e.rank ?? null, wins: +e.wins || 0, losses: +e.losses || 0, games: +e.games || 0,
-    tier: e.tier || null, qualified: !!e.qualified,
-    avatar: absUrl(e.avatar), profile: absUrl(e.href),
-  })).filter((e) => e.name);
+  // pozor: u pole by pick(raw, 'entries') vrátil Array.prototype.entries
+  const list = Array.isArray(raw) ? raw : asArray(pick(raw, 'entries', 'players', 'board') || raw);
+  const out = list.map((e) => {
+    const elo = Number(e.elo);
+    return {
+      id: e.id != null ? String(e.id) : null,
+      name: String(pick(e, 'nickname', 'displayName', 'name', 'nick', 'username') || '').trim(),
+      rank: e.rank ?? null, wins: +e.wins || 0, losses: +e.losses || 0,
+      games: +(e.games ?? e.totalGames) || (+e.wins || 0) + (+e.losses || 0),
+      elo: Number.isFinite(elo) ? elo : null,
+      lastPlayedAt: e.lastPlayedAt || null,
+      tier: e.tier || null, qualified: !!e.qualified,
+      avatar: absUrl(e.avatar), profile: absUrl(e.href),
+    };
+  }).filter((e) => e.name);
+  // Streamers Queue nemá pořadí – dopočítá se podle ELO (stejné ELO = stejné místo)
+  if (out.length && out.every((e) => e.rank == null) && out.some((e) => e.elo != null)) {
+    out.sort((a, b) => (b.elo ?? -1e9) - (a.elo ?? -1e9));
+    out.forEach((e, i) => { e.rank = i && e.elo === out[i - 1].elo ? out[i - 1].rank : i + 1; });
+  }
+  return out;
 }
 
 export function normalize(raw) {

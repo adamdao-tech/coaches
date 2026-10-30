@@ -198,3 +198,8 @@ dialog .row { display: flex; gap: 8px; margin-top: 12px; }
 .chip { padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-weight: 600; font-size: 13px; }
 .chip.active { border-color: var(--accent); color: var(--text); background: var(--panel-2); }
 .team-opgg { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; padding-left: 8px; }
+
+/* Streamers Queue API */
+.team h4 .small { font-family: Inter, sans-serif; font-weight: 500; letter-spacing: 0; }
+.odds { margin-left: auto; font: 700 12px Rajdhani, sans-serif; padding: 0 6px; border-radius: 4px; background: var(--panel-2); color: var(--muted); }
+.odds.fav { color: var(--win); }

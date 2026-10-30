@@ -1,4 +1,4 @@
-import { normalize, normalizeBoard, mergeLobbies } from './adapter.js';
+import { normalize, normalizeBoard, mergeLobbies, canonicalize } from './adapter.js';
 import { computeStats, headToHead, sortedRecords, byLobbyOrder } from './stats.js';
 import { loadChampions, champTag } from './champions.js';
 
@@ -43,7 +43,16 @@ async function loadData() {
     } catch (e) { console.warn(`Zdroj „${label}“ selhal:`, e.message); }
   }
 
-  // Výchozí: uložená historie z repa + živá lobby + žebříček (přes Worker, záloha z repa)
+  // Hlavní zdroj: Streamers Queue API (přes Worker, klíč zůstává na serveru)
+  const [sqGames, sqPlayers] = await Promise.allSettled([fetchJson('/api/sq/games'), fetchJson('/api/sq/players')]);
+  const got = (r) => (r.status === 'fulfilled' ? r.value : null);
+  if (got(sqGames) && got(sqPlayers)) {
+    const board = normalizeBoard(got(sqPlayers));
+    const lobbies = canonicalize(normalize(got(sqGames)), board);
+    if (lobbies.length || board.length) return setData(lobbies, 'Streamers Queue API', board);
+  }
+
+  // Záloha: uložená historie z repa + živá lobby + žebříček ze streamersclash.cz
   const [hist, live, board] = await Promise.allSettled([
     fetchJson('data/matches.json'),
     fetchJson('/api/data'),
@@ -102,6 +111,7 @@ function route() {
 const COLS = [
   ['rank', '#', (p, i) => `<span class="muted">${p.rank ?? i + 1}</span>`],
   ['name', 'Hráč', (p) => `${playerCell(p)}${p.tier ? ` <span class="tier tier-${esc(p.tier)}">${esc(p.tier)}</span>` : ''}`],
+  ['elo', 'ELO', (p) => (p.elo == null ? '<span class="muted">–</span>' : `<b>${p.elo}</b>`)],
   ['games', 'Zápasy', (p) => `${p.games}${p.pending ? `<span class="muted small" title="právě hraje / čeká"> +${p.pending}</span>` : ''}`],
   ['wins', 'W', (p) => `<span class="win">${p.wins}</span>`],
   ['losses', 'L', (p) => `<span class="loss">${p.losses}</span>`],
@@ -116,7 +126,7 @@ const TEXT_COLS = ['name', 'form', 'opgg', 'champs'];
 // sloupce bez dat (championi, OP.GG) skryj
 function visibleCols() {
   const ps = [...state.stats.values()];
-  return COLS.filter(([c]) => (c === 'champs' ? ps.some((p) => p.champs.size) : c === 'opgg' ? ps.some((p) => p.opgg.length) : true));
+  return COLS.filter(([c]) => (c === 'champs' ? ps.some((p) => p.champs.size) : c === 'opgg' ? ps.some((p) => p.opgg.length) : c === 'elo' ? ps.some((p) => p.elo != null) : true));
 }
 
 function renderPlayersShell() {
@@ -130,13 +140,15 @@ function renderPlayersShell() {
       <thead><tr>${visibleCols().map(([c, l]) => `<th data-col="${c}" class="${TEXT_COLS.includes(c) ? '' : 'num'}">${l}</th>`).join('')}</tr></thead>
       <tbody></tbody>
     </table></div>
-    <p class="muted small">W/L a pořadí jsou z oficiálního žebříčku. Forma, série a detail (soupeři, spoluhráči) se počítají z uložených zápasů – historie se doplňuje automaticky každých 30 minut.</p>`;
+    <p class="muted small">${state.source === 'Streamers Queue API'
+      ? 'ELO, W/L a pořadí (podle ELO) jsou z Streamers Queue API. Forma, série a soupeři/spoluhráči se počítají z celé historie zápasů. Živé zápasy se obnovují každou minutu.'
+      : 'W/L a pořadí jsou z oficiálního žebříčku. Forma, série a detail (soupeři, spoluhráči) se počítají z uložených zápasů.'}</p>`;
 }
 
 function filteredPlayers() {
   const q = state.q.toLowerCase();
   const { col, dir } = state.sort;
-  const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'rank' ? (p.rank ?? 1e9) : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : col === 'champs' ? p.champs.size : col === 'opgg' ? p.opgg.length : p[col]);
+  const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'rank' ? (p.rank ?? 1e9) : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : col === 'champs' ? p.champs.size : col === 'opgg' ? p.opgg.length : col === 'elo' ? (p.elo ?? -1e9) : p[col]);
   return [...state.stats.values()]
     .filter((p) => (!q || p.name.toLowerCase().includes(q)) && p.games >= state.minGames)
     .sort((a, b) => {
@@ -195,6 +207,7 @@ function renderPlayer(name) {
         <h2>${esc(p.name)}</h2>
         <div class="hero-meta">
           ${p.rank ? `<span class="badge">#${p.rank} v žebříčku</span>` : ''}
+          ${p.lastPlayedAt ? `<span class="muted small">naposledy hrál ${esc(fmtTime(p.lastPlayedAt))}</span>` : ''}
           ${p.tier ? `<span class="tier tier-${esc(p.tier)}">${esc(p.tier)}</span>` : ''}
           ${p.profile ? `<a class="badge" href="${esc(p.profile)}" target="_blank" rel="noopener">profil na SC ↗</a>` : ''}
           ${p.opgg.length ? opggLinks(p.opgg) : ''}
@@ -202,6 +215,7 @@ function renderPlayer(name) {
         <div class="muted small">Detail níže je z ${p.tracked.games} uložených zápasů${p.board ? ` (celkem ${p.games})` : ''}.</div>
       </div>
       <div class="kpis">
+        ${p.elo != null ? `<div><b>${p.elo}</b><span>ELO</span></div>` : ''}
         <div><b>${p.games}</b><span>zápasů</span></div>
         <div><b class="win">${p.wins}</b><span>W</span></div>
         <div><b class="loss">${p.losses}</b><span>L</span></div>
@@ -245,7 +259,9 @@ function renderMatches(filter = 'vse') {
   const opgg = (l, side) => (l.opgg?.[side] || []).map((o) => `<a class="opgg" href="${esc(o.url)}" target="_blank" rel="noopener" title="OP.GG multisearch (${o.players} hráčů)">${esc(String(o.server).toUpperCase())} ${o.players}/5</a>`).join(' ');
   const team = (l, side) => `
     <div class="team ${side} ${l.winner === side ? 'won' : l.winner ? 'lost' : ''}">
-      <h4>${side === 'blue' ? 'BLUE' : 'RED'}${l.winner === side ? ' <span class="tag">W</span>' : ''}</h4>
+      <h4>${side === 'blue' ? 'BLUE' : 'RED'}${l.winner === side ? ' <span class="tag">W</span>' : ''}
+        ${l.teamInfo?.[side]?.avgElo ? `<span class="muted small" title="Průměrné ELO týmu">Ø ${l.teamInfo[side].avgElo}</span>` : ''}
+        ${l.odds ? `<span class="odds ${l.odds[side] >= 50 ? 'fav' : ''}" title="Předpověď výhry podle ELO">${Math.round(l.odds[side])} %</span>` : ''}</h4>
       ${l[side].map((p) => { const s = state.stats.get(p.name.toLowerCase()); return `
         <a class="pl" href="#hrac/${encodeURIComponent(p.name)}">${p.champion ? champTag(p.champion, { label: false }) : avatar(p, 22)}<span>${esc(p.name)}</span>
         <span class="muted small">${s && s.games ? `${s.wins}W ${s.losses}L` : ''}</span></a>`; }).join('')}
@@ -382,5 +398,16 @@ $('#reload').addEventListener('click', loadData);
 window.addEventListener('hashchange', route);
 
 loadData();
-// živá data: obnova každou minutu (vložený JSON se nemění, takže jen u URL/API)
-setInterval(() => { if (!LS.get('coaches.pasted') && state.source !== 'ukázková data') loadData(); }, 60_000);
+
+// Obnova: živé zápasy každou minutu (malá data), celá historie jednou za 10 minut
+async function refreshLive() {
+  if (state.source !== 'Streamers Queue API' || document.hidden) return;
+  try {
+    const live = canonicalize(normalize(await fetchJson('/api/sq/live')), state.board);
+    // odehrané nech, živé/čekající nahraď aktuálními; co skončilo, se objeví při další plné obnově
+    const done = state.lobbies.filter((l) => l.winner);
+    setData(mergeLobbies(done, live), state.source, state.board);
+  } catch (e) { console.warn('obnova živých zápasů selhala', e.message); }
+}
+setInterval(refreshLive, 60_000);
+setInterval(() => { if (!LS.get('coaches.pasted') && state.source !== 'ukázková data' && !document.hidden) loadData(); }, 10 * 60_000);

@@ -66,6 +66,8 @@ export function computeStats(lobbies, board = []) {
     // celkem: z žebříčku, pokud je
     if (s.board) { s.games = s.board.games; s.wins = s.board.wins; s.losses = s.board.losses; }
     s.rank = s.board?.rank ?? null;
+    s.elo = s.board?.elo ?? null;
+    s.lastPlayedAt = s.board?.lastPlayedAt ?? null;
     s.tier = s.board?.tier ?? null;
     s.wr = s.games ? s.wins / s.games : null;
     const done = s.history.filter((h) => h.result);

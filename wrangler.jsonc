@@ -11,6 +11,8 @@
   "vars": {
     // Živá data ze Streamers Clash (prázdné = web jede jen na uložených datech z repa)
     "SOURCE_URL": "https://streamersclash.cz/api/streamers-queue/lobby",
-    "BOARD_URL": "https://streamersclash.cz/api/streamers-queue/board"
+    "BOARD_URL": "https://streamersclash.cz/api/streamers-queue/board",
+    // Streamers Queue API (hlavní zdroj). Klíč: secret SQ_API_KEY – nikdy ho nedávej sem do souboru!
+    "SQ_BASE_URL": "https://sq.candycz01.xyz"
   }
 }
