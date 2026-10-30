@@ -12,12 +12,14 @@
 const SQ = {
   players: { path: '/api/players', ttl: 60 },
   games: { path: '/api/games?state=ENDED,IN_PROGRESS,WAITING', ttl: 120 },
-  live: { path: '/api/games?state=ACTIVE', ttl: 15 },
+  live: { path: '/api/games?state=ACTIVE', ttl: 30 },
 };
 const CACHE_SECONDS = 30;
 
 // Paměťová cache v instanci Workeru (funguje i na *.workers.dev, kde Cache API nic neukládá)
 const memory = new Map();
+// Po odpovědi 429 (vyčerpaný limit 1800/h) se API do vypršení Retry-After nevolá vůbec
+let cooldownUntil = 0;
 
 export default {
   async fetch(request, env, ctx) {
@@ -50,6 +52,11 @@ async function sqProxy(name, env, ctx) {
   const hit = await cache.match(cacheKey);
   if (hit) return hit;
 
+  if (now < cooldownUntil) {
+    if (mem) return sqResponse(mem.body, 30, 'stale');
+    return json({ error: 'Streamers Queue API: vyčerpaný limit, zkus to za chvíli', retryAfter: Math.ceil((cooldownUntil - now) / 1000) }, 503);
+  }
+
   let upstream;
   try {
     upstream = await fetch(base + path, {
@@ -60,9 +67,12 @@ async function sqProxy(name, env, ctx) {
     return json({ error: `Streamers Queue API nedostupné: ${e.message}` }, 502);
   }
   if (!upstream.ok) {
+    if (upstream.status === 429) cooldownUntil = now + Math.min(Number(upstream.headers.get('retry-after')) || 300, 3600) * 1000;
     // při výpadku nebo vyčerpaném limitu radši starší data než nic
-    if (mem) return sqResponse(mem.body, 5, 'stale');
+    if (mem) return sqResponse(mem.body, upstream.status === 429 ? 30 : 5, 'stale');
     const retry = upstream.headers.get('retry-after');
+    if (upstream.status === 429) cooldownUntil = now + Math.min(Number(retry) || 300, 3600) * 1000;
+    if (upstream.status === 429 && mem) return sqResponse(mem.body, 30, 'stale');
     return json({ error: `Streamers Queue API vrátilo HTTP ${upstream.status}`, retryAfter: retry }, 502);
   }
 

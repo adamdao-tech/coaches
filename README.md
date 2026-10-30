@@ -17,7 +17,7 @@ Hlavní zdroj je **Streamers Queue API** (Candi, `https://sq.candycz01.xyz`) př
 |---|---|---|
 | `/api/sq/players` | `/api/players` – hráči, ELO, W/L | 60 s |
 | `/api/sq/games` | `/api/games?state=ENDED,IN_PROGRESS,WAITING` – celá historie | 120 s |
-| `/api/sq/live` | `/api/games?state=ACTIVE` – živé zápasy, web je obnovuje každou minutu | 15 s |
+| `/api/sq/live` | `/api/games?state=ACTIVE` – živé zápasy, web je obnovuje každou minutu | 30 s |
 
 API klíč je **secret** `SQ_API_KEY` ve Workeru – nikdy ho nedávej do kódu ani do `wrangler.jsonc`.
 Nastavení: Cloudflare → Workers → coaches → Settings → Variables and Secrets → Add → Secret `SQ_API_KEY`,
