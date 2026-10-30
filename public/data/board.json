@@ -1,7 +1,7 @@
 {
  "source": "https://streamersclash.cz/api/streamers-queue/board",
- "updatedAt": "2026-10-29T21:59:43.736Z",
- "asOf": 1793311134746,
+ "updatedAt": "2026-10-30T01:53:55.581Z",
+ "asOf": 1793324864276,
  "players": 460,
  "entries": [
   {
@@ -1238,12 +1238,12 @@
   },
   {
    "rank": 111,
-   "nickname": "brigos",
+   "nickname": "Brigos",
    "wins": 21,
    "losses": 15,
    "games": 36,
    "avatar": "https://cdn.discordapp.com/avatars/937966312691466281/d09e25c743b1212983546a696041f00c.webp?size=256",
-   "href": null,
+   "href": "/profile/Brigos",
    "qualified": false,
    "tier": null
   },
