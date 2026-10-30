@@ -1,7 +1,7 @@
 {
  "source": "https://streamersclash.cz/api/streamers-queue/board",
- "updatedAt": "2026-10-30T01:53:55.581Z",
- "asOf": 1793324864276,
+ "updatedAt": "2026-10-30T08:32:29.762Z",
+ "asOf": 1793348705972,
  "players": 460,
  "entries": [
   {
@@ -2481,23 +2481,23 @@
   },
   {
    "rank": 222,
-   "nickname": "gentleman kolofou",
-   "wins": 10,
-   "losses": 8,
-   "games": 18,
-   "avatar": "https://cdn.discordapp.com/avatars/951965783666352158/abea2046e0f00cca84a941c744bd6a68.webp?size=256",
-   "href": null,
-   "qualified": false,
-   "tier": null
-  },
-  {
-   "rank": 222,
    "nickname": "ChippyChips",
    "wins": 10,
    "losses": 13,
    "games": 23,
    "avatar": "https://cdn.discordapp.com/avatars/663443741058662411/8a8090526548981b762e30e82cd70737.webp?size=256",
    "href": "/profile/ChippyChips",
+   "qualified": false,
+   "tier": null
+  },
+  {
+   "rank": 222,
+   "nickname": "kolofou1",
+   "wins": 10,
+   "losses": 8,
+   "games": 18,
+   "avatar": "/api/media/file/avatar-2116-1793325312735.webp?v=mvubl7fu",
+   "href": "/profile/kolofou1",
    "qualified": false,
    "tier": null
   },
