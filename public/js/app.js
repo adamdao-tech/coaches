@@ -141,7 +141,7 @@ function renderPlayersShell() {
       <tbody></tbody>
     </table></div>
     <p class="muted small">${state.source === 'Streamers Queue API'
-      ? 'ELO, W/L a pořadí (podle ELO) jsou z Streamers Queue API. Forma, série a soupeři/spoluhráči se počítají z celé historie zápasů. Živé zápasy se obnovují každou minutu.'
+      ? 'Pořadí je podle počtu výher (jako oficiální žebříček), ELO a W/L jsou ze Streamers Queue API. Forma, série a soupeři/spoluhráči se počítají z celé historie zápasů. Živé zápasy se obnovují každou minutu.'
       : 'W/L a pořadí jsou z oficiálního žebříčku. Forma, série a detail (soupeři, spoluhráči) se počítají z uložených zápasů.'}</p>`;
 }
 
@@ -154,7 +154,7 @@ function filteredPlayers() {
     .sort((a, b) => {
       const va = val(a), vb = val(b);
       const c = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
-      return c * dir || b.wins - a.wins || a.name.localeCompare(b.name);
+      return c * dir || b.wins - a.wins || a.losses - b.losses || a.name.localeCompare(b.name);
     });
 }
 const streakVal = (s) => (!s ? 0 : (s[0] === 'W' ? 1 : -1) * parseInt(s.slice(1), 10));

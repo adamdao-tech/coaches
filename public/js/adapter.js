@@ -222,10 +222,11 @@ export function normalizeBoard(raw) {
       avatar: absUrl(e.avatar), profile: absUrl(e.href),
     };
   }).filter((e) => e.name);
-  // Streamers Queue nemá pořadí – dopočítá se podle ELO (stejné ELO = stejné místo)
-  if (out.length && out.every((e) => e.rank == null) && out.some((e) => e.elo != null)) {
-    out.sort((a, b) => (b.elo ?? -1e9) - (a.elo ?? -1e9));
-    out.forEach((e, i) => { e.rank = i && e.elo === out[i - 1].elo ? out[i - 1].rank : i + 1; });
+  // Streamers Queue nemá pořadí – dopočítá se jako na streamersclash.cz: podle počtu výher
+  // (stejný počet výher = stejné místo; uvnitř skupiny dřív ten s méně prohrami)
+  if (out.length && out.every((e) => e.rank == null)) {
+    out.sort((a, b) => b.wins - a.wins || a.losses - b.losses || (b.elo ?? 0) - (a.elo ?? 0));
+    out.forEach((e, i) => { e.rank = i && e.wins === out[i - 1].wins ? out[i - 1].rank : i + 1; });
   }
   return out;
 }
