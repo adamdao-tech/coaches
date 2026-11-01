@@ -214,6 +214,7 @@ export function normalizeBoard(raw) {
     return {
       id: e.id != null ? String(e.id) : null,
       name: String(pick(e, 'nickname', 'displayName', 'name', 'nick', 'username') || '').trim(),
+      username: e.username || null,
       rank: e.rank ?? null, wins: +e.wins || 0, losses: +e.losses || 0,
       games: +(e.games ?? e.totalGames) || (+e.wins || 0) + (+e.losses || 0),
       elo: Number.isFinite(elo) ? elo : null,
@@ -229,6 +230,48 @@ export function normalizeBoard(raw) {
     out.forEach((e, i) => { e.rank = i && e.wins === out[i - 1].wins ? out[i - 1].rank : i + 1; });
   }
   return out;
+}
+
+// Streamers Queue API zná hráče jen pod Discord přezdívkou (SGoob = „CEO Tenisového Klubu“).
+// Přejmenuje je na nick ze streamersclash.cz, aby šli najít tak, jak je zná každý.
+// Párování: Discord ID z avataru → jedinečná shoda W/L → shoda jména/username.
+// Discord přezdívka zůstane v `alias` (hledá se i podle ní).
+export function applyScNames(board, scRaw) {
+  const sc = normalizeBoard(scRaw);
+  if (!board.length || !sc.length) return board;
+  const lc = (s) => String(s || '').toLowerCase();
+  const byId = new Map(board.filter((b) => b.id).map((b) => [b.id, b]));
+  const used = new Set();
+  const take = (b, e) => { used.add(b); b.match = e; };
+  const rest = [];
+  for (const e of sc) {
+    const id = String(e.avatar || '').match(/discordapp\.com\/avatars\/(\d+)\//)?.[1];
+    const b = id && byId.get(id);
+    if (b && !used.has(b)) take(b, e); else rest.push(e);
+  }
+  const rest2 = [];
+  for (const e of rest) {
+    const c = board.filter((b) => !used.has(b) && b.wins === e.wins && b.losses === e.losses);
+    if (c.length === 1) take(c[0], e); else rest2.push(e);
+  }
+  for (const e of rest2) {
+    // tolerantně: bez podtržítek, teček apod. (halkum_ = .halkum)
+    const n = (s) => lc(s).replace(/[^a-z0-9]/g, '');
+    const want = n(e.name);
+    const b = want && board.find((x) => !used.has(x) && [n(x.name), n(x.username)].includes(want));
+    if (b) take(b, e);
+  }
+  for (const b of board) {
+    const e = b.match;
+    delete b.match;
+    if (!e) continue;
+    if (lc(e.name) !== lc(b.name)) { b.alias = b.name; b.name = e.name; }
+    b.profile = b.profile || e.profile;
+    b.tier = b.tier || e.tier;
+    b.qualified = b.qualified || e.qualified;
+    if (!b.avatar) b.avatar = e.avatar;
+  }
+  return board;
 }
 
 export function normalize(raw) {

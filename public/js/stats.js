@@ -69,6 +69,8 @@ export function computeStats(lobbies, board = []) {
     s.elo = s.board?.elo ?? null;
     s.lastPlayedAt = s.board?.lastPlayedAt ?? null;
     s.tier = s.board?.tier ?? null;
+    s.alias = s.board?.alias ?? null;
+    if (!s.profile && s.board?.profile) s.profile = s.board.profile;
     s.wr = s.games ? s.wins / s.games : null;
     const done = s.history.filter((h) => h.result);
     s.form = done.slice(-5).map((h) => h.result);

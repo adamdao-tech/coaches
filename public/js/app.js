@@ -1,4 +1,4 @@
-import { normalize, normalizeBoard, mergeLobbies, canonicalize } from './adapter.js';
+import { normalize, normalizeBoard, mergeLobbies, canonicalize, applyScNames } from './adapter.js';
 import { computeStats, headToHead, sortedRecords, byLobbyOrder } from './stats.js';
 import { loadChampions, champTag } from './champions.js';
 
@@ -44,10 +44,16 @@ async function loadData() {
   }
 
   // Hlavní zdroj: Streamers Queue API (přes Worker, klíč zůstává na serveru)
-  const [sqGames, sqPlayers] = await Promise.allSettled([fetchJson('/api/sq/games'), fetchJson('/api/sq/players')]);
+  const [sqGames, sqPlayers, scBoard] = await Promise.allSettled([
+    fetchJson('/api/sq/games'),
+    fetchJson('/api/sq/players'),
+    // nicky ze streamersclash.cz – SQ API má jen Discord přezdívky
+    fetchJson('/api/board').catch(() => fetchJson('data/board.json')),
+  ]);
   const got = (r) => (r.status === 'fulfilled' ? r.value : null);
   if (got(sqGames) && got(sqPlayers)) {
     const board = normalizeBoard(got(sqPlayers));
+    if (got(scBoard)) applyScNames(board, got(scBoard));
     const lobbies = canonicalize(normalize(got(sqGames)), board);
     if (lobbies.length || board.length) return setData(lobbies, 'Streamers Queue API', board);
   }
@@ -150,7 +156,7 @@ function filteredPlayers() {
   const { col, dir } = state.sort;
   const val = (p) => (col === 'name' ? p.name.toLowerCase() : col === 'rank' ? (p.rank ?? 1e9) : col === 'wr' ? (p.wr ?? -1) : col === 'streak' ? streakVal(p.streak) : col === 'form' ? p.form.filter((f) => f === 'W').length : col === 'champs' ? p.champs.size : col === 'opgg' ? p.opgg.length : col === 'elo' ? (p.elo ?? -1e9) : p[col]);
   return [...state.stats.values()]
-    .filter((p) => (!q || p.name.toLowerCase().includes(q)) && p.games >= state.minGames)
+    .filter((p) => (!q || p.name.toLowerCase().includes(q) || (p.alias || '').toLowerCase().includes(q)) && p.games >= state.minGames)
     .sort((a, b) => {
       const va = val(a), vb = val(b);
       const c = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
@@ -175,7 +181,7 @@ const avatar = (p, size = 26) => p.avatar
   ? `<img class="av" src="${esc(p.avatar)}" width="${size}" height="${size}" alt="" loading="lazy" referrerpolicy="no-referrer">`
   : `<span class="av av-fallback" style="width:${size}px;height:${size}px">${esc(p.name[0] || '?')}</span>`;
 
-const playerCell = (p) => `<a class="pl" href="#hrac/${encodeURIComponent(p.name)}">${avatar(p)}<span>${esc(p.name)}</span></a>`;
+const playerCell = (p) => `<a class="pl" href="#hrac/${encodeURIComponent(p.name)}"${p.alias ? ` title="Discord: ${esc(p.alias)}"` : ''}>${avatar(p)}<span>${esc(p.name)}</span></a>`;
 const wrBar = (wr) => wr == null ? '<span class="muted">–</span>' :
   `<span class="wr"><span class="wr-bar"><i style="width:${Math.round(wr * 100)}%" class="${wr >= 0.5 ? 'hi' : 'lo'}"></i></span>${pct(wr)}</span>`;
 const formDots = (f) => f.length ? `<span class="form">${f.map((r) => `<i class="${r === 'W' ? 'w' : 'l'}" title="${r}"></i>`).join('')}</span>` : '<span class="muted">–</span>';
@@ -205,6 +211,7 @@ function renderPlayer(name) {
       ${avatar(p, 64)}
       <div>
         <h2>${esc(p.name)}</h2>
+        ${p.alias ? `<div class="muted small">na Discordu: ${esc(p.alias)}</div>` : ''}
         <div class="hero-meta">
           ${p.rank ? `<span class="badge">#${p.rank} v žebříčku</span>` : ''}
           ${p.lastPlayedAt ? `<span class="muted small">naposledy hrál ${esc(fmtTime(p.lastPlayedAt))}</span>` : ''}
