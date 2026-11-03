@@ -83,6 +83,7 @@ function setData(lobbies, source, board = []) {
   renderMeta();
   // při obnově nepřekreslovat celé UI (ztratil by se fokus v hledání)
   if ($('table.players tbody')) renderPlayersTable();
+  else if ($('#match-list')) renderMatchList();
   else if ($('#h2h-out')) runH2H();
   else route();
 }
@@ -106,7 +107,7 @@ function route() {
   const arg = rest.join('/');
   document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.dataset.view === (view === 'hrac' ? 'hraci' : view)));
   const main = $('#main');
-  if (view === 'zapasy') main.innerHTML = renderMatches(arg || 'vse');
+  if (view === 'zapasy') { main.innerHTML = renderMatches(arg || 'vse'); renderMatchList(); }
   else if (view === 'h2h') { main.innerHTML = renderH2HShell(arg); runH2H(); }
   else if (view === 'hrac' && arg) main.innerHTML = renderPlayer(arg);
   else { main.innerHTML = renderPlayersShell(); renderPlayersTable(); }
@@ -256,13 +257,60 @@ const nameLink = (n) => `<a href="#hrac/${encodeURIComponent(n)}">${esc(n)}</a>`
 
 const MATCH_FILTERS = [['vse', 'Vše'], ['zive', 'Živé a čekající'], ['odehrane', 'Odehrané']];
 const MATCH_LIMIT = 60;
+const mstate = { filter: 'vse', q: '', date: '', page: 0 };
+
+// "2026-10-20" z času lobby v místním čase
+const localDay = (t) => {
+  const d = new Date(t);
+  return isNaN(d) ? '' : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+};
+
+function matchList() {
+  let list = [...state.lobbies].sort(byLobbyOrder).reverse();
+  if (mstate.filter === 'zive') list = list.filter((l) => !l.winner);
+  if (mstate.filter === 'odehrane') list = list.filter((l) => l.winner);
+  if (mstate.date) list = list.filter((l) => l.time && localDay(l.time) === mstate.date);
+  const q = mstate.q.trim().toLowerCase().replace(/^#/, '');
+  if (q) {
+    list = list.filter((l) => String(l.id) === q || ['blue', 'red'].some((side) => l[side].some((p) => {
+      const s = state.stats.get(p.name.toLowerCase());
+      return p.name.toLowerCase().includes(q) || (s?.alias || '').toLowerCase().includes(q);
+    })));
+  }
+  return list;
+}
 
 function renderMatches(filter = 'vse') {
-  let list = [...state.lobbies].sort(byLobbyOrder).reverse();
-  if (filter === 'zive') list = list.filter((l) => !l.winner);
-  if (filter === 'odehrane') list = list.filter((l) => l.winner);
-  const total = list.length;
-  list = list.slice(0, MATCH_LIMIT);
+  mstate.filter = filter;
+  mstate.page = 0;
+  const days = state.lobbies.map((l) => l.time && localDay(l.time)).filter(Boolean).sort();
+  return `
+    <div class="toolbar">${MATCH_FILTERS.map(([k, label]) => `<a class="chip ${k === filter ? 'active' : ''}" href="#zapasy/${k}">${label}</a>`).join('')}</div>
+    <div class="toolbar">
+      <input id="mq" list="player-list" placeholder="Hráč nebo číslo lobby…" value="${esc(mstate.q)}">
+      <label class="muted small">Den <input id="mdate" type="date" value="${esc(mstate.date)}" min="${esc(days[0] || '')}" max="${esc(days.at(-1) || '')}"></label>
+      <button class="btn ghost" id="mclear" type="button">Zrušit filtr</button>
+    </div>
+    <div id="match-list"></div>`;
+}
+
+function renderMatchList() {
+  const box = $('#match-list');
+  if (!box) return;
+  const all = matchList();
+  const total = all.length;
+  const pages = Math.max(1, Math.ceil(total / MATCH_LIMIT));
+  mstate.page = Math.min(mstate.page, pages - 1);
+  const from = mstate.page * MATCH_LIMIT;
+  const list = all.slice(from, from + MATCH_LIMIT);
+  const pager = total > MATCH_LIMIT ? `
+    <div class="toolbar pager">
+      <button class="btn ghost" data-page="0" ${mstate.page ? '' : 'disabled'}>« Nejnovější</button>
+      <button class="btn ghost" data-page="${mstate.page - 1}" ${mstate.page ? '' : 'disabled'}>‹ Novější</button>
+      <span class="muted small">${from + 1}–${from + list.length} z ${total} · strana ${mstate.page + 1}/${pages}</span>
+      <button class="btn ghost" data-page="${mstate.page + 1}" ${mstate.page < pages - 1 ? '' : 'disabled'}>Starší ›</button>
+      <button class="btn ghost" data-page="${pages - 1}" ${mstate.page < pages - 1 ? '' : 'disabled'}>Nejstarší »</button>
+    </div>` : `<div class="toolbar"><span class="muted small">${total} lobby</span></div>`;
   const opgg = (l, side) => (l.opgg?.[side] || []).map((o) => `<a class="opgg" href="${esc(o.url)}" target="_blank" rel="noopener" title="OP.GG multisearch (${o.players} hráčů)">${esc(String(o.server).toUpperCase())} ${o.players}/5</a>`).join(' ');
   const team = (l, side) => `
     <div class="team ${side} ${l.winner === side ? 'won' : l.winner ? 'lost' : ''}">
@@ -274,15 +322,14 @@ function renderMatches(filter = 'vse') {
         <span class="muted small">${s && s.games ? `${s.wins}W ${s.losses}L` : ''}</span></a>`; }).join('')}
       ${l.opgg?.[side]?.length ? `<div class="team-opgg">${opgg(l, side)}</div>` : ''}
     </div>`;
-  return `
-    <div class="toolbar">${MATCH_FILTERS.map(([k, label]) => `<a class="chip ${k === filter ? 'active' : ''}" href="#zapasy/${k}">${label}</a>`).join('')}
-      <span class="muted small">${total > MATCH_LIMIT ? `zobrazeno ${MATCH_LIMIT} z ${total}` : `${total} lobby`}</span></div>
+  box.innerHTML = `${pager}
     ${list.length ? `<div class="lobbies">${list.map((l) => `
     <article class="lobby">
       <header><b>#${esc(l.id)}</b><span class="badge ${l.status === 'hraje se' ? 'badge-live' : ''}">${esc(l.winner ? 'odehráno' : (l.status || 'čeká'))}</span>
       <span class="muted">${l.time ? esc(fmtTime(l.time)) : ''}${l.timeTo ? `–${esc(l.timeTo)}` : ''}</span></header>
       <div class="teams">${team(l, 'blue')}${team(l, 'red')}</div>
-    </article>`).join('')}</div>` : '<p class="empty">Žádná lobby</p>'}`;
+    </article>`).join('')}</div>` : '<p class="empty">Žádná lobby</p>'}
+    ${total > MATCH_LIMIT && list.length > 6 ? pager : ''}`;
 }
 function fmtTime(t) {
   const d = new Date(t);
@@ -384,11 +431,16 @@ document.addEventListener('click', (e) => {
   const tr = e.target.closest('table.players tbody tr[data-name]');
   if (tr && !e.target.closest('a')) location.hash = `hrac/${encodeURIComponent(tr.dataset.name)}`;
   if (e.target.id === 'csv') exportCsv();
+  const pg = e.target.closest('button[data-page]');
+  if (pg && !pg.disabled) { mstate.page = +pg.dataset.page; renderMatchList(); $('#match-list').scrollIntoView({ block: 'start' }); }
+  if (e.target.id === 'mclear') { mstate.q = ''; mstate.date = ''; $('#mq').value = ''; $('#mdate').value = ''; mstate.page = 0; renderMatchList(); }
 });
 document.addEventListener('input', (e) => {
   if (e.target.id === 'q') { state.q = e.target.value; renderPlayersTable(); }
   if (e.target.id === 'min') { state.minGames = +e.target.value || 0; renderPlayersTable(); }
   if (e.target.id === 'h2h-a' || e.target.id === 'h2h-b') runH2H();
+  if (e.target.id === 'mq') { mstate.q = e.target.value; mstate.page = 0; renderMatchList(); }
+  if (e.target.id === 'mdate') { mstate.date = e.target.value; mstate.page = 0; renderMatchList(); }
 });
 $('#src-btn').addEventListener('click', openSourceDialog);
 $('#src-form').addEventListener('submit', applySource);
